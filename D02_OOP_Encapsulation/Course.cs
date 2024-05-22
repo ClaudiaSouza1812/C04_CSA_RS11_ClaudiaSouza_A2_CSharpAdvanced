@@ -9,11 +9,20 @@ namespace D02_OOP_Encapsulation
 {
     internal class Course
     {
-        
-        #region Enums
+        #region Enums (public or internal) 
 
+        /* Enums por dafault são int e zero-based, exemplo de um Enum
+        internal enum EnumMaritalStatus
+        {
+            Single,     // 0
+            Married,    // 1
+            Divorced,   // 2
+            Widowed     // 3
+        }
+        */
 
         #endregion
+
         #region Fields (properties, private variables)
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
@@ -24,22 +33,9 @@ namespace D02_OOP_Encapsulation
 
         #endregion
 
-        #region Enums (public or internal) 
-
-        /* Enums por dafault são int e zero-based
-        internal enum EnumMaritalStatus
-        {
-            Single,     // 0
-            Married,    // 1
-            Divorced,   // 2
-            Widowed     // 3
-        }
-        */
-
-
-        #endregion
-
+        
         #region Properties (public or internal)
+
         #region Auto-implemented properties 2.0
         /* 
         Exemplo de uma propriedade usando Auto-implemented properties
@@ -88,6 +84,7 @@ namespace D02_OOP_Encapsulation
         // internal string FullCourse => field = value;     // Set
 
         #endregion
+
         #endregion
 
         #region Constructors (public or internal)
