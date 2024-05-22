@@ -105,12 +105,12 @@ namespace D02_OOP_Encapsulation
         {
             #region CorseID
 
-            bool converted;
-            int value;
+            bool converted = false; 
+            int value = 0;
 
             Utility.WriteMessage("Course id: ", "\n\n");
 
-            bool converted = int.TryParse(Console.ReadLine(), out value);
+            converted = int.TryParse(Console.ReadLine(), out value);
 
             if (converted) 
             {
