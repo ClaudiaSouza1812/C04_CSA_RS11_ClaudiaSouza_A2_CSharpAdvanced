@@ -19,7 +19,13 @@ namespace D01_Enum
             person01.Name = "Claudia";
             person01.MaritalStatus = Person.EnumMaritalStatus.Married;
 
-            // Person.AddPerson(listPersons);
+            Person person02 = new Person("bb", Person.EnumMaritalStatus.Single);
+            /*
+            listPersons.Add(person01);
+            listPersons.Add(person02);
+            */
+            
+            Person.AddPerson(listPersons);
 
 
             Utility.TerminateConsole();
