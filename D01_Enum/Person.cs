@@ -48,7 +48,7 @@ namespace D01_Enum
             Brown = 10,     // 0
             Black = 20,     // 1
             White = 5,      // 2
-            Gold,           // 3
+            Blond,           // 3
             Red             // 4
         }
 
@@ -135,7 +135,7 @@ namespace D01_Enum
             }
         }
 
-        internal static void AddPerson(List<Person> list)
+        internal static void AddPerson(List<Person> listPerson)
         {
             Console.Clear();
             Utility.WriteTitle("Add a Person", "\n", "\n\n");
@@ -143,6 +143,19 @@ namespace D01_Enum
             Utility.WriteMessage("Name: ");
 
             string name = Console.ReadLine();
+
+            Utility.WriteMessage("Marital status (Single, Married, Divorced, Widowed): ", "", "\n");
+
+            string maritalStatus = Console.ReadLine();
+
+            // Validar se o input é correto de acordo com a enum
+            // true: ignora o case do input, aceita 'Single' e 'single'
+            if (Enum.TryParse(maritalStatus, true, out EnumMaritalStatus status))
+            {
+                Person person = new Person(name, status);
+                listPerson.Add(person);
+                Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status {person.MaritalStatus}");
+            }
         }
 
         
