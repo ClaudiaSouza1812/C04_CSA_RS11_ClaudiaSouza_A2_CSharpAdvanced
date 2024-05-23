@@ -119,7 +119,8 @@ namespace D04_OOP_Polymorphism
         internal string FullCourse => field = value;     // Set
         */
 
-        internal string FullCourse => $"Course nº {CourseId}: {Area} - {Name}"; // Get
+        // virtual: indica que a propriedade poderá ser reescrita (override) na derived (inherited) classe
+        internal virtual string FullCourse => $"Course nº {CourseId}: {Area} - {Name}"; // Get
 
         // internal string FullCourse => field = value;     // Set
 
@@ -166,7 +167,7 @@ namespace D04_OOP_Polymorphism
 
         #region Methods (public or internal)
 
-        internal void ReadCourse()
+        internal virtual void ReadCourse()
         {
             #region CorseId
 
@@ -200,7 +201,7 @@ namespace D04_OOP_Polymorphism
         }
 
 
-        internal void ListCourse()
+        internal virtual void ListCourse()
         {
             Utility.WriteMessage(FullCourse, "\n\n");
         }

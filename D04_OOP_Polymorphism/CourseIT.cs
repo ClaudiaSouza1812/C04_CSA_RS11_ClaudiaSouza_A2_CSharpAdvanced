@@ -29,9 +29,9 @@ namespace D04_OOP_Polymorphism
 
         internal bool Exam { get; set; }
 
-        // reescrever a propriedade herdada
-        // há duas formas: new, override
-        internal new string FullCourse => $"Course nº {CourseId}: {Area} - {Name}, exam? {Exam}"; // Get
+        // reescrever a propriedade herdada: override
+        // ofuscar, criar uma nova com o mesmo nome: new 
+        internal override string FullCourse => $"Course nº {CourseId}: {Area} - {Name}, exam? {Exam}"; // Get
 
         #endregion
 

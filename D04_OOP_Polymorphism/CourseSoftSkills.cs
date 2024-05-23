@@ -22,10 +22,14 @@ namespace D04_OOP_Polymorphism
 
         internal string Subarea { get; set; }
 
-        // reescrever a propriedade herdada
-        // há duas formas: new, override
+        /* reescrever a propriedade herdada: override
+        ofuscar, criar uma nova propriedade com o mesmo nome: new, ex:
         internal new string FullCourse => $"Course nº {CourseId}: {Area}, {Subarea} : {Name}"; // Get
+        override: polimorfismo, substituição do que é herdado, ex:
+        internal override string FullCourse => $"Course nº {CourseId}: {Area}, {Subarea} : {Name}"; // Get
+        */
 
+        internal override string FullCourse => $"Course nº {CourseId}: {Area}, {Subarea} : {Name}"; // Get
         #endregion
 
         #region Constructors
@@ -45,7 +49,7 @@ namespace D04_OOP_Polymorphism
 
         #region Methods
 
-        internal new void ReadCourse()
+        internal override void ReadCourse()
         {
             base.ReadCourse();
 
@@ -54,7 +58,7 @@ namespace D04_OOP_Polymorphism
             Subarea = Console.ReadLine();
         }
 
-        internal new void ListCourse()
+        internal override void ListCourse()
         {
             Utility.WriteMessage(FullCourse, "\n\n");
         }
