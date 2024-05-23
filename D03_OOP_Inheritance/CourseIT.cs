@@ -56,7 +56,7 @@ namespace D03_OOP_Inheritance
         {
             base.ReadCourse();
 
-            Utility.WriteMessage("Course exam (true|false)? ", "\n");
+            Utility.WriteMessage("Course exam (true|false)? ");
 
             Exam = Convert.ToBoolean(Console.ReadLine());
         }

@@ -186,14 +186,14 @@ namespace D03_OOP_Inheritance
 
             #region CourseName
 
-            Utility.WriteMessage("Course name: ", "\n\n");
+            Utility.WriteMessage("Course name: ");
             Name = Console.ReadLine();
 
             #endregion
 
             #region Area
 
-            Utility.WriteMessage("Course area: ", "\n\n");
+            Utility.WriteMessage("Course area: ");
             Area = Console.ReadLine();
 
             #endregion
