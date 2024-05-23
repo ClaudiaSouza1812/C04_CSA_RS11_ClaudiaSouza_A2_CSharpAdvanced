@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -58,10 +59,18 @@ namespace D04_OOP_Polymorphism
             Subarea = Console.ReadLine();
         }
 
-        internal override void ListCourse()
+        // Overloading
+        internal void ListCourse(string level)
         {
-            Utility.WriteMessage(FullCourse, "\n\n");
+            Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");
         }
+
+        internal void ListCourse(DateTime timestamp)
+        {
+            Utility.WriteMessage($"{FullCourse} ({timestamp.ToShortDateString()}), ", "\n\n");
+        }
+
+
         #endregion
     }
 }

@@ -52,7 +52,7 @@ namespace D04_OOP_Polymorphism
 
         #region Methods
 
-        internal new void ReadCourse()
+        internal override void ReadCourse()
         {
             base.ReadCourse();
 
@@ -61,7 +61,7 @@ namespace D04_OOP_Polymorphism
             Exam = Convert.ToBoolean(Console.ReadLine());
         }
 
-        internal new void ListCourse()
+        internal override void ListCourse()
         {
 
             Utility.WriteMessage(FullCourse, "\n\n");
