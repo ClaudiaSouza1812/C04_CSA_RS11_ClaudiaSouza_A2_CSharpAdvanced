@@ -55,5 +55,8 @@
       <Name>D00_Utility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="_polymorphism.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

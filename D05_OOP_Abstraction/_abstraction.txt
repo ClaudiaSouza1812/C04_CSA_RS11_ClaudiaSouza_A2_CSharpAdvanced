@@ -1,0 +1,39 @@
+﻿/*  
+    ------------------
+    Encapsulation
+    ------------------
+    Private classe members: fields
+    Internal/Public classe members: methods, properties
+    
+
+    ------------------
+    Inheritance
+    ------------------
+    Base class
+    Derived class
+
+    Na base class, marcar com 'virtual' os métodos que podem ser reescritos.
+    Na derived class, marcar os métodos virtual com 'override'.
+
+
+    ------------------
+    Polymorphism
+    ------------------
+    The same method with different signatures --> Overloading    
+
+
+    ------------------
+    Abstraction
+    ------------------
+    
+    Abstract class
+        não pode ser instanciada diretamente
+        pode ter membros abstract e não abstract
+        os membros abstract não podem ter implementação
+        os métodos têm de ser implementados na classe derivada
+    
+    or
+    
+    Interfaces (melhor!!!)
+
+*/

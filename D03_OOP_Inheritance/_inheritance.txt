@@ -1,0 +1,19 @@
+﻿/*  
+    ------------------
+    Encapsulation
+    ------------------
+    Private classe members: fields
+    Internal/Public classe members: methods, properties
+    
+
+    ------------------
+    Inheritance
+    ------------------
+    Base class
+    Derived class
+
+    Na base class, marcar com 'virtual' os métodos que podem ser reescritos.
+    Na derived class, marcar os métodos virtual com 'override'.
+
+
+*/
