@@ -10,6 +10,7 @@ namespace D04_OOP_Polymorphism
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
