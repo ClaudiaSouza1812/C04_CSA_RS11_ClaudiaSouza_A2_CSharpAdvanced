@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,16 @@ namespace D03_OOP_Inheritance
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
+
+            CourseIT courseIT01 = new CourseIT();
+
+            courseIT01.ReadCourse();
+
+            courseIT01.ListCourse();
+
+
+            Utility.TerminateConsole();
         }
     }
 }
