@@ -1,4 +1,15 @@
-﻿using D00_Utility;
+﻿/*
+    Propriedades: 
+        CourseId
+        Name (tem de ser em maiúsculas)
+        Area (tem de ser em maiúsculas)
+        FullCourse (read-only - get)
+
+    Métodos void:
+        ReadCourse
+        ListCourse
+*/
+using D00_Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +57,7 @@ namespace D02_OOP_Encapsulation
 
         #endregion
 
-        #region Classic properties 1.0
+        #region Classic properties 1.0 (use field)
         /* 
         Exemplo de uma propriedade usando Classic properties
 
@@ -64,7 +75,7 @@ namespace D02_OOP_Encapsulation
         }
         #endregion
 
-        #region Bodied-expression properties 3.0
+        #region Bodied-expression properties 3.0 (use field)
         /* 
         Exemplo de uma propriedade usando Bodied-expression properties
         internal double Value02
@@ -74,14 +85,25 @@ namespace D02_OOP_Encapsulation
         }
         */
 
+        #region Bodied-expression - classic declaration
+
         internal string Area
         {
             get => area;
             set => area = value.ToUpper();
         }
 
+        #endregion
+
+        #region Bodied-expression - lambda expression
+
         internal string FullCourse => $"Course nº {CourseId}: {Area} - {Name}"; // Get
+
         // internal string FullCourse => field = value;     // Set
+
+        #endregion
+
+
 
         #endregion
 

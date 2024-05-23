@@ -27,7 +27,6 @@ namespace D02_OOP_Encapsulation
             course02.ReadCourse();
 
             // Listar
-            
             course01.ListCourse();
             course02.ListCourse();
 

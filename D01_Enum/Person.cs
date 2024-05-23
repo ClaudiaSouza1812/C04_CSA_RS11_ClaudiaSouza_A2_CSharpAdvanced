@@ -156,6 +156,10 @@ namespace D01_Enum
                 listPerson.Add(person);
                 Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status {person.MaritalStatus}");
             }
+            else
+            {
+                Utility.WriteMessage("Invalid marital status entered.", "\n\n");
+            }
         }
 
         

@@ -1,0 +1,7 @@
+﻿------------------
+Encapsulation
+------------------
+
+Internal/Public classe members: methods, properties
+
+Private classe members: fields, variables
