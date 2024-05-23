@@ -1,4 +1,20 @@
 ﻿/*
+    CLASS ELEMENTS:
+        Attributes or fields    = variáveis privadas da classe (suporte às propriedades)
+        Properties              = caraterísticas
+        Methods                 = funcionalidades
+        Constructors            = funcionalidade invocada aquando da criação do objeto
+        Destructor              = funcionalidade que permite indicar como é que o objeto é destruído
+    EXEMPLO
+        Classe: Produto
+        Objects (instâncias da classe): Produto1, Produto2, Produto3...
+        Properties: Nome, Cor, Unidade, ...
+        Methods: Inserir, Pesquisar, Editar, Apagar, ...
+        Constructor: Cor = verde
+        Destructor (log): informar que o objeto vai ser destruído
+
+*/
+/*
     Propriedades: 
         CourseId
         Name (tem de ser em maiúsculas)
@@ -22,7 +38,7 @@ namespace D02_OOP_Encapsulation
     {
         #region Enums (public or internal) 
 
-        /* Enums por dafault são int e zero-based, exemplo de um Enum
+        /* Enums por dafault são int e zero-based, ex:
         internal enum EnumMaritalStatus
         {
             Single,     // 0
@@ -36,7 +52,8 @@ namespace D02_OOP_Encapsulation
 
         #region Fields (properties, private variables)
         /*
-        variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
+        variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties), ex:
+        private string name;
         */
 
         private string name;
@@ -96,6 +113,11 @@ namespace D02_OOP_Encapsulation
         #endregion
 
         #region Bodied-expression - lambda expression
+        /* a lambda expression to define a read-only property in a concise manner, ex:
+        
+        internal string FullCourse => $"Course nº {CourseId}: {Area} - {Name}"; // Get
+        internal string FullCourse => field = value;     // Set
+        */
 
         internal string FullCourse => $"Course nº {CourseId}: {Area} - {Name}"; // Get
 
@@ -103,19 +125,28 @@ namespace D02_OOP_Encapsulation
 
         #endregion
 
-
-
         #endregion
 
         #endregion
 
         #region Constructors (public or internal)
-        // Fazer substituto do default constructor
+        /* Substituto do default constructor, ex:
+        internal Person()
+        {
+            Id = NextId++;
+            Name = string.Empty;
+        }
+        */
 
 
-
-
-        // Fazer segundo construtor com inserção de parâmetros obrigatórios
+        /* Segundo construtor com inserção de parâmetros obrigatórios, ex:
+        internal Person(string name, EnumMaritalStatus maritalStatus)
+        {
+            Id = NextId++;
+            Name = name;
+            MaritalStatus = maritalStatus;
+        }
+        */
 
 
 
@@ -125,7 +156,7 @@ namespace D02_OOP_Encapsulation
 
         internal void ReadCourse()
         {
-            #region CorseID
+            #region CorseId
 
             bool converted = false; 
             int value = 0;

@@ -9,10 +9,6 @@ using System.Threading.Tasks;
 
 namespace D01_Enum
 {
-    #region Enums
-
-
-    #endregion
 
     internal class Person
     {
