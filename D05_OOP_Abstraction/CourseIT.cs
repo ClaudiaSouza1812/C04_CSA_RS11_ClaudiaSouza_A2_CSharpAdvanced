@@ -31,7 +31,9 @@ namespace D05_OOP_Abstraction
 
         // reescrever a propriedade herdada: override
         // ofuscar, criar uma nova com o mesmo nome: new 
-        internal override string FullCourse => $"Course nº {CourseId}: {Area} - {Name}, exam? {Exam}"; // Get
+        internal override string FullCourse => $"Course nº {CourseId}: {Area} - {Name}, Exam? {Exam}"; // Get
+
+        internal override double Price { get; set; }
 
         #endregion
 
@@ -40,11 +42,13 @@ namespace D05_OOP_Abstraction
         internal CourseIT() : base()
         { 
             Exam = true;
+            Price = 100.00;
         }
 
         internal CourseIT(int courseId, string name, string area, bool exam) : base(courseId, name, area)
         {
             Exam = exam;
+            Price = 100.00; ;
         }
 
 
@@ -65,6 +69,11 @@ namespace D05_OOP_Abstraction
         {
 
             Utility.WriteMessage(FullCourse, "\n\n");
+        }
+
+        internal override void Billing(string status)
+        {
+            Utility.WriteMessage($"({Price:C2}) Estado de pagamento: {status}", "\n", "\n\n");
         }
 
 

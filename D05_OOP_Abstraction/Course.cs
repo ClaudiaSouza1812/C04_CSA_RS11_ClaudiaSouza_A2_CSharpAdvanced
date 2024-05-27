@@ -124,6 +124,8 @@ namespace D05_OOP_Abstraction
 
         // internal string FullCourse => field = value;     // Set
 
+        internal abstract double Price { get; set; }
+
         #endregion
 
         #endregion

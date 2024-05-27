@@ -31,6 +31,8 @@ namespace D05_OOP_Abstraction
         */
 
         internal override string FullCourse => $"Course nº {CourseId}: {Area}, {Subarea} : {Name}"; // Get
+
+        internal override double Price { get; set; }
         #endregion
 
         #region Constructors
@@ -38,11 +40,13 @@ namespace D05_OOP_Abstraction
         internal CourseSoftSkills() : base()
         {
             Subarea = string.Empty;
+            Price = 100.00;
         }
 
         internal CourseSoftSkills(int courseId, string area, string subarea, string name) : base(courseId, name, area)
         {
             Subarea = subarea;
+            Price = 100.00;
         }
 
 
@@ -70,6 +74,10 @@ namespace D05_OOP_Abstraction
             Utility.WriteMessage($"{FullCourse} ({timestamp.ToShortDateString()}), ", "\n\n");
         }
 
+        internal override void Billing(string status)
+        {
+            Utility.WriteMessage($"{Price:C2} Estado de pagamento: {status}", "", "\n\n");
+        }
 
         #endregion
     }
