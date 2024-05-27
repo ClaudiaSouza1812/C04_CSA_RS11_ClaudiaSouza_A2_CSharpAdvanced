@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using D00_Utility;
 
 namespace D05_OOP_Abstraction
 {
@@ -10,6 +11,11 @@ namespace D05_OOP_Abstraction
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
+
+            Course course01 = new Course();
+
+            Utility.TerminateConsole();
         }
     }
 }
