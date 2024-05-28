@@ -10,20 +10,7 @@ namespace D06_OOP_Interfaces
 
     internal class CourseSoftSkills : Course, ICourseSoftSkills
     {
-        #region Enums (public or internal) 
-
-        // Lista de linguas aceitas o data type Enum
-        // Enums por dafault são int e zero-based
-        internal enum EnumLanguage
-        {
-            Portugues,  // 0
-            Frances,    // 1
-            Ingles      // 2
-        }
-
-        #endregion
-
-
+        // má escolha: colocar a enum dentro da classe 
         #region Properties
 
         // implanta as propriedades que pertencem unicamente a ICourseSoftSkills

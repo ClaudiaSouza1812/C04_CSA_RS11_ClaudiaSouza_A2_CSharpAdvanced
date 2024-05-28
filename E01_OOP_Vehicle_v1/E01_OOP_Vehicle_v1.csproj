@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25E851DE-DE60-4A54-B23D-95ED77C683B8}</ProjectGuid>
+    <ProjectGuid>{6FE89F9B-11FE-491C-8BC0-FB3588650E4E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D06_OOP_Interfaces</RootNamespace>
-    <AssemblyName>D06_OOP_Interfaces</AssemblyName>
+    <RootNamespace>E01_OOP_Vehicle_v1</RootNamespace>
+    <AssemblyName>E01_OOP_Vehicle_v1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,26 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Course.cs" />
-    <Compile Include="CourseIT.cs" />
-    <Compile Include="CourseSoftSkills.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="IArea.cs" />
-    <Compile Include="ICourse.cs" />
-    <Compile Include="ICourseIT.cs" />
-    <Compile Include="ICourseSoftSkills.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
-      <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
-      <Name>D00_Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
