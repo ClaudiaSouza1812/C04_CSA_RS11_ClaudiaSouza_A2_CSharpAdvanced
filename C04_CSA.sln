@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D05_OOP_Abstraction", "D05_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D06_OOP_Interfaces", "D06_OOP_Interfaces\D06_OOP_Interfaces.csproj", "{25E851DE-DE60-4A54-B23D-95ED77C683B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_ClassTemplate_v01", "00_ClassTemplate_v01\00_ClassTemplate_v01.csproj", "{388E24FA-5EF8-4E94-ABF5-9ABD51654ABA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00_ClassTemplate_v01", "..\..\02_CSharp_F\10_20240423\CA_RS11_ClaudiaSouza_A2_CSharpFundamentals\00_ClassTemplate_v01\00_ClassTemplate_v01.csproj", "{388E24FA-5EF8-4E94-ABF5-9ABD51654ABA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

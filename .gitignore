@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/D06_OOP_Interfaces/D06_OOP_Interfaces.csproj
