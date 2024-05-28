@@ -12,9 +12,9 @@ namespace D06_OOP_Interfaces
     // Enums por default são int e zero-based
     internal enum EnumLanguage
     {
-        Portugues,  // 0
-        Frances,    // 1
-        Ingles      // 2
+        Portuguese,  // 0
+        French,    // 1
+        English      // 2
     }
     
 }

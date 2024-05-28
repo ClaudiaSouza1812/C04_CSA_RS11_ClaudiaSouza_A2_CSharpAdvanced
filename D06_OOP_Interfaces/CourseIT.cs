@@ -1,8 +1,10 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace D06_OOP_Interfaces
 {
@@ -16,6 +18,54 @@ namespace D06_OOP_Interfaces
         #region Properties
 
         public bool Exam { get; set; }
+
+        // reescrever a propriedade herdada: override
+        // ofuscar, criar uma nova com o mesmo nome: new 
+        public override string FullCourse => $"Course nº {CourseId}: {Name} - {AreaName}, Exam? {Exam}"; // Get
+
+        public double Price { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        public CourseIT() : base()
+        {
+            Exam = true;
+            Price = 100.00;
+        }
+
+        public CourseIT(int courseId, int areaId, string name, string areaName, string subareaName, string description, bool exam) : base(courseId, areaId, name,  areaName, subareaName, description)
+        {
+            Exam = exam;
+            Price = 100.00; ;
+        }
+
+
+        #endregion
+
+        #region Methods
+
+        public override void ReadCourse()
+        {
+            base.ReadCourse();
+
+            Utility.WriteMessage("Course exam (true|false)? ");
+
+            Exam = Convert.ToBoolean(Console.ReadLine());
+        }
+
+        internal override void ListCourse()
+        {
+
+            Utility.WriteMessage(FullCourse, "\n\n");
+        }
+
+        internal override void Billing(string status)
+        {
+            Utility.WriteMessage($"({Price:C2}) Estado de pagamento: {status}", "\n", "\n\n");
+        }
+
 
         #endregion
 

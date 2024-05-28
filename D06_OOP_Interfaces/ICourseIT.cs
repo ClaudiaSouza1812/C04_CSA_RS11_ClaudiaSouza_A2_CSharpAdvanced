@@ -15,6 +15,8 @@ namespace D06_OOP_Interfaces
 
         bool Exam { get; }
 
+        double Price { get; }
+
         #endregion
     }
 }

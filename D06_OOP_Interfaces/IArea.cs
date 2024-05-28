@@ -21,10 +21,6 @@ namespace D06_OOP_Interfaces
 
         #endregion
 
-        #region Methods
-
-
-
-        #endregion
+        
     }
 }

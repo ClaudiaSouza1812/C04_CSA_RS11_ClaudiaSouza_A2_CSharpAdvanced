@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,66 @@ namespace D06_OOP_Interfaces
 
         public EnumLanguage Language { get; set; }
 
+        public override string FullCourse => $"Course nº {CourseId}: {Name}, {Language} : {AreaName}"; // Get
+
+        public double Price { get; set; }
+
         #endregion
 
+        #region Constructors
 
+        internal CourseSoftSkills() : base()
+        {
+            Language = EnumLanguage.English;
+            Price = 100.00;
+        }
+
+        internal CourseSoftSkills(int courseId, int areaId, string name, string areaName, string subareaName, string description, EnumLanguage language, double price) : base(courseId, areaId, name, areaName, subareaName, description)
+        {
+            Language = language;
+            Price = 100.00;
+        }
+
+        #endregion
+
+        #region Methods
+
+        public override void ReadCourse()
+        {
+            base.ReadCourse();
+
+            Utility.WriteMessage("Language: ");
+
+            string language = Console.ReadLine();
+
+            if (Enum.TryParse(language, true, out EnumLanguage lang))
+            {
+                Language = lang;
+            }
+            else
+            {
+                Utility.WriteMessage("Invalid language entered.", "\n\n");
+            }
+
+        }
+
+        // Override
+        public override void ListCourse(string level)
+        {
+            Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");
+        }
+
+        public override void ListCourse(DateTime timestamp)
+        {
+            Utility.WriteMessage($"{FullCourse} ({timestamp.ToShortDateString()}), ", "\n\n");
+        }
+
+        internal override void Billing(string status)
+        {
+            Utility.WriteMessage($"{Price:C2} Estado de pagamento: {status} - Language {Language}", "", "\n\n");
+        }
+
+
+        #endregion
     }
 }

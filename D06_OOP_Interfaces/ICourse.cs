@@ -14,7 +14,7 @@ namespace D06_OOP_Interfaces
         // Declara intenção das propriedades (só recebem valor, não implementam (set) valores) que pertencem a ICourse
         int CourseId { get; }
         string Name { get; }
-        int FullCourse {  get; }
+        string FullCourse {  get; }
 
         #endregion
 

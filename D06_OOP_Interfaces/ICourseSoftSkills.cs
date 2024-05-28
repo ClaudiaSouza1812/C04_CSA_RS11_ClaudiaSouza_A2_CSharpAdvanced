@@ -30,6 +30,8 @@ namespace D06_OOP_Interfaces
 
         EnumLanguage Language { get; }
 
+        double Price { get; }
+
         #endregion
 
     }
