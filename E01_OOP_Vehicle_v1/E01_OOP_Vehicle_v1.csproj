@@ -43,15 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Enums.cs" />
+    <Compile Include="Interfaces\IVehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Classes\" />
-    <Folder Include="Interfaces\" />
+    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
+      <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
+      <Name>D00_Utility</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
