@@ -12,7 +12,7 @@ namespace D06_OOP_Interfaces
     {
         #region Enums (public or internal) 
 
-        // Lista de linguas aceitas o data tipe Enum
+        // Lista de linguas aceitas o data type Enum
         // Enums por dafault são int e zero-based
         internal enum EnumLanguage
         {
