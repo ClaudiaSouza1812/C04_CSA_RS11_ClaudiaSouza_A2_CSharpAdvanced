@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace D06_OOP_Interfaces
 {
-    // 1º interface a ser feita
+    // 1º interface a ser feita, o nome reflete o módulo principal
     internal interface ICourse
     {
         #region Properties (public or internal)
 
-        // Declaração de intenção das propriedades (só recebem valor, não implementam (set) valor)
+        // Declaração de intenção das propriedades (só recebem valor, não implementam (set) valores)
         int CourseId { get; }
         string Name { get; }
         int FullCourse {  get; }
