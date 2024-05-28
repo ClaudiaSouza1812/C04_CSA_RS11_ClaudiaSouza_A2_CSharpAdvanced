@@ -12,7 +12,7 @@ namespace D06_OOP_Interfaces
     {
         #region Properties
 
-        // Declaração de intenção das propriedades (só recebem valor, não implementam (set) valores)
+        // Declara intenção das propriedades (só recebem valor, não implementam (set) valores) que pertencem a IArea
 
         int AreaId { get; }
         string AreaName { get; }

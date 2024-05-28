@@ -10,7 +10,7 @@ namespace D06_OOP_Interfaces
 
     internal interface ICourseIT : ICourse
     {
-        // adiciona propriedades que pertencem unicamente a ICourseIT
+        // declara intenção das propriedades que pertencem unicamente a ICourseIT
         #region Properties
 
         bool Exam { get; }

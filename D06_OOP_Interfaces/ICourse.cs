@@ -11,7 +11,7 @@ namespace D06_OOP_Interfaces
     {
         #region Properties (public or internal)
 
-        // Declaração de intenção das propriedades (só recebem valor, não implementam (set) valores)
+        // Declara intenção das propriedades (só recebem valor, não implementam (set) valores) que pertencem a ICourse
         int CourseId { get; }
         string Name { get; }
         int FullCourse {  get; }
@@ -20,7 +20,7 @@ namespace D06_OOP_Interfaces
 
         #region Methods
 
-        // Declaração de intenção dos métodos (só podem ser void ou não void, sem implementação)
+        // Declara intenção dos métodos (só podem ser void ou não void, sem implementação) que pertencem a ICourse
         void ReadCourse();
         void ListCourse(string level);
         void ListCourse(DateTime timestamp);

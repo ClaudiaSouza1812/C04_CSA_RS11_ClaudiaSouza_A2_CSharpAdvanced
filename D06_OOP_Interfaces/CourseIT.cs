@@ -11,6 +11,8 @@ namespace D06_OOP_Interfaces
 
     internal class CourseIT : Course, ICourseIT
     {
+        // implanta as propriedades que pertencem unicamente a ICourseIT
+
         #region Properties
 
         public bool Exam { get; set; }

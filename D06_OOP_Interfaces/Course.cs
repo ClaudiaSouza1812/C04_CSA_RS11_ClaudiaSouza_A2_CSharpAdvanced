@@ -16,14 +16,14 @@ namespace D06_OOP_Interfaces
     {
         #region Properties
 
-        // propriedades herdadas da ICourse (comuns á todas as futuras classes):
+        // implanta as propriedades herdadas da ICourse (comuns á todas as futuras classes):
         public int CourseId { get; set; }
 
         public string Name { get; set; }
 
         public int FullCourse { get; set; }
 
-        // propriedades herdadas da IArea (comuns á todas as futuras classes):
+        // implanta as propriedades herdadas da IArea (comuns á todas as futuras classes):
         public int AreaId { get; set; }
 
         public string AreaName { get; set; }
@@ -45,8 +45,8 @@ namespace D06_OOP_Interfaces
         #endregion
 
         #region Methods
-        // métodos herdados da ICourse (comuns á todas as futuras classes)
-        // dosi métodos ListCourse com duas assinaturas diferentes
+        // implanta as métodos herdados da ICourse (comuns á todas as futuras classes)
+        // dois métodos ListCourse com duas assinaturas diferentes
 
         public void ListCourse(string level)
         {

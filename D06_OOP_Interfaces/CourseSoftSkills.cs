@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace D06_OOP_Interfaces
 {
+    // Herda propriedades e métodos da classe Course e da interface ICourseSoftSkills
+
     internal class CourseSoftSkills : Course, ICourseSoftSkills
     {
         #region Enums (public or internal) 
 
+        // Lista de linguas aceitas o data tipe Enum
         // Enums por dafault são int e zero-based
         internal enum EnumLanguage
         {
@@ -20,7 +23,10 @@ namespace D06_OOP_Interfaces
 
         #endregion
 
+
         #region Properties
+
+        // implanta as propriedades que pertencem unicamente a ICourseSoftSkills
 
         public EnumLanguage Language { get; set; }
 
