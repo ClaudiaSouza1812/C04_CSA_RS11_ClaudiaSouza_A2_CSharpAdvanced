@@ -18,12 +18,11 @@ namespace D06_OOP_Interfaces
         #region Properties
 
         public bool Exam { get; set; }
+        public double Price { get; set; }
 
         // reescrever a propriedade herdada: override
         // ofuscar, criar uma nova com o mesmo nome: new 
         public override string FullCourse => $"Course nº {CourseId}: {Name} - {AreaName}, Exam? {Exam}"; // Get
-
-        public double Price { get; set; }
 
         #endregion
 
@@ -35,16 +34,20 @@ namespace D06_OOP_Interfaces
             Price = 100.00;
         }
 
+        // Declarar todas as propriedades herdadas e adicionar as novas propriedades declaradas que são obrigatórias no construtor
+
         public CourseIT(int courseId, int areaId, string name, string areaName, string subareaName, string description, bool exam) : base(courseId, areaId, name,  areaName, subareaName, description)
         {
             Exam = exam;
             Price = 100.00; ;
         }
 
-
         #endregion
 
         #region Methods
+
+        // reescrever o método herdado: override
+        // ofuscar, criar um novo método com o mesmo nome: new 
 
         public override void ReadCourse()
         {

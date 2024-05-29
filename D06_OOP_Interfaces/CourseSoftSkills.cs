@@ -29,10 +29,12 @@ namespace D06_OOP_Interfaces
         internal CourseSoftSkills() : base()
         {
             Language = EnumLanguage.English;
-            Price = 100.00;
+            Price = 120.00;
         }
 
-        internal CourseSoftSkills(int courseId, int areaId, string name, string areaName, string subareaName, string description, EnumLanguage language, double price) : base(courseId, areaId, name, areaName, subareaName, description)
+        // Declarar todas as propriedades herdadas e adicionar as novas propriedades declaradas que são obrigatórias no construtor
+
+        internal CourseSoftSkills(int courseId, int areaId, string name, string areaName, string subareaName, string description, EnumLanguage language) : base(courseId, areaId, name, areaName, subareaName, description)
         {
             Language = language;
             Price = 100.00;
