@@ -38,6 +38,23 @@ namespace E01_OOP_Vehicle_v1.Classes
         EQC
     }
 
+    internal enum EnumRoadVehicleColor
+    {
+        Preto,
+        Prata,
+        Cinza,
+        Branco,
+        Azul
+    }
+
+    internal enum EnumRoadVehicleNumberOfDoors
+    {
+        Três,
+        Quatro,
+        Cinco
+    }
+
+
     #endregion
 
     #region Water Vehicles

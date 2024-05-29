@@ -50,6 +50,7 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         void MoveVehicle();
         void StopVehicle();
 
+
         #endregion
     }
 }

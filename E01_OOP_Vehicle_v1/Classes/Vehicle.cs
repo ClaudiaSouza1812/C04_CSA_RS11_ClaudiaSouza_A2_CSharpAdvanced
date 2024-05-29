@@ -1,4 +1,5 @@
-﻿using E01_OOP_Vehicle_v1.Interfaces;
+﻿using D00_Utility;
+using E01_OOP_Vehicle_v1.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,9 +47,8 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
 
-        public Vehicle(int vehicleId, int vehicleYear, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumRoadVehicleBrand roadVehicleBrand, EnumRoadVehicleModel roadVehicleModel, EnumWaterVehicleBrand waterVehicleBrand, EnumWaterVehicleModel waterVehicleModel)
+        public Vehicle(int vehicleYear, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumRoadVehicleBrand roadVehicleBrand, EnumRoadVehicleModel roadVehicleModel, EnumWaterVehicleBrand waterVehicleBrand, EnumWaterVehicleModel waterVehicleModel)
         {
-            VehicleId = vehicleId;
             VehicleYear = vehicleYear;
             AirVehicleBrand = airVehicleBrand;
             AirVehicleModel = airVehicleModel;
@@ -64,26 +64,49 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         #region Methods
 
-        public void CreateVehicle()
+        public virtual void CreateVehicle()
         {
-            
+            bool converted;
+            int year;
+
+            do
+            {
+                Console.Clear();
+
+                Utility.WriteMessage("Fabrication year: ");
+
+                converted = int.TryParse(Console.ReadLine(), out year);
+
+                if (converted && year > 1950 && year < DateTime.Today.Year)
+                {
+                    VehicleYear = year;
+                }
+                else
+                {
+                    Utility.WriteMessage("Only numbers accepted.", "\n", "\n");
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                }
+
+            } while (!converted);
         }
 
-        public void MoveVehicle()
+        public virtual void MoveVehicle()
         {
-            
-        }
+            int speed = 50;
 
-        public abstract void MoveVehicle(double speed);
+            Utility.WriteMessage($"Vehicle in movement, velocity: {speed}km.", "", "\n");
+        }
 
         public void StartVehicle()
         {
-            
+            Utility.WriteMessage("Starting vehicle.", "", "\n");
         }
 
         public void StopVehicle()
         {
-            
+            int speed = 0;
+
+            Utility.WriteMessage($"Vehicle stopping, velocity: {speed}km.", "", "\n");
         }
 
         #endregion
