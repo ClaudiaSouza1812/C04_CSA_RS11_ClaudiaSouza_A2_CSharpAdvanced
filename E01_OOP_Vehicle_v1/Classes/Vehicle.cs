@@ -38,7 +38,26 @@ namespace E01_OOP_Vehicle_v1.Classes
             VehicleId = NextId++;
             VehicleYear = DateTime.Now.Year;
             AirVehicleBrand = EnumAirVehicleBrand.Embraer;
+            AirVehicleModel = EnumAirVehicleModel.Phenom;
+            RoadVehicleBrand = EnumRoadVehicleBrand.Mercedez;
+            RoadVehicleModel = EnumRoadVehicleModel.EQC;
+            WaterVehicleBrand = EnumWaterVehicleBrand.Beneteau;
+            WaterVehicleModel = EnumWaterVehicleModel.Sundancer;
         }
+
+
+        public Vehicle(int vehicleId, int vehicleYear, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumRoadVehicleBrand roadVehicleBrand, EnumRoadVehicleModel roadVehicleModel, EnumWaterVehicleBrand waterVehicleBrand, EnumWaterVehicleModel waterVehicleModel)
+        {
+            VehicleId = vehicleId;
+            VehicleYear = vehicleYear;
+            AirVehicleBrand = airVehicleBrand;
+            AirVehicleModel = airVehicleModel;
+            RoadVehicleBrand = roadVehicleBrand;
+            RoadVehicleModel = roadVehicleModel;
+            WaterVehicleBrand = waterVehicleBrand;
+            WaterVehicleModel = waterVehicleModel;
+        }
+
 
         #endregion
 

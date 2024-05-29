@@ -35,7 +35,7 @@ namespace E01_OOP_Vehicle_v1.Classes
     {
         Macan,
         Cayenne,
-
+        EQC
     }
 
     #endregion
