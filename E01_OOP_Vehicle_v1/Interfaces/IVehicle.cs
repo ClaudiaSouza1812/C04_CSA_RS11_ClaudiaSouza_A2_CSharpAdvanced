@@ -18,31 +18,6 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         #endregion
 
-        #region IVehicleAir
-
-        EnumAirVehicleBrand AirVehicleBrand { get; }
-        EnumAirVehicleModel AirVehicleModel { get; }
-
-        #endregion
-
-        #region IVehicleRoad
-
-        EnumRoadVehicleBrand RoadVehicleBrand { get; }
-        EnumRoadVehicleModel RoadVehicleModel { get; }
-
-        #endregion
-
-        #region IVehicleWater
-
-        EnumWaterVehicleBrand WaterVehicleBrand { get; }
-        EnumWaterVehicleModel WaterVehicleModel { get; }
-
-        #endregion
-
-
-        #endregion
-
-
         #region Methods
 
         void CreateVehicle();

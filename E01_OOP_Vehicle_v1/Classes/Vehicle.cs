@@ -38,26 +38,12 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             VehicleId = NextId++;
             VehicleYear = DateTime.Now.Year;
-            AirVehicleBrand = EnumAirVehicleBrand.Embraer;
-            AirVehicleModel = EnumAirVehicleModel.Phenom;
-            RoadVehicleBrand = EnumRoadVehicleBrand.Mercedez;
-            RoadVehicleModel = EnumRoadVehicleModel.EQC;
-            WaterVehicleBrand = EnumWaterVehicleBrand.Beneteau;
-            WaterVehicleModel = EnumWaterVehicleModel.Sundancer;
         }
 
-
-        public Vehicle(int vehicleYear, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumRoadVehicleBrand roadVehicleBrand, EnumRoadVehicleModel roadVehicleModel, EnumWaterVehicleBrand waterVehicleBrand, EnumWaterVehicleModel waterVehicleModel)
+        public Vehicle(int vehicleYear)
         {
             VehicleYear = vehicleYear;
-            AirVehicleBrand = airVehicleBrand;
-            AirVehicleModel = airVehicleModel;
-            RoadVehicleBrand = roadVehicleBrand;
-            RoadVehicleModel = roadVehicleModel;
-            WaterVehicleBrand = waterVehicleBrand;
-            WaterVehicleModel = waterVehicleModel;
         }
-
 
         #endregion
 
@@ -92,9 +78,10 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public virtual void MoveVehicle()
         {
-            int speed = 50;
+            int actualSpeed = 50;
 
-            Utility.WriteMessage($"Vehicle in movement, velocity: {speed}km.", "", "\n");
+            Utility.WriteMessage($"Vehicle in movement, speed from 0km to: {actualSpeed}km.", "", "\n");
+
         }
 
         public void StartVehicle()
@@ -104,9 +91,10 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public void StopVehicle()
         {
-            int speed = 0;
+            int actualSpeed = 0;
 
-            Utility.WriteMessage($"Vehicle stopping, velocity: {speed}km.", "", "\n");
+            Utility.WriteMessage($"Vehicle stopping, speed from 50km to: {actualSpeed}km.", "", "\n");
+
         }
 
         #endregion

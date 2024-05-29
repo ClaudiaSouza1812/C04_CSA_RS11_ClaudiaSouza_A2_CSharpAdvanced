@@ -46,7 +46,9 @@
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Interfaces\IVehicle.cs" />
+    <Compile Include="Interfaces\IVehicleAir.cs" />
     <Compile Include="Interfaces\IVehicleRoad.cs" />
+    <Compile Include="Interfaces\IVehicleWater.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

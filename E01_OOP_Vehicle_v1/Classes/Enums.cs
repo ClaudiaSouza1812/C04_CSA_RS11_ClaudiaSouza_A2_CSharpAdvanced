@@ -21,6 +21,12 @@ namespace E01_OOP_Vehicle_v1.Classes
         Beluga
     }
 
+    // implementar
+    internal enum EnumAirVehicleType
+    {
+
+    }
+
     #endregion
 
     #region Road Vehicles
@@ -72,6 +78,11 @@ namespace E01_OOP_Vehicle_v1.Classes
         Sundancer
     }
 
+    // implementar
+    internal enum EnumWaterVehicleType
+    {
+
+    }
     #endregion
 
 
