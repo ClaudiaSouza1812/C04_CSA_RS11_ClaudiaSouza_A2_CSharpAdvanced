@@ -13,11 +13,11 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         #region IVehicle own properties to be inherited by other interfaces and classes
 
-        #endregion
-
         int VehicleId { get; }
         int NextId { get; }
         int VehicleYear { get; }
+
+        #endregion
 
         #region IVehicleAir inherited
 
