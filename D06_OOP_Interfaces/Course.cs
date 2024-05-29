@@ -105,16 +105,6 @@ namespace D06_OOP_Interfaces
         // implanta as métodos herdados da ICourse (comuns á todas as futuras classes)
         // dois métodos ListCourse com duas assinaturas diferentes
 
-        public virtual void ListCourse(string level)
-        {
-            Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");
-        }
-
-        public virtual void ListCourse(DateTime timestamp)
-        {
-            Utility.WriteMessage($"{FullCourse} ({timestamp.ToShortDateString()}), ", "\n\n");
-        }
-
         public virtual void ReadCourse()
         {
             #region CorseId
@@ -146,14 +136,40 @@ namespace D06_OOP_Interfaces
             AreaName = Console.ReadLine();
 
             #endregion
+
+            #region Subarea
+
+            Utility.WriteMessage("Course subarea: ");
+            SubareaName = Console.ReadLine();
+
+            #endregion
+
+            #region Description
+
+            Utility.WriteMessage("Course Description: ");
+            Description = Console.ReadLine();
+
+            #endregion
         }
 
-        internal virtual void ListCourse()
+        public virtual void ListCourse()
         {
             Utility.WriteMessage(FullCourse, "\n\n");
         }
 
-        internal abstract void Billing(string status);
+        public virtual void ListCourse(string level)
+        {
+            Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");
+        }
+
+        public virtual void ListCourse(DateTime timestamp)
+        {
+            Utility.WriteMessage($"{FullCourse} Starts: ({timestamp.ToShortDateString()}), ", "\n\n");
+        }
+
+        // An abstract method, must be overridden and implemented in a derived class
+
+        public abstract void Billing(string status);
 
         #endregion
 

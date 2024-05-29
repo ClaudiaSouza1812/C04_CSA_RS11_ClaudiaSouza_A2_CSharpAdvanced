@@ -22,7 +22,7 @@ namespace D06_OOP_Interfaces
 
         // reescrever a propriedade herdada: override
         // ofuscar, criar uma nova com o mesmo nome: new 
-        public override string FullCourse => $"Course nº {CourseId}: {Name} - {AreaName}, Exam? {Exam}"; // Get
+        public override string FullCourse => $"Course nº {CourseId}: {Name} - {AreaName} - {SubareaName} - {Description}, Exam? {Exam}"; // Get
 
         #endregion
 
@@ -58,15 +58,9 @@ namespace D06_OOP_Interfaces
             Exam = Convert.ToBoolean(Console.ReadLine());
         }
 
-        internal override void ListCourse()
+        public override void Billing(string status)
         {
-
-            Utility.WriteMessage(FullCourse, "\n\n");
-        }
-
-        internal override void Billing(string status)
-        {
-            Utility.WriteMessage($"({Price:C2}) Estado de pagamento: {status}", "\n", "\n\n");
+            Utility.WriteMessage($"Preço ({Price:C2}) - Estado de pagamento: {status}", "", "\n\n");
         }
 
 

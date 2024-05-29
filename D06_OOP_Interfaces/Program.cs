@@ -23,6 +23,8 @@ namespace D06_OOP_Interfaces
 
             courseIt01.ListCourse();
 
+            courseIt01.ListCourse("Level 2");
+
             courseIt01.Billing("Pago");
 
             #endregion

@@ -15,6 +15,8 @@ namespace D06_OOP_Interfaces
         int CourseId { get; }
         string Name { get; }
         string FullCourse {  get; }
+        string SubareaName { get; }
+        string Description { get; }
 
         #endregion
 
@@ -22,8 +24,10 @@ namespace D06_OOP_Interfaces
 
         // Declara intenção dos métodos (só podem ser void ou não void, sem implementação) que pertencem a ICourse
         void ReadCourse();
+        void ListCourse();
         void ListCourse(string level);
         void ListCourse(DateTime timestamp);
+        void Billing(string status);
 
         #endregion
     }

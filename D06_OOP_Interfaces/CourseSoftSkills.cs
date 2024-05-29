@@ -11,14 +11,12 @@ namespace D06_OOP_Interfaces
 
     internal class CourseSoftSkills : Course, ICourseSoftSkills
     {
-        // má escolha: colocar a enum dentro da classe 
+        // má escolha: colocar a enum dentro da classe, faça uma classe dedicada
         #region Properties
 
         // implanta as propriedades que pertencem unicamente a ICourseSoftSkills
 
         public EnumLanguage Language { get; set; }
-
-        public override string FullCourse => $"Course nº {CourseId}: {Name}, {Language} : {AreaName}"; // Get
 
         public double Price { get; set; }
 
@@ -58,25 +56,16 @@ namespace D06_OOP_Interfaces
             }
             else
             {
-                Utility.WriteMessage("Invalid language entered.", "\n\n");
+                Utility.WriteMessage($"Invalid language entered. The default language will be set: {EnumLanguage.English}", "\n\n");
             }
 
         }
 
         // Override
-        public override void ListCourse(string level)
+        
+        public override void Billing(string status)
         {
-            Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");
-        }
-
-        public override void ListCourse(DateTime timestamp)
-        {
-            Utility.WriteMessage($"{FullCourse} ({timestamp.ToShortDateString()}), ", "\n\n");
-        }
-
-        internal override void Billing(string status)
-        {
-            Utility.WriteMessage($"{Price:C2} Estado de pagamento: {status} - Language {Language}", "", "\n\n");
+            Utility.WriteMessage($"Preço ({Price:C2}) - Estado de pagamento: {status} - Language {Language}", "", "\n\n");
         }
 
 
