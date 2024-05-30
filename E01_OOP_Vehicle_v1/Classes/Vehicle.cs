@@ -79,8 +79,12 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (!converted);
         }
 
-        // Ask Milena
-        public abstract void ListVehicle();
+        public virtual void ListVehicle()
+        {
+            Utility.WriteTitle("Vehicle Information", "\n", "\n\n");
+
+            Utility.WriteMessage($"{FullVehicle}");
+        }
 
         public void StartVehicle()
         {
@@ -95,11 +99,11 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         }
 
-        public void StopVehicle()
+        public virtual void StopVehicle()
         {
             int actualSpeed = 0;
 
-            Utility.WriteMessage($"Vehicle stopping, speed from 50km to: {actualSpeed}km.", "", "\n");
+            Utility.WriteMessage($"Vehicle stopping.", "", "\n");
 
         }
 

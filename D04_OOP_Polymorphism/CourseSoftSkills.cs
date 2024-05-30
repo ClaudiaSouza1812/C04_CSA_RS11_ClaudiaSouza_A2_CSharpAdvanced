@@ -59,7 +59,7 @@ namespace D04_OOP_Polymorphism
             Subarea = Console.ReadLine();
         }
 
-        // Overloading
+        // Polimorphism with Overloading method
         internal void ListCourse(string level)
         {
             Utility.WriteMessage($"{FullCourse} ({level}), ", "\n\n");

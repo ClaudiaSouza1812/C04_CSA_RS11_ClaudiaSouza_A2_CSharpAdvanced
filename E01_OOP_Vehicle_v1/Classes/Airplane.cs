@@ -26,6 +26,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {PlaneRegistration}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
 
+        private int speed;
+
         #endregion
 
 
@@ -55,7 +57,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
 
         #region Methods
-
+        // Polimorphism with Inheritance and Override method
         // Override the Vehicle method adding Airplane properties
 
         public override void CreateVehicle()
@@ -139,13 +141,16 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         }
 
-        // Ask Milena
-        public override void ListVehicle()
+        // Polimorphism with Inheritance and Override method
+        // Override the Vehicle method changing its speed and specifying the vehicle name
+        public override void MoveVehicle()
         {
-            Utility.WriteTitle("List Air Vehicle", "\n", "\n\n");
+            speed = 280;
 
-            Utility.WriteMessage($"{FullVehicle}");
+            Utility.WriteMessage($"Airplane in movement, speed from 0km/h to: {speed}km/h.", "", "\n");
+
         }
+
 
         public void TakeOff()
         {
@@ -154,11 +159,20 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage($"The plane is taking off and has gone from 0 feet to {CurrentAltitude:F3} feet.", "", "\n");
         }
 
+
         public void Land()
         {
             CurrentAltitude = 0.0;
 
             Utility.WriteMessage("Plane landed with success.", "", "\n");
+        }
+
+        // Polimorphism with Inheritance and Override method
+        public override void StopVehicle()
+        {
+            Utility.WriteMessage($"Vehicle stopping, speed from {speed}km/h to: 0km/h.", "", "\n");
+
+            speed = 0;
         }
 
 
