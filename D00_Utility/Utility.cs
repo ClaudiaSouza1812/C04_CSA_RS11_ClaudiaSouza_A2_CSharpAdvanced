@@ -72,7 +72,7 @@ namespace D00_Utility
         public static void PauseConsole()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write("\n\nPrime qualquer tecla para continuar.\n");
+            Console.Write("\nPrime qualquer tecla para continuar.\n\n");
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
         }

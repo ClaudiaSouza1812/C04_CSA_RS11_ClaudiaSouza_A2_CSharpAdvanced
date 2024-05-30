@@ -21,10 +21,13 @@ namespace E01_OOP_Vehicle_v1.Classes
         Beluga
     }
 
-    // implementar
     internal enum EnumAirVehicleType
     {
-
+        Airplane,
+        Helicopter,
+        Glider,
+        Balloon,
+        Drone,
     }
 
     #endregion

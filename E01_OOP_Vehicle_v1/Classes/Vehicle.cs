@@ -18,9 +18,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public int VehicleYear { get; set; }
 
-        public EnumAirVehicleBrand AirVehicleBrand { get; set; }
-
-        public EnumAirVehicleModel AirVehicleModel { get; set; }
+        
 
         public EnumRoadVehicleBrand RoadVehicleBrand { get; set; }
 
@@ -29,6 +27,8 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumWaterVehicleBrand WaterVehicleBrand { get; set; }
 
         public EnumWaterVehicleModel WaterVehicleModel { get; set; }
+
+        public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, ";
 
         #endregion
 
@@ -42,6 +42,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public Vehicle(int vehicleYear)
         {
+            VehicleId = NextId++;
             VehicleYear = vehicleYear;
         }
 
@@ -69,11 +70,21 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
                 else
                 {
+                    converted = false;
                     Utility.WriteMessage("Only numbers accepted.", "\n", "\n");
                     Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
                 }
 
             } while (!converted);
+        }
+
+        // Ask Milena
+        public abstract void ListVehicle();
+
+        public void StartVehicle()
+        {
+            Utility.WriteMessage("Starting vehicle.", "\n\n", "\n");
         }
 
         public virtual void MoveVehicle()
@@ -82,11 +93,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             Utility.WriteMessage($"Vehicle in movement, speed from 0km to: {actualSpeed}km.", "", "\n");
 
-        }
-
-        public void StartVehicle()
-        {
-            Utility.WriteMessage("Starting vehicle.", "", "\n");
         }
 
         public void StopVehicle()

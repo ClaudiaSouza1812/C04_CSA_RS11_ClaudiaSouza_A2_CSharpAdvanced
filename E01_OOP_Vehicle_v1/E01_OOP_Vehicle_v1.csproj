@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Airplane.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Vehicle.cs" />
     <Compile Include="Interfaces\IVehicle.cs" />
