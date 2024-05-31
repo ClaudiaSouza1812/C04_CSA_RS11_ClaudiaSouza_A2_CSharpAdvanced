@@ -9,7 +9,7 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 {
     internal interface IVehicleRoad : IVehicle
     {
-        // declara intenção das propriedades que pertencem unicamente a ICourseIT
+        // declara intenção das propriedades que pertencem unicamente a IVehicleRoad
         #region Properties
 
         string CarRegistration { get; }
@@ -17,7 +17,6 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         EnumRoadVehicleModel RoadVehicleModel { get; }
         EnumRoadVehicleColor RoadVehicleColor  { get; }
         EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; }
-        double CurrentSpeed { get; }
         double MaxSpeed { get; }
 
         #endregion

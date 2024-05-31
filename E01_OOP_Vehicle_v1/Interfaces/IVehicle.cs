@@ -13,22 +13,28 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         #region IVehicle own properties to be inherited by other interfaces and classes
 
+        // declara intenção das propriedades que pertencem a IVehicle
         int VehicleId { get; }
         int VehicleYear { get; }
 
         #endregion
 
+        #endregion
+
         #region Methods
 
+        #region IVehicle own methods to be inherited by other interfaces and classes
+
+        // declara intenção dos métodos que pertencem a IVehicle
         void CreateVehicle();
         void ListVehicle();
         void StartVehicle();
         void MoveVehicle();
         void StopVehicle();
 
-
         #endregion
 
         #endregion
+
     }
 }

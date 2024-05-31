@@ -14,19 +14,15 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public int VehicleId { get; }
 
-        internal static int NextId { get; set; } = 1;
+        private static int NextId { get; set; } = 1;
 
         public int VehicleYear { get; set; }
-
-        
-
-        public EnumRoadVehicleBrand RoadVehicleBrand { get; set; }
-
-        public EnumRoadVehicleModel RoadVehicleModel { get; set; }
 
         public EnumWaterVehicleBrand WaterVehicleBrand { get; set; }
 
         public EnumWaterVehicleModel WaterVehicleModel { get; set; }
+
+        public double CurrentSpeed { get; set; }
 
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, ";
 
@@ -86,26 +82,17 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage($"{FullVehicle}");
         }
 
-        public void StartVehicle()
-        {
-            Utility.WriteMessage("Starting vehicle.", "\n\n", "\n");
-        }
+        public abstract void StartVehicle();
 
         public virtual void MoveVehicle()
         {
-            int actualSpeed = 50;
+            CurrentSpeed = 50;
 
-            Utility.WriteMessage($"Vehicle in movement, speed from 0km to: {actualSpeed}km.", "", "\n");
-
-        }
-
-        public virtual void StopVehicle()
-        {
-            int actualSpeed = 0;
-
-            Utility.WriteMessage($"Vehicle stopping.", "", "\n");
+            Utility.WriteMessage($"Vehicle in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
 
         }
+
+        public abstract void StopVehicle();
 
         #endregion
 

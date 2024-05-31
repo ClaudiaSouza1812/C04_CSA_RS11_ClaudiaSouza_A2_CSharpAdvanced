@@ -16,7 +16,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public double CurrentAltitude { get; set; }
 
-        public double MaxAltitude { get; set; }
+        public double MaxAltitude { get; }
 
         public EnumAirVehicleBrand AirVehicleBrand { get; set; }
 
@@ -26,8 +26,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {PlaneRegistration}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
 
-        private int speed;
-
         #endregion
 
 
@@ -35,7 +33,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public Airplane() : base()
         { 
-            PlaneRegistration = string.Empty;
+            PlaneRegistration = "N00000";
             CurrentAltitude = 0.0;
             MaxAltitude = 45.000;
             AirVehicleBrand = EnumAirVehicleBrand.Embraer;
@@ -86,7 +84,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             
             #endregion
-
 
             #region AirVehicleBrand
 
@@ -141,22 +138,30 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         }
 
+
+        // Polimorphism with Inheritance and Override method
+        // Override the Vehicle method specifying the vehicle name
+        public override void StartVehicle()
+        {
+            Utility.WriteMessage("Starting Airplane.", "\n\n", "\n");
+        }
+
+
         // Polimorphism with Inheritance and Override method
         // Override the Vehicle method changing its speed and specifying the vehicle name
         public override void MoveVehicle()
         {
-            speed = 280;
+            CurrentSpeed = 280;
 
-            Utility.WriteMessage($"Airplane in movement, speed from 0km/h to: {speed}km/h.", "", "\n");
+            Utility.WriteMessage($"Airplane in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
 
         }
-
 
         public void TakeOff()
         {
             CurrentAltitude = 35.000;
             
-            Utility.WriteMessage($"The plane is taking off and has gone from 0 feet to {CurrentAltitude:F3} feet.", "", "\n");
+            Utility.WriteMessage($"The Airplane is taking off and has gone from 0 feet to {CurrentAltitude:F3} feet.", "", "\n");
         }
 
 
@@ -164,15 +169,17 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             CurrentAltitude = 0.0;
 
-            Utility.WriteMessage("Plane landed with success.", "", "\n");
+            Utility.WriteMessage("The Airplane landed with success.", "", "\n");
         }
 
+
         // Polimorphism with Inheritance and Override method
+        // Override the Vehicle method changing its speed and specifying the vehicle name
         public override void StopVehicle()
         {
-            Utility.WriteMessage($"Vehicle stopping, speed from {speed}km/h to: 0km/h.", "", "\n");
+            Utility.WriteMessage($"The Airplane stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
 
-            speed = 0;
+            CurrentSpeed = 0;
         }
 
 
