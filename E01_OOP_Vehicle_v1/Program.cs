@@ -14,6 +14,8 @@ namespace E01_OOP_Vehicle_v1
         {
             Utility.SetUnicodeConsole();
 
+            #region Air Vehicles
+
             Airplane plane01 = new Airplane();
 
             //plane01.CreateVehicle();
@@ -24,6 +26,31 @@ namespace E01_OOP_Vehicle_v1
             plane01.TakeOff();
             plane01.Land();
             plane01.StopVehicle();
+
+            Airplane plane02 = new Airplane(1999, "N45632", EnumAirVehicleBrand.Boing, EnumAirVehicleModel.A350, EnumAirVehicleType.Airplane);
+
+            plane02.ListVehicle();
+
+            plane02.StartVehicle();
+            plane02.MoveVehicle();
+            plane02.TakeOff();
+            plane02.Land();
+            plane02.StopVehicle();
+
+            #endregion
+
+            #region Road Vehicles
+
+            Car car01 = new Car();
+
+            car01.MoveVehicle();
+            string Utility.WriteMessage("Speed: ");
+            car01.MoveVehicle(200);
+
+            #endregion
+
+
+
 
             Utility.TerminateConsole();
         }

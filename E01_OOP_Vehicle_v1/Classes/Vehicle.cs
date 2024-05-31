@@ -24,6 +24,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public double CurrentSpeed { get; set; }
 
+        public double MaxSpeed { get; set; }
+
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, ";
 
         #endregion
@@ -75,6 +77,13 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (!converted);
         }
 
+        public virtual void MoveVehicle()
+        {
+            CurrentSpeed = 50;
+
+            Utility.WriteMessage($"Vehicle in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
+        }
+
         public virtual void ListVehicle()
         {
             Utility.WriteTitle("Vehicle Information", "\n", "\n\n");
@@ -83,14 +92,6 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
         public abstract void StartVehicle();
-
-        public virtual void MoveVehicle()
-        {
-            CurrentSpeed = 50;
-
-            Utility.WriteMessage($"Vehicle in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
-
-        }
 
         public abstract void StopVehicle();
 

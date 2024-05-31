@@ -24,7 +24,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public EnumAirVehicleType AirVehicleType { get; set; }
 
-        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {PlaneRegistration}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
+        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {PlaneRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nCurrent altitude: {CurrentAltitude}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
 
         #endregion
 
@@ -34,17 +34,17 @@ namespace E01_OOP_Vehicle_v1.Classes
         public Airplane() : base()
         { 
             PlaneRegistration = "N00000";
-            CurrentAltitude = 0.0;
+            MaxSpeed = 900;
             MaxAltitude = 45.000;
             AirVehicleBrand = EnumAirVehicleBrand.Embraer;
             AirVehicleModel = EnumAirVehicleModel.Phenom;
             AirVehicleType = EnumAirVehicleType.Airplane;
         }
 
-        public Airplane(int vehicleYear, string planeRegistration, double currentAltitude, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumAirVehicleType airVehicleType) : base(vehicleYear)
+        public Airplane(int vehicleYear, string planeRegistration, EnumAirVehicleBrand airVehicleBrand, EnumAirVehicleModel airVehicleModel, EnumAirVehicleType airVehicleType) : base(vehicleYear)
         {
             PlaneRegistration = planeRegistration;
-            CurrentAltitude = currentAltitude;
+            MaxSpeed = 900;
             MaxAltitude = 45.000;
             AirVehicleBrand = airVehicleBrand;
             AirVehicleModel = airVehicleModel;

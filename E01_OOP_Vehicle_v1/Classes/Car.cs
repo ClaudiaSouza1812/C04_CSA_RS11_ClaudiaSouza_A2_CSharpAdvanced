@@ -1,4 +1,5 @@
-﻿using E01_OOP_Vehicle_v1.Interfaces;
+﻿using D00_Utility;
+using E01_OOP_Vehicle_v1.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,21 +22,39 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; set; }
 
-        
+        #endregion
 
-        public double MaxSpeed { get; }
+        #region Constructors
+
+        public Car() : base()
+        {
+            CarRegistration = "000000";
+            RoadVehicleBrand = EnumRoadVehicleBrand.Mercedez;
+            RoadVehicleModel = EnumRoadVehicleModel.EQC;
+            RoadVehicleColor = EnumRoadVehicleColor.Preto;
+            RoadVehicleNumberOfDoors = EnumRoadVehicleNumberOfDoors.Cinco;
+            CurrentSpeed = 0;
+            MaxSpeed = 180;
+        }
+
+        public Car(int vehicleYear, string carRegistration, EnumRoadVehicleBrand roadVehicleBrand, EnumRoadVehicleModel roadVehicleModel, EnumRoadVehicleColor roadVehicleColor, EnumRoadVehicleNumberOfDoors roadVehicleNumberOfDoors) : base(vehicleYear)
+        {
+            CarRegistration = carRegistration;
+            RoadVehicleBrand = roadVehicleBrand;
+            RoadVehicleModel = roadVehicleModel;
+            RoadVehicleColor = roadVehicleColor;
+            RoadVehicleNumberOfDoors = roadVehicleNumberOfDoors;
+            CurrentSpeed = 0;
+            MaxSpeed = 180;
+        }
+
+
 
         #endregion
-        
-
-
-
-
-
 
         public override void StartVehicle()
         {
-            throw new NotImplementedException();
+            Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
         }
 
         public void Honk()
@@ -43,11 +62,39 @@ namespace E01_OOP_Vehicle_v1.Classes
             throw new NotImplementedException();
         }
 
-        public void MoveVehicle(double speed)
+        // Polimorphism with Inheritance and Overloading methods
+        // Override the Vehicle method changing its speed and specifying the vehicle name
+        public override void MoveVehicle()
         {
-            throw new NotImplementedException();
+            CurrentSpeed = 50;
+
+            Utility.WriteMessage($"Car in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
+
         }
 
+        public void MoveVehicle(double speed)
+        {
+            string answer;
+            bool status;
+            do
+            {
+                Console.Clear();
+                Utility.WriteMessage("Speed: ");
+                answer = Console.ReadLine();
+                status = double.TryParse(answer, out speed);
+
+                if (!status || speed > MaxSpeed)
+                {
+                    Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
+                }
+
+            } while (!status || speed > MaxSpeed);
+
+            CurrentSpeed = speed;
+
+        }
+
+        
         public void Park()
         {
             throw new NotImplementedException();

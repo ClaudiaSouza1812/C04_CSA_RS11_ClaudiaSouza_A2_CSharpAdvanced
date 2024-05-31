@@ -17,12 +17,12 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         EnumRoadVehicleModel RoadVehicleModel { get; }
         EnumRoadVehicleColor RoadVehicleColor  { get; }
         EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; }
-        double MaxSpeed { get; }
 
         #endregion
 
         #region Methods
 
+        // declara intenção dos métodos que pertencem a IVehicleRoad
         void MoveVehicle(double speed);
         void Park();
         void Honk();

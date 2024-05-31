@@ -19,6 +19,8 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         #region Methods
 
+        // declara intenção dos métodos que pertencem a IVehicleAir
+
         void TakeOff();
         void Land();
 
