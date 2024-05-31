@@ -177,7 +177,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         // Override the Vehicle method changing its speed and specifying the vehicle name
         public override void StopVehicle()
         {
-            Utility.WriteMessage($"The Airplane stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
+            Utility.WriteMessage($"The Airplane is stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
 
             CurrentSpeed = 0;
         }

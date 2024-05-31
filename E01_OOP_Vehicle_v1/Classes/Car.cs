@@ -22,6 +22,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; set; }
 
+        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {CarRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nBrand: {RoadVehicleBrand}\nModel: {RoadVehicleModel}\nColor: {RoadVehicleColor}\nDoors: {RoadVehicleNumberOfDoors}.";
+
         #endregion
 
         #region Constructors
@@ -89,18 +91,23 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public void Honk()
         {
-            throw new NotImplementedException();
+            Utility.WriteMessage($"The Car is honking.", "", "\n");
         }
 
 
         public void Park()
         {
-            throw new NotImplementedException();
+            Utility.WriteMessage($"The Car is parking, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
+
+            CurrentSpeed = 0;
         }
+
 
         public override void StopVehicle()
         {
-            throw new NotImplementedException();
+            Utility.WriteMessage($"The Car is stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
+
+            CurrentSpeed = 0;
         }
     }
 }

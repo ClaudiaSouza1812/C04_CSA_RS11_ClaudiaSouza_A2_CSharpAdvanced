@@ -46,7 +46,18 @@ namespace E01_OOP_Vehicle_v1
 
             double speed = CarUtility.GetCarSpeed();
 
+            car01.CreateVehicle();
+
+            car01.StartVehicle();
             car01.MoveVehicle(speed);
+            car01.Honk();
+            // car01.StopVehicle();
+            car01.Park();
+            
+
+            car01.ListVehicle();
+
+            
 
             #endregion
 
