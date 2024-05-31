@@ -55,63 +55,28 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
         }
 
-        
-        internal double GetCarSpeed()
-        {
-            double speed;
-            string answer;
-            bool status = false; 
-            
-            do
-            {
-                Console.Clear();
-                Utility.WriteTitle("Car Speed", "", "\n");
-
-                Utility.WriteMessage("Enter speed: ");
-
-                answer = Console.ReadLine();
-
-                if (CheckDouble(answer))
-                {
-                    status = CheckCarSpeed(answer);
-                }
-                
-            } while (!status);
-
-            speed = Convert.ToDouble(answer);
-
-            return speed;
-        }
-
-        internal bool CheckDouble(string answer)
-        {
-            return double.TryParse(answer, out double CarSpeed);
-        }
-
-
-        private bool CheckCarSpeed(string speed)
+        internal static bool CheckCarSpeed(string speed)
         {
 
             if (Convert.ToDouble(speed) > MaxSpeed)
             {
                 Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
+                Utility.PauseConsole();
                 return false;
             }
             return true;
         }
 
-
+        // Polimorphism with Inheritance and Overloading 
+        // Overloading method with different parameter (signature) and behavior.
         public void MoveVehicle(double speed)
         {
             CurrentSpeed = speed;
+
+            Utility.WriteMessage($"Car in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
         }
 
-        public void Honk()
-        {
-            throw new NotImplementedException();
-        }
-
-        // Polimorphism with Inheritance and Overloading methods
+        // Polimorphism with Inheritance and Override
         // Override the Vehicle method changing its speed and specifying the vehicle name
         public override void MoveVehicle()
         {
@@ -119,6 +84,12 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             Utility.WriteMessage($"Car in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
 
+        }
+
+
+        public void Honk()
+        {
+            throw new NotImplementedException();
         }
 
 

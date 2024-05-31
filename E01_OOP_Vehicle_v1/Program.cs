@@ -44,7 +44,7 @@ namespace E01_OOP_Vehicle_v1
 
             Car car01 = new Car();
 
-            double speed = car01.GetCarSpeed();
+            double speed = CarUtility.GetCarSpeed();
 
             car01.MoveVehicle(speed);
 

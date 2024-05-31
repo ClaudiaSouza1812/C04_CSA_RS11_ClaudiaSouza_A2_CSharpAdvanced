@@ -24,7 +24,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public double CurrentSpeed { get; set; }
 
-        public double MaxSpeed { get; set; }
+        public static double MaxSpeed { get; set; }
 
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, ";
 
