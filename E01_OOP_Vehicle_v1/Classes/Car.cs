@@ -48,13 +48,62 @@ namespace E01_OOP_Vehicle_v1.Classes
             MaxSpeed = 180;
         }
 
-
-
         #endregion
 
         public override void StartVehicle()
         {
             Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
+        }
+
+        
+        internal double GetCarSpeed()
+        {
+            double speed;
+            string answer;
+            bool status = false; 
+            
+            do
+            {
+                Console.Clear();
+                Utility.WriteTitle("Car Speed", "", "\n");
+
+                Utility.WriteMessage("Enter speed: ");
+
+                answer = Console.ReadLine();
+
+                if (CheckDouble(answer))
+                {
+                    status = CheckCarSpeed(answer);
+                }
+                
+            } while (!status);
+
+            speed = Convert.ToDouble(answer);
+
+            return speed;
+        }
+
+        internal bool CheckDouble(string answer)
+        {
+            return double.TryParse(answer, out double CarSpeed);
+        }
+
+
+        private bool CheckCarSpeed(string speed)
+        {
+
+            if (Convert.ToDouble(speed) > MaxSpeed)
+            {
+                Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
+                return false;
+            }
+            return true;
+        }
+
+
+        public void MoveVehicle(double speed)
+        {
+            CurrentSpeed = speed;
         }
 
         public void Honk()
@@ -72,29 +121,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         }
 
-        public void MoveVehicle(double speed)
-        {
-            string answer;
-            bool status;
-            do
-            {
-                Console.Clear();
-                Utility.WriteMessage("Speed: ");
-                answer = Console.ReadLine();
-                status = double.TryParse(answer, out speed);
 
-                if (!status || speed > MaxSpeed)
-                {
-                    Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
-                }
-
-            } while (!status || speed > MaxSpeed);
-
-            CurrentSpeed = speed;
-
-        }
-
-        
         public void Park()
         {
             throw new NotImplementedException();
