@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using D00_Utility;
 
 namespace D09_LINQ
 {
@@ -10,6 +11,24 @@ namespace D09_LINQ
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
+            #region D01 - Hello World
+
+            D01_HelloWorld.HelloWorldMethodSyntax();
+            D01_HelloWorld.HelloWorldQuerySyntax();
+            #endregion
+
+            #region D02 - Short Names
+
+            D02_ShortNames.ShortNamesMethodSyntax();
+
+            #endregion
+
+            #region D03 - Numbers greater or equal to 10
+
+            #endregion
+
+            Utility.TerminateConsole();
         }
     }
 }
