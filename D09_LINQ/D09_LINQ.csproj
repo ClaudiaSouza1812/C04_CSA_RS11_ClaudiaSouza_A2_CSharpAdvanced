@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6FE89F9B-11FE-491C-8BC0-FB3588650E4E}</ProjectGuid>
+    <ProjectGuid>{2B922D27-E577-41B9-8AD0-723ED9916BA0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E01_OOP_Vehicle_v1</RootNamespace>
-    <AssemblyName>E01_OOP_Vehicle_v1</AssemblyName>
+    <RootNamespace>D09_LINQ</RootNamespace>
+    <AssemblyName>D09_LINQ</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,23 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Airplane.cs" />
-    <Compile Include="Classes\Car.cs" />
-    <Compile Include="Classes\CarUtility.cs" />
-    <Compile Include="Classes\Enums.cs" />
-    <Compile Include="Classes\Submarine.cs" />
-    <Compile Include="Classes\Vehicle.cs" />
-    <Compile Include="Interfaces\IVehicle.cs" />
-    <Compile Include="Interfaces\IVehicleAir.cs" />
-    <Compile Include="Interfaces\IVehicleRoad.cs" />
-    <Compile Include="Interfaces\IVehicleWater.cs" />
+    <Compile Include="D01_HelloWorld.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="_linq.txt" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
       <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>

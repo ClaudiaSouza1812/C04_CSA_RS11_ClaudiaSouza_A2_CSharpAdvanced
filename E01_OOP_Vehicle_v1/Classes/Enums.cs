@@ -84,7 +84,9 @@ namespace E01_OOP_Vehicle_v1.Classes
     // implementar
     internal enum EnumWaterVehicleType
     {
-
+        Submarine,
+        Ship,
+        Yacht
     }
     #endregion
 

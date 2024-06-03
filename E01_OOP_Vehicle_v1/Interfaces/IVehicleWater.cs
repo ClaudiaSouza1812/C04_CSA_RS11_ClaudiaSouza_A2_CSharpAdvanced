@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E01_OOP_Vehicle_v1.Interfaces
 {
-    internal interface IVehicleWater
+    internal interface IVehicleWater : IVehicle
     {
         string PennantNumber { get; }
         double CurrentDepth { get; }
