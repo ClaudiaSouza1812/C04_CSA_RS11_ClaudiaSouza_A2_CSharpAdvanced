@@ -16,6 +16,8 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         // declara intenção das propriedades que pertencem a IVehicle
         int VehicleId { get; }
         int VehicleYear { get; }
+        double CurrentSpeed { get; }
+        double MaxSpeed { get; }
 
         #endregion
 

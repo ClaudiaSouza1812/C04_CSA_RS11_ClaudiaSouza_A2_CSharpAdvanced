@@ -18,15 +18,11 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public int VehicleYear { get; set; }
 
-        public EnumWaterVehicleBrand WaterVehicleBrand { get; set; }
-
-        public EnumWaterVehicleModel WaterVehicleModel { get; set; }
-
         public double CurrentSpeed { get; set; }
 
-        public static double MaxSpeed { get; set; }
+        public double MaxSpeed { get; set; }
 
-        public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, ";
+        public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, Current speed: {CurrentSpeed}, Maximum speed: {MaxSpeed}, ";
 
         #endregion
 
@@ -36,12 +32,16 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             VehicleId = NextId++;
             VehicleYear = DateTime.Now.Year;
+            CurrentSpeed = 0;
+            MaxSpeed = 0;
         }
 
         public Vehicle(int vehicleYear)
         {
             VehicleId = NextId++;
             VehicleYear = vehicleYear;
+            CurrentSpeed = 0;
+            MaxSpeed = 0;
         }
 
         #endregion

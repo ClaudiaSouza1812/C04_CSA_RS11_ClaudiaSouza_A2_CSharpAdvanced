@@ -13,14 +13,11 @@ namespace E01_OOP_Vehicle_v1.Classes
         #region Properties
 
         public string CarRegistration { get; set; }
-
         public EnumRoadVehicleBrand RoadVehicleBrand { get; set; }
-
         public EnumRoadVehicleModel RoadVehicleModel { get; set; }
-
         public EnumRoadVehicleColor RoadVehicleColor { get; set; }
-
         public EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; set; }
+        public static new double MaxSpeed { get; set; }
 
         public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {CarRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nBrand: {RoadVehicleBrand}\nModel: {RoadVehicleModel}\nColor: {RoadVehicleColor}\nDoors: {RoadVehicleNumberOfDoors}.";
 
@@ -35,7 +32,6 @@ namespace E01_OOP_Vehicle_v1.Classes
             RoadVehicleModel = EnumRoadVehicleModel.EQC;
             RoadVehicleColor = EnumRoadVehicleColor.Preto;
             RoadVehicleNumberOfDoors = EnumRoadVehicleNumberOfDoors.Cinco;
-            CurrentSpeed = 0;
             MaxSpeed = 180;
         }
 
@@ -46,18 +42,48 @@ namespace E01_OOP_Vehicle_v1.Classes
             RoadVehicleModel = roadVehicleModel;
             RoadVehicleColor = roadVehicleColor;
             RoadVehicleNumberOfDoors = roadVehicleNumberOfDoors;
-            CurrentSpeed = 0;
             MaxSpeed = 180;
         }
 
         #endregion
+
+        #region Methods
 
         public override void StartVehicle()
         {
             Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
         }
 
-        internal static bool CheckCarSpeed(string speed)
+
+        internal double GetCarSpeed()
+        {
+            double speed;
+            string answer;
+            bool status = false;
+
+            do
+            {
+                Console.Clear();
+                Utility.WriteTitle("Car Speed", "", "\n");
+
+                Utility.WriteMessage("Enter speed: ");
+
+                answer = Console.ReadLine();
+
+                if (VehicleUtility.CheckDouble(answer))
+                {
+                    status = CheckCarSpeed(answer);
+                }
+
+            } while (!status);
+
+            speed = Convert.ToDouble(answer);
+
+            return speed;
+        }
+
+
+        internal bool CheckCarSpeed(string speed)
         {
 
             if (Convert.ToDouble(speed) > MaxSpeed)
@@ -69,6 +95,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             return true;
         }
 
+
         // Polimorphism with Inheritance and Overloading 
         // Overloading method with different parameter (signature) and behavior.
         public void MoveVehicle(double speed)
@@ -77,6 +104,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             Utility.WriteMessage($"Car in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
         }
+
 
         // Polimorphism with Inheritance and Override
         // Override the Vehicle method changing its speed and specifying the vehicle name
@@ -109,5 +137,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             CurrentSpeed = 0;
         }
+
+        #endregion
+
     }
 }

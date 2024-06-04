@@ -45,10 +45,10 @@
   <ItemGroup>
     <Compile Include="Classes\Airplane.cs" />
     <Compile Include="Classes\Car.cs" />
-    <Compile Include="Classes\CarUtility.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Submarine.cs" />
     <Compile Include="Classes\Vehicle.cs" />
+    <Compile Include="Classes\VehicleUtility.cs" />
     <Compile Include="Interfaces\IVehicle.cs" />
     <Compile Include="Interfaces\IVehicleAir.cs" />
     <Compile Include="Interfaces\IVehicleRoad.cs" />
