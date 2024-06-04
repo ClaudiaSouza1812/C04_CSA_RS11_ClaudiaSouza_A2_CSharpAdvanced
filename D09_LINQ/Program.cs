@@ -13,9 +13,10 @@ namespace D09_LINQ
         {
             Utility.SetUnicodeConsole();
             #region D01 - Hello World
-
+            /*
             D01_HelloWorld.HelloWorldMethodSyntax();
             D01_HelloWorld.HelloWorldQuerySyntax();
+            
             #endregion
 
             #region D02 - Short Names
@@ -24,10 +25,14 @@ namespace D09_LINQ
             D02_ShortNames.ShortNamesMethodSyntax();
 
             D02_ShortNames.ShortNamesQuerySyntax();
-
+            */
             #endregion
 
             #region D03 - Numbers greater or equal to 10
+
+            D03_NumbersGreaterOrEqualTo10.CreateListNumbers();
+            D03_NumbersGreaterOrEqualTo10.NumbersGreaterOrEqualTo10MethodSyntax();
+            D03_NumbersGreaterOrEqualTo10.NumbersGreaterOrEqualTo10QuerySyntax();
 
             #endregion
 

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,10 +51,15 @@ namespace D09_LINQ
         internal static void ShortNamesQuerySyntax()
         {
             #region v1: Com subquery e Min()
+            
 
             var shortNames02 =
                 from n1 in namesList
-                where n1.Length == namesList.Min(n2 => n2.Length)
+                where n1.Length ==
+                (
+                    from n2 in namesList
+                    select n2.Length
+                ).Min()
                 select n1;
 
             Utility.WriteTitle("Short Names Query Syntax v1: Com subquery e Min()", "", "\n\n");
@@ -66,21 +72,44 @@ namespace D09_LINQ
             #endregion
 
             #region v2: Com subquery e First()
+            
 
-            var shortNames03 =
+            var shortNames04 =
                 from n1 in namesList
-                where n1 == namesList.First(n2 => n2.Length == namesList.Min(n => n.Length))
+                where n1.Length ==
+                (
+                    from n2 in namesList
+                    orderby n2.Length 
+                    select n2.Length
+                ).First()
                 select n1;
 
             Utility.WriteTitle("Short Names Query Syntax v2: Com subquery e First()", "", "\n\n");
 
-            foreach (var name in shortNames03)
+            foreach (var name in shortNames04)
             {
                 Utility.WriteMessage(name, "", "\n");
             }
 
+            #endregion
+
+            #region v3: Sem subquery Min() e First()
+
+            /*
+            var shortNames02 =
+                from n1 in namesList
+                where n1.Length == namesList.Min(n2 => n2.Length)
+                select n1;
+            */
+
+            /*
+            var shortNames03 =
+                from n1 in namesList
+                where n1 == namesList.First(n2 => n2.Length == namesList.Min(n => n.Length))
+                select n1;
+            */
 
             #endregion
-        } 
+        }
     }
 }

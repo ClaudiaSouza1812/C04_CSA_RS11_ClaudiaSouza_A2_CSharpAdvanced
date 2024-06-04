@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2B922D27-E577-41B9-8AD0-723ED9916BA0}</ProjectGuid>
+    <ProjectGuid>{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D09_LINQ</RootNamespace>
-    <AssemblyName>D09_LINQ</AssemblyName>
+    <RootNamespace>E02_LINQ_LinqToObjects</RootNamespace>
+    <AssemblyName>E02_LINQ_LinqToObjects</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,23 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="D01_HelloWorld.cs" />
-    <Compile Include="D02_ShortNames.cs" />
-    <Compile Include="D03_NumbersGreaterOrEqualTo10.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="_linq.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
-      <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
-      <Name>D00_Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

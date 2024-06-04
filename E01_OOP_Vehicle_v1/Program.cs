@@ -22,11 +22,15 @@ namespace E01_OOP_Vehicle_v1
 
             plane01.ListVehicle();
 
+            Utility.PauseConsole();
+
             plane01.StartVehicle();
             plane01.MoveVehicle();
             plane01.TakeOff();
             plane01.Land();
             plane01.StopVehicle();
+
+            Utility.PauseConsole();
 
             Airplane plane02 = new Airplane(1999, "N45632", EnumAirVehicleBrand.Boing, EnumAirVehicleModel.A350, EnumAirVehicleType.Airplane);
 
@@ -37,7 +41,9 @@ namespace E01_OOP_Vehicle_v1
             plane02.TakeOff();
             plane02.Land();
             plane02.StopVehicle();
-            
+
+            Utility.PauseConsole();
+
             #endregion
 
             #region Road Vehicles
@@ -48,20 +54,35 @@ namespace E01_OOP_Vehicle_v1
 
             car01.CreateVehicle();
 
+            Utility.PauseConsole();
+
             car01.StartVehicle();
             car01.MoveVehicle(speed);
             car01.Honk();
             // car01.StopVehicle();
             car01.Park();
             
-
             car01.ListVehicle();
 
-            
+            Utility.PauseConsole();
 
             #endregion
 
+            #region Water Vehicles
 
+            Submarine submarine01 = new Submarine();
+
+            submarine01.StartVehicle();
+            submarine01.MoveVehicle();
+            submarine01.Dive();
+            submarine01.Emerge();
+            submarine01.StopVehicle();
+
+            Utility.PauseConsole();
+
+            submarine01.ListVehicle();
+
+            #endregion
 
 
             Utility.TerminateConsole();

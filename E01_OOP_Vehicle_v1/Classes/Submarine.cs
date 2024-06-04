@@ -19,7 +19,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumWaterVehicleModel WaterVehicleModel { get; set; }
         public EnumWaterVehicleType WaterVehicleType { get; set; }
 
-        public override string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, Pennant number: {PennantNumber}, Current depth: {CurrentDepth}, ";
+        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPennant number: {PennantNumber}\nCurrent depth: {CurrentDepth}\nMaximum depth: {MaxDepth}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}.";
         #endregion
 
         #region Constructors
@@ -64,12 +64,26 @@ namespace E01_OOP_Vehicle_v1.Classes
         // Override the Vehicle method changing its speed and specifying the vehicle name
         public override void MoveVehicle()
         {
-            CurrentSpeed = 280;
+            CurrentSpeed = 60;
 
             Utility.WriteMessage($"{WaterVehicleType} in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
 
         }
 
+        public void Dive()
+        {
+            CurrentDepth = GetSubmarineDepth();
+
+            Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth}.", "", "\n");
+        }
+
+        public void Emerge()
+        {
+            CurrentDepth = 0.0;
+
+            Utility.WriteMessage($"The {WaterVehicleType} reached the surface successfully.", "", "\n");
+
+        }
 
         public override void StopVehicle()
         {
@@ -78,13 +92,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             CurrentSpeed = 0;
         }
 
-        public void Dive()
-        {
-            CurrentDepth = GetSubmarineDepth();
-
-            Utility.WriteMessage($"Submarine is diveing with a depth of {CurrentDepth}.", "", "\n");
-        }
-
+       
         internal double GetSubmarineDepth()
         {
             double depth;
@@ -125,10 +133,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             return true;
         }
 
-        public void Emerge()
-        {
-            throw new NotImplementedException();
-        }
+        
 
         #endregion
 

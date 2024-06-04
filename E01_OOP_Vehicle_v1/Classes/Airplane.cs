@@ -164,7 +164,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             CurrentAltitude = 0.0;
 
-            Utility.WriteMessage($"The {AirVehicleType} landed with success.", "", "\n");
+            Utility.WriteMessage($"The {AirVehicleType} landed successfully.", "", "\n");
         }
 
 

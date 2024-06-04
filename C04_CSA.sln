@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D07_CollectionsGeneric_IEnu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D09_LINQ", "D09_LINQ\D09_LINQ.csproj", "{2B922D27-E577-41B9-8AD0-723ED9916BA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E02_LINQ_LinqToObjects", "E02_LINQ_LinqToObjects\E02_LINQ_LinqToObjects.csproj", "{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E03_LINQ_linqMethods", "E03_LINQ_linqMethods\E03_LINQ_linqMethods.csproj", "{64270B58-2C4E-434A-8B12-E712EA334B4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,14 @@ Global
 		{2B922D27-E577-41B9-8AD0-723ED9916BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B922D27-E577-41B9-8AD0-723ED9916BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B922D27-E577-41B9-8AD0-723ED9916BA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FDBF01E-2099-4149-AD0C-7418BC6DE2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64270B58-2C4E-434A-8B12-E712EA334B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64270B58-2C4E-434A-8B12-E712EA334B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64270B58-2C4E-434A-8B12-E712EA334B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64270B58-2C4E-434A-8B12-E712EA334B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
