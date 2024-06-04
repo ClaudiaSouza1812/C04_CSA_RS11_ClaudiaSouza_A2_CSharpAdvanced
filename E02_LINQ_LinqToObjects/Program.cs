@@ -10,6 +10,7 @@ namespace E02_LINQ_LinqToObjects
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
