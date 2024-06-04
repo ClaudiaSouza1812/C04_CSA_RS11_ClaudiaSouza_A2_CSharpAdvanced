@@ -15,7 +15,7 @@ namespace E01_OOP_Vehicle_v1
             Utility.SetUnicodeConsole();
 
             #region Air Vehicles
-            /*
+            
             Airplane plane01 = new Airplane();
 
             plane01.CreateVehicle();
@@ -37,14 +37,14 @@ namespace E01_OOP_Vehicle_v1
             plane02.TakeOff();
             plane02.Land();
             plane02.StopVehicle();
-            */
+            
             #endregion
 
             #region Road Vehicles
 
             Car car01 = new Car();
 
-            double speed = CarUtility.GetCarSpeed();
+            double speed = Car.GetCarSpeed();
 
             car01.CreateVehicle();
 

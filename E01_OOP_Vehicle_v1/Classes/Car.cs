@@ -55,7 +55,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
 
-        internal double GetCarSpeed()
+        internal static double GetCarSpeed()
         {
             double speed;
             string answer;
@@ -83,7 +83,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
 
-        internal bool CheckCarSpeed(string speed)
+        internal static bool CheckCarSpeed(string speed)
         {
 
             if (Convert.ToDouble(speed) > MaxSpeed)
