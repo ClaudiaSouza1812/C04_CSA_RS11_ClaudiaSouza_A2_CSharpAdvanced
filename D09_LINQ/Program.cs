@@ -19,8 +19,11 @@ namespace D09_LINQ
             #endregion
 
             #region D02 - Short Names
+            D02_ShortNames.CreateListNames();
 
             D02_ShortNames.ShortNamesMethodSyntax();
+
+            D02_ShortNames.ShortNamesQuerySyntax();
 
             #endregion
 

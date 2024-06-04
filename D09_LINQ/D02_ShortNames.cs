@@ -34,10 +34,17 @@ namespace D09_LINQ
 
             Utility.WriteTitle("Short Names Method Syntax", "", "\n\n");
 
-            foreach (var shortName in shortNames01) 
+            foreach (var name in shortNames01) 
             {
-                Utility.WriteMessage(shortName, "\n");
+                Utility.WriteMessage(name, "", "\n");
             }
+
+            string shortName = namesList.First(n => n.Length == namesList.Min(n1 => n1.Length));
+
+            Utility.WriteTitle("Short Names Query Method v2: Com First()", "", "\n\n");
+
+            Utility.WriteMessage(shortName, "", "\n");
+            
         }
 
         internal static void ShortNamesQuerySyntax()
@@ -49,18 +56,31 @@ namespace D09_LINQ
                 where n1.Length == namesList.Min(n2 => n2.Length)
                 select n1;
 
-            Utility.WriteTitle("Short Names Query Syntax", "", "\n\n");
+            Utility.WriteTitle("Short Names Query Syntax v1: Com subquery e Min()", "", "\n\n");
 
-            foreach (var shortName in shortNames02)
+            foreach (var name in shortNames02)
             {
-                Utility.WriteMessage(shortName, "\n");
+                Utility.WriteMessage(name, "", "\n");
             }
 
             #endregion
 
-            #region v1: Com subquery e First()
-        }
+            #region v2: Com subquery e First()
+
+            var shortNames03 =
+                from n1 in namesList
+                where n1 == namesList.First(n2 => n2.Length == namesList.Min(n => n.Length))
+                select n1;
+
+            Utility.WriteTitle("Short Names Query Syntax v2: Com subquery e First()", "", "\n\n");
+
+            foreach (var name in shortNames03)
+            {
+                Utility.WriteMessage(name, "", "\n");
+            }
 
 
+            #endregion
+        } 
     }
 }
