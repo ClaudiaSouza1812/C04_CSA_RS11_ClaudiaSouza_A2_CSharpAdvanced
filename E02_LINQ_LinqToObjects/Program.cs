@@ -16,13 +16,9 @@ namespace E02_LINQ_LinqToObjects
 
             CityCustomer customers = new CityCustomer();
 
-            customers.CreateCitiesCustomers();
+            customers.CitiesCustomersMethodSyntax();
 
-            customers.MethodSyntaxQuestion1();
-
-            customers.MethodSyntaxQuestion2();
-
-            customers.MethodSyntaxQuestion3();
+            
 
 
             Utility.TerminateConsole();
