@@ -13,13 +13,9 @@ namespace E01_OOP_Vehicle_v1.Classes
         #region Properties
 
         public int VehicleId { get; }
-
         private static int NextId { get; set; } = 1;
-
         public int VehicleYear { get; set; }
-
         public double CurrentSpeed { get; set; }
-
         public double MaxSpeed { get; set; }
 
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, Current speed: {CurrentSpeed}, Maximum speed: {MaxSpeed}, ";
@@ -58,8 +54,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public void GetVehicleYear()
         {
-            bool isInt, isCorrect = false;
-            string year;
+            bool isYear;
+            int year;
 
             do
             {
@@ -69,23 +65,25 @@ namespace E01_OOP_Vehicle_v1.Classes
 
                 Utility.WriteMessage("Vehicle fabrication year: ");
 
-                year = Console.ReadLine();
+                string answer = Console.ReadLine();
 
-                isInt = VehicleUtility.CheckInt(year);
+                isYear = int.TryParse(answer, out year);
 
-                if (isInt)
+                if (!isYear)
                 {
-                    isCorrect = VehicleUtility.CheckVehicleYear(year);
-                }
-                else
-                {
-                    Utility.WriteMessage("Only numbers accepted.", "\n", "\n");
+                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
                     Utility.PauseConsole();
                 }
+                else if (!VehicleUtility.CheckVehicleYear(year))
+                {
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
+                    isYear = false;
+                }
 
-            } while (!isCorrect);
+            } while (!isYear);
 
-            VehicleYear = Convert.ToInt32(year);
+            VehicleYear = year;
         }
 
 
@@ -103,7 +101,10 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage($"{FullVehicle}", "", "\n");
         }
 
-        public abstract void StartVehicle();
+        public virtual void StartVehicle()
+        {
+            Utility.WriteMessage("Starting the vehicle.", "\n", "\n");
+        }
 
         public abstract void StopVehicle();
 

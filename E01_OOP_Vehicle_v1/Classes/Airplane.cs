@@ -80,22 +80,23 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #endregion
 
-            #region AirVehicleModel
+            #region AirVehicleType
 
-            Utility.WriteMessage("Model: ");
+            Utility.WriteMessage("Type: ");
 
-            string model = Console.ReadLine();
+            string type = Console.ReadLine();
 
-            if (Enum.TryParse(model, true, out EnumAirVehicleModel planeModel))
+            if (Enum.TryParse(type, true, out EnumAirVehicleType planeType))
             {
-                AirVehicleModel = planeModel;
+                AirVehicleType = planeType;
             }
             else
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleModel.Phenom}", "\n", "\n");
+                Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumAirVehicleType.Airplane}", "\n", "\n\n");
             }
 
             #endregion
+
 
             #region AirVehicleBrand
 
@@ -109,28 +110,27 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else 
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n");
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n\n");
             }
 
             #endregion
 
-            #region AirVehicleType
+            #region AirVehicleModel
 
-            Utility.WriteMessage("Type: ");
+            Utility.WriteMessage("Model: ");
 
-            string type = Console.ReadLine();
+            string model = Console.ReadLine();
 
-            if (Enum.TryParse(type, true, out EnumAirVehicleType planeType))
+            if (Enum.TryParse(model, true, out EnumAirVehicleModel planeModel))
             {
-                AirVehicleType = planeType;
+                AirVehicleModel = planeModel;
             }
             else
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleType.Airplane}", "\n", "\n");
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleModel.Phenom}", "\n", "\n\n");
             }
 
             #endregion
-
         }
 
 
@@ -138,7 +138,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         // Override the Vehicle method specifying the vehicle name
         public override void StartVehicle()
         {
-            Utility.WriteMessage($"Starting {AirVehicleType}.", "\n", "\n");
+            Utility.WriteMessage($"Starting {AirVehicleType}.", "", "\n");
         }
 
 
