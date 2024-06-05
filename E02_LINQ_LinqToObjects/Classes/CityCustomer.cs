@@ -12,9 +12,9 @@ namespace E02_LINQ_LinqToObjects.Classes
     {
         #region Variáveis da classe
 
-        List<City> listCities = new List<City>();
-        List<Customer> listCustomers = new List<Customer>();
-        IEnumerable filteredList;
+        internal List<City> listCities = new List<City>();
+        internal List<Customer> listCustomers = new List<Customer>();
+        internal IEnumerable filteredList;
 
         #endregion
 
@@ -34,6 +34,7 @@ namespace E02_LINQ_LinqToObjects.Classes
             MethodSyntaxQuestion5();
             MethodSyntaxQuestion6();
             MethodSyntaxQuestion6v2();
+
         }
 
         #endregion
