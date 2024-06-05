@@ -35,6 +35,7 @@ namespace E01_OOP_Vehicle_v1
             Airplane plane02 = new Airplane(1999, "N45632", EnumAirVehicleBrand.Boing, EnumAirVehicleModel.A350, EnumAirVehicleType.Airplane);
 
             plane02.ListVehicle();
+            Utility.PauseConsole();
 
             plane02.StartVehicle();
             plane02.MoveVehicle();
@@ -56,15 +57,17 @@ namespace E01_OOP_Vehicle_v1
 
             Utility.PauseConsole();
 
+            car01.ListVehicle();
+
+            Utility.PauseConsole();
+
             car01.StartVehicle();
             car01.MoveVehicle(speed);
             car01.Honk();
             // car01.StopVehicle();
             car01.Park();
             
-            car01.ListVehicle();
-
-            Utility.PauseConsole();
+            
 
             #endregion
 

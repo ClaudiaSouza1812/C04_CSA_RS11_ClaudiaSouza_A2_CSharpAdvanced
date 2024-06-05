@@ -51,31 +51,38 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public virtual void CreateVehicle()
         {
-            bool converted;
-            int year;
+            Utility.WriteTitle("Create Vehicle", "", "\n\n");
+
+            GetVehicleYear();
+        }
+
+        public void GetVehicleYear()
+        {
+            bool isInt, isCorrect = false;
+            string year;
 
             do
             {
-                Console.Clear();
+                Utility.WriteMessage("Vehicle fabrication year: ");
 
-                Utility.WriteMessage("Fabrication year: ");
+                year = Console.ReadLine();
 
-                converted = int.TryParse(Console.ReadLine(), out year);
+                isInt = VehicleUtility.CheckInt(year);
 
-                if (converted && year > 1950 && year < DateTime.Today.Year)
+                if (isInt)
                 {
-                    VehicleYear = year;
+                    isCorrect = VehicleUtility.CheckVehicleYear(year);
                 }
                 else
                 {
-                    converted = false;
                     Utility.WriteMessage("Only numbers accepted.", "\n", "\n");
-                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
-                    Utility.PauseConsole();
                 }
 
-            } while (!converted);
+            } while (!isCorrect);
+
+            VehicleYear = Convert.ToInt32(year);
         }
+
 
         public virtual void MoveVehicle()
         {
@@ -88,7 +95,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             Utility.WriteTitle("Vehicle Information", "\n", "\n\n");
 
-            Utility.WriteMessage($"{FullVehicle}");
+            Utility.WriteMessage($"{FullVehicle}", "", "\n");
         }
 
         public abstract void StartVehicle();

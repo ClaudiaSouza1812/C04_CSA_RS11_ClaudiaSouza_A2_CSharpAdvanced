@@ -19,7 +19,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; set; }
         public static new double MaxSpeed { get; set; }
 
-        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {CarRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nBrand: {RoadVehicleBrand}\nModel: {RoadVehicleModel}\nColor: {RoadVehicleColor}\nDoors: {RoadVehicleNumberOfDoors}.";
+        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nCar registration: {CarRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nBrand: {RoadVehicleBrand}\nModel: {RoadVehicleModel}\nColor: {RoadVehicleColor}\nDoors: {RoadVehicleNumberOfDoors}.";
 
         #endregion
 
@@ -31,7 +31,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             RoadVehicleBrand = EnumRoadVehicleBrand.Mercedez;
             RoadVehicleModel = EnumRoadVehicleModel.EQC;
             RoadVehicleColor = EnumRoadVehicleColor.Preto;
-            RoadVehicleNumberOfDoors = EnumRoadVehicleNumberOfDoors.Cinco;
+            RoadVehicleNumberOfDoors = EnumRoadVehicleNumberOfDoors.Quatro;
             MaxSpeed = 180;
         }
 
@@ -49,6 +49,105 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         #region Methods
 
+        public override void CreateVehicle()
+        {
+            base.CreateVehicle();
+
+            #region CarRegistration
+
+            string carRegistration;
+            do
+            {
+                Utility.WriteMessage("Car registration: ");
+                carRegistration = Console.ReadLine();
+
+                if (carRegistration != string.Empty)
+                {
+                    CarRegistration = carRegistration;
+                }
+                else
+                {
+                    Utility.WriteMessage("You need to enter the plane registration.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+
+            } while (carRegistration == string.Empty);
+
+
+            #endregion
+
+            #region RoadVehicleBrand
+
+            Utility.WriteMessage("Brand: ");
+
+            string brand = Console.ReadLine();
+
+            if (Enum.TryParse(brand, true, out EnumRoadVehicleBrand carBrand))
+            {
+                RoadVehicleBrand = carBrand;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumRoadVehicleBrand.Mercedez}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region RoadVehicleModel
+
+            Utility.WriteMessage("Model: ");
+
+            string model = Console.ReadLine();
+
+            if (Enum.TryParse(model, true, out EnumRoadVehicleModel carModel))
+            {
+                RoadVehicleModel = carModel;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumRoadVehicleModel.EQC}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region RoadVehicleColor
+
+            Utility.WriteMessage("Color: ");
+
+            string color = Console.ReadLine();
+
+            if (Enum.TryParse(color, true, out EnumRoadVehicleColor carColor))
+            {
+                RoadVehicleColor = carColor;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid color entered. The default color will be set: {EnumRoadVehicleColor.Prata}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region RoadVehicleNumberOfDoors
+
+            Utility.WriteMessage("Enter the number of doors, ex: (quatro).");
+            Utility.WriteMessage("Number Of Doors: ");
+
+            string doors = Console.ReadLine();
+
+            if (Enum.TryParse(doors, true, out EnumRoadVehicleNumberOfDoors carDoors))
+            {
+                RoadVehicleNumberOfDoors = carDoors;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid number of doors entered. The default number of doors will be set: {EnumRoadVehicleNumberOfDoors.Quatro}", "\n", "\n");
+            }
+
+            #endregion
+
+        }
+
+
         public override void StartVehicle()
         {
             Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
@@ -57,9 +156,8 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         internal static double GetCarSpeed()
         {
-            double speed;
-            string answer;
-            bool status = false;
+            string speed;
+            bool isDouble, isCorrect = false;
 
             do
             {
@@ -68,18 +166,18 @@ namespace E01_OOP_Vehicle_v1.Classes
 
                 Utility.WriteMessage("Enter speed: ");
 
-                answer = Console.ReadLine();
+                speed = Console.ReadLine();
 
-                if (VehicleUtility.CheckDouble(answer))
+                isDouble = VehicleUtility.CheckDouble(speed);
+
+                if (isDouble)
                 {
-                    status = CheckCarSpeed(answer);
+                    isCorrect = CheckCarSpeed(speed);
                 }
 
-            } while (!status);
+            } while (!isCorrect);
 
-            speed = Convert.ToDouble(answer);
-
-            return speed;
+            return Convert.ToDouble(speed);
         }
 
 
