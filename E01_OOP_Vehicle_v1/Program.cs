@@ -13,15 +13,15 @@ namespace E01_OOP_Vehicle_v1
         static void Main(string[] args)
         {
             Utility.SetUnicodeConsole();
-
+           
             #region Air Vehicles
             
             Airplane plane01 = new Airplane();
 
             plane01.CreateVehicle();
+            Utility.PauseConsole();
 
             plane01.ListVehicle();
-
             Utility.PauseConsole();
 
             plane01.StartVehicle();
@@ -29,7 +29,6 @@ namespace E01_OOP_Vehicle_v1
             plane01.TakeOff();
             plane01.Land();
             plane01.StopVehicle();
-
             Utility.PauseConsole();
 
             Airplane plane02 = new Airplane(1999, "N45632", EnumAirVehicleBrand.Boing, EnumAirVehicleModel.A350, EnumAirVehicleType.Airplane);
@@ -42,10 +41,10 @@ namespace E01_OOP_Vehicle_v1
             plane02.TakeOff();
             plane02.Land();
             plane02.StopVehicle();
-
             Utility.PauseConsole();
 
             #endregion
+            
 
             #region Road Vehicles
 
@@ -54,11 +53,9 @@ namespace E01_OOP_Vehicle_v1
             double speed = Car.GetCarSpeed();
 
             car01.CreateVehicle();
-
             Utility.PauseConsole();
 
             car01.ListVehicle();
-
             Utility.PauseConsole();
 
             car01.StartVehicle();
@@ -66,14 +63,20 @@ namespace E01_OOP_Vehicle_v1
             car01.Honk();
             // car01.StopVehicle();
             car01.Park();
-            
-            
+            Utility.PauseConsole();
 
             #endregion
+
 
             #region Water Vehicles
 
             Submarine submarine01 = new Submarine();
+
+            submarine01.CreateVehicle();
+            Utility.PauseConsole();
+
+            submarine01.ListVehicle();
+            Utility.PauseConsole();
 
             submarine01.StartVehicle();
             submarine01.MoveVehicle();
@@ -81,12 +84,7 @@ namespace E01_OOP_Vehicle_v1
             submarine01.Emerge();
             submarine01.StopVehicle();
 
-            Utility.PauseConsole();
-
-            submarine01.ListVehicle();
-
             #endregion
-
 
             Utility.TerminateConsole();
         }

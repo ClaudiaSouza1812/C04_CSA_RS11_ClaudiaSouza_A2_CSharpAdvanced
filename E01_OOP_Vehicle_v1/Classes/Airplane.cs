@@ -62,7 +62,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             string planeRegistration;
             do
             {
-                Utility.WriteMessage("Plane registration: ");
+                Utility.WriteMessage("Registration: ");
                 planeRegistration = Console.ReadLine();
 
                 if (planeRegistration != string.Empty)
@@ -71,29 +71,12 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
                 else
                 {
-                    Utility.WriteMessage("You need to enter the plane registration.", "\n", "\n");
+                    Utility.WriteMessage("You need to enter the registration.", "\n", "\n");
                     Utility.PauseConsole();
                 }
 
             } while (planeRegistration == string.Empty);
 
-            
-            #endregion
-
-            #region AirVehicleBrand
-
-            Utility.WriteMessage("Brand: ");
-
-            string brand = Console.ReadLine();
-
-            if (Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand)) 
-            {
-                AirVehicleBrand = planeBrand;
-            }
-            else 
-            {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n");
-            }
 
             #endregion
 
@@ -110,6 +93,23 @@ namespace E01_OOP_Vehicle_v1.Classes
             else
             {
                 Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleModel.Phenom}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region AirVehicleBrand
+
+            Utility.WriteMessage("Brand: ");
+
+            string brand = Console.ReadLine();
+
+            if (Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand)) 
+            {
+                AirVehicleBrand = planeBrand;
+            }
+            else 
+            {
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n");
             }
 
             #endregion
@@ -138,7 +138,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         // Override the Vehicle method specifying the vehicle name
         public override void StartVehicle()
         {
-            Utility.WriteMessage($"Starting {AirVehicleType}.", "\n\n", "\n");
+            Utility.WriteMessage($"Starting {AirVehicleType}.", "\n", "\n");
         }
 
 

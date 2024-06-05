@@ -63,6 +63,10 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             do
             {
+                Console.Clear();
+
+                Utility.WriteTitle("Create Vehicle", "", "\n\n");
+
                 Utility.WriteMessage("Vehicle fabrication year: ");
 
                 year = Console.ReadLine();
@@ -76,6 +80,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage("Only numbers accepted.", "\n", "\n");
+                    Utility.PauseConsole();
                 }
 
             } while (!isCorrect);

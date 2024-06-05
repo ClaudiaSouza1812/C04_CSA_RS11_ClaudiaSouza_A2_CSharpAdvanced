@@ -67,7 +67,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
                 else
                 {
-                    Utility.WriteMessage("You need to enter the plane registration.", "\n", "\n");
+                    Utility.WriteMessage("You need to enter the car registration.", "\n", "\n");
                     Utility.PauseConsole();
                 }
 
@@ -129,7 +129,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #region RoadVehicleNumberOfDoors
 
-            Utility.WriteMessage("Enter the number of doors, ex: (quatro).");
+            Utility.WriteMessage("Enter the number of doors, ex: (quatro).","\n", "\n");
             Utility.WriteMessage("Number Of Doors: ");
 
             string doors = Console.ReadLine();

@@ -53,6 +53,86 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         #region Methods
 
+        public override void CreateVehicle()
+        {
+            base.CreateVehicle();
+
+            #region PennantNumber
+
+            string pennantNumber;
+            do
+            {
+                Utility.WriteMessage("Pennant number: ");
+                pennantNumber = Console.ReadLine();
+
+                if (pennantNumber != string.Empty)
+                {
+                    PennantNumber = pennantNumber;
+                }
+                else
+                {
+                    Utility.WriteMessage("You need to enter the pennant number.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+
+            } while (pennantNumber == string.Empty);
+
+
+            #endregion
+
+            #region WaterVehicleType
+
+            Utility.WriteMessage("Type: ");
+
+            string type = Console.ReadLine();
+
+            if (Enum.TryParse(type, true, out EnumWaterVehicleType waterType))
+            {
+                WaterVehicleType = waterType;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleType.Submarine}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region WaterVehicleBrand
+
+            Utility.WriteMessage("Brand: ");
+
+            string brand = Console.ReadLine();
+
+            if (Enum.TryParse(brand, true, out EnumWaterVehicleBrand waterBrand))
+            {
+                WaterVehicleBrand = waterBrand;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumWaterVehicleBrand.Beneteau}", "\n", "\n");
+            }
+
+            #endregion
+
+            #region WaterVehicleModel
+
+            Utility.WriteMessage("Model: ");
+
+            string model = Console.ReadLine();
+
+            if (Enum.TryParse(model, true, out EnumWaterVehicleModel waterModel))
+            {
+                WaterVehicleModel = waterModel;
+            }
+            else
+            {
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleModel.Oceanis}", "\n", "\n");
+            }
+
+            #endregion
+
+        }
+
         public override void StartVehicle()
         {
             Utility.WriteMessage($"Starting the {WaterVehicleType}.", "\n\n", "\n");
@@ -74,14 +154,14 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             CurrentDepth = GetSubmarineDepth();
 
-            Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth}.", "", "\n");
+            Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth} meters.", "", "\n");
         }
 
         public void Emerge()
         {
             CurrentDepth = 0.0;
 
-            Utility.WriteMessage($"The {WaterVehicleType} reached the surface successfully.", "", "\n");
+            Utility.WriteMessage($"The {WaterVehicleType} emerged and reached the surface successfully.", "", "\n");
 
         }
 
@@ -101,9 +181,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             do
             {
-                Console.Clear();
-                Utility.WriteTitle($"Depth", "", "\n");
-
                 Utility.WriteMessage("Enter Depth: ");
 
                 answer = Console.ReadLine();

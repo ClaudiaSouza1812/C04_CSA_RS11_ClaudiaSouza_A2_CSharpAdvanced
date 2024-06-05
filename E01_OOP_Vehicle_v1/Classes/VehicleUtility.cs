@@ -16,8 +16,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             if (!status)
             {
-                Utility.WriteMessage("Only numbers are accepted.", "", "\n");
-                Utility.PauseConsole();
                 return status;
             }
 
@@ -30,8 +28,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             if (!status)
             {
-                Utility.WriteMessage("Only integer numbers are accepted.", "", "\n");
-                Utility.PauseConsole();
                 return status;
             }
 
@@ -42,7 +38,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         {
             int year = Convert.ToInt32(answer);
 
-            if (year > 1950 && year < DateTime.Today.Year)
+            if (year >= 1950 && year <= DateTime.Today.Year)
             {
                 return true;
             }
