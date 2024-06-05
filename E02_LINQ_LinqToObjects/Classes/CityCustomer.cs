@@ -14,7 +14,7 @@ namespace E02_LINQ_LinqToObjects.Classes
 
         List<City> listCities = new List<City>();
         List<Customer> listCustomers = new List<Customer>();
-        IEnumerable listFiltered;
+        IEnumerable filteredList;
 
         #endregion
 
@@ -24,7 +24,7 @@ namespace E02_LINQ_LinqToObjects.Classes
 
         internal void ListCitiesCustomers()
         {
-            foreach (var item in listFiltered)
+            foreach (var item in filteredList)
             {
                 Utility.WriteMessage($"{item}", "", "\n");
             }
@@ -73,7 +73,7 @@ namespace E02_LINQ_LinqToObjects.Classes
         #region Consulta 2.1.  O nome dos clientes da cidade 'Porto'. 
         internal void MethodSyntaxQuestion1()
         {
-            listFiltered = listCustomers.Where(c => c.Location.Location == "Porto").Select(c => c.Name);
+            filteredList = listCustomers.Where(c => c.Location.Location == "Porto").Select(c => c.Name);
 
             ListCitiesCustomers();
         }
@@ -82,9 +82,23 @@ namespace E02_LINQ_LinqToObjects.Classes
 
         #region Consulta 2.2.  O número de clientes da cidade 'Porto'. 
 
+        internal void MethodSyntaxQuestion2()
+        {
+            int cityCount = listCustomers.Where(c => c.Location.Location == "Porto").Count();
+
+            Utility.WriteMessage($"{cityCount}", "", "\n");
+        }
+
         #endregion
 
         #region Consulta 2.3.  O cliente mais novo da cidade 'Porto'. 
+
+        internal void MethodSyntaxQuestion3()
+        {
+            filteredList = listCustomers.Where(c => c.Location.Location == "Porto").OrderBy(c => c.Age).Take(1).Select(c => c.Name);
+
+            ListCitiesCustomers();
+        }
 
         #endregion
 
