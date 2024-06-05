@@ -16,6 +16,7 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         // declara intenção das propriedades que pertencem a IVehicle
         int VehicleId { get; }
         int VehicleYear { get; }
+        // checar com Milena
         double CurrentSpeed { get; }
         double MaxSpeed { get; }
 
@@ -29,10 +30,11 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         // declara intenção dos métodos que pertencem a IVehicle
         void CreateVehicle();
-        void ListVehicle();
         void StartVehicle();
         void MoveVehicle();
         void StopVehicle();
+        // checar com Milena
+        void ListVehicle();
 
         #endregion
 

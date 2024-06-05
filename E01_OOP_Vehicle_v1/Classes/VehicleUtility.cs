@@ -9,43 +9,14 @@ namespace E01_OOP_Vehicle_v1.Classes
 {
     internal class VehicleUtility
     {
-        // Perguntar a Milena sobre CarUtility
-        internal static bool CheckDouble(string answer)
+        public static bool CheckVehicleYear(int year)
         {
-            bool status = double.TryParse(answer, out double CarSpeed);
-
-            if (!status)
-            {
-                return status;
-            }
-
-            return status;
-        }
-
-        internal static bool CheckInt(string answer)
-        {
-            bool status = int.TryParse(answer, out int year);
-
-            if (!status)
-            {
-                return status;
-            }
-
-            return status;
-        }
-
-        public static bool CheckVehicleYear(string answer)
-        {
-            int year = Convert.ToInt32(answer);
-
             if (year >= 1950 && year <= DateTime.Today.Year)
             {
                 return true;
             }
             else
             {
-                Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
-                Utility.PauseConsole();
                 return false;
             }
         }

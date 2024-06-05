@@ -17,7 +17,8 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumRoadVehicleModel RoadVehicleModel { get; set; }
         public EnumRoadVehicleColor RoadVehicleColor { get; set; }
         public EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; set; }
-        public static new double MaxSpeed { get; set; }
+        public new double CurrentSpeed { get; set; }
+        public new double MaxSpeed { get; set; }
 
         public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nCar registration: {CarRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nBrand: {RoadVehicleBrand}\nModel: {RoadVehicleModel}\nColor: {RoadVehicleColor}\nDoors: {RoadVehicleNumberOfDoors}.";
 
@@ -52,6 +53,12 @@ namespace E01_OOP_Vehicle_v1.Classes
         public override void CreateVehicle()
         {
             base.CreateVehicle();
+
+            #region CurrentSpeed
+
+            CurrentSpeed = GetCarSpeed();
+
+            #endregion
 
             #region CarRegistration
 
@@ -88,7 +95,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumRoadVehicleBrand.Mercedez}", "\n", "\n");
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumRoadVehicleBrand.Mercedez}", "\n", "\n\n");
             }
 
             #endregion
@@ -105,7 +112,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumRoadVehicleModel.EQC}", "\n", "\n");
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumRoadVehicleModel.EQC}", "\n", "\n\n");
             }
 
             #endregion
@@ -122,7 +129,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid color entered. The default color will be set: {EnumRoadVehicleColor.Prata}", "\n", "\n");
+                Utility.WriteMessage($"Invalid color entered. The default color will be set: {EnumRoadVehicleColor.Prata}", "\n", "\n\n");
             }
 
             #endregion
@@ -140,7 +147,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid number of doors entered. The default number of doors will be set: {EnumRoadVehicleNumberOfDoors.Quatro}", "\n", "\n");
+                Utility.WriteMessage($"Invalid number of doors entered. The default number of doors will be set: {EnumRoadVehicleNumberOfDoors.Quatro}", "\n", "\n\n");
             }
 
             #endregion
@@ -148,46 +155,37 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
 
-        public override void StartVehicle()
+        internal double GetCarSpeed()
         {
-            Utility.WriteMessage("Starting the Car.", "\n\n", "\n");
-        }
-
-
-        internal static double GetCarSpeed()
-        {
-            string speed;
-            bool isDouble, isCorrect = false;
+            bool isSpeed;
+            double speed;
 
             do
             {
-                Console.Clear();
-                Utility.WriteTitle("Car Speed", "", "\n");
-
                 Utility.WriteMessage("Enter speed: ");
 
-                speed = Console.ReadLine();
+                string answer = Console.ReadLine();
 
-                isDouble = VehicleUtility.CheckDouble(speed);
+                isSpeed = double.TryParse(answer, out speed);
 
-                if (isDouble)
+                if (!CheckCarSpeed(speed))
                 {
-                    isCorrect = CheckCarSpeed(speed);
+                    Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
+                    Utility.PauseConsole();
+                    isSpeed = false;
                 }
 
-            } while (!isCorrect);
+            } while (!isSpeed);
 
-            return Convert.ToDouble(speed);
+            return speed;
         }
 
 
-        internal static bool CheckCarSpeed(string speed)
+        internal bool CheckCarSpeed(double speed)
         {
 
-            if (Convert.ToDouble(speed) > MaxSpeed)
+            if (speed > MaxSpeed)
             {
-                Utility.WriteMessage($"Maximum speed: {MaxSpeed}km/h.");
-                Utility.PauseConsole();
                 return false;
             }
             return true;

@@ -12,6 +12,7 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         string PennantNumber { get; }
         double CurrentDepth { get; }
         double MaxDepth { get; }
+        // checar com Milena
         EnumWaterVehicleBrand WaterVehicleBrand { get; }
         EnumWaterVehicleModel WaterVehicleModel { get; }
         EnumWaterVehicleType WaterVehicleType { get; }

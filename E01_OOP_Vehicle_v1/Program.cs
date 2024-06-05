@@ -50,8 +50,6 @@ namespace E01_OOP_Vehicle_v1
 
             Car car01 = new Car();
 
-            double speed = Car.GetCarSpeed();
-
             car01.CreateVehicle();
             Utility.PauseConsole();
 
@@ -59,7 +57,7 @@ namespace E01_OOP_Vehicle_v1
             Utility.PauseConsole();
 
             car01.StartVehicle();
-            car01.MoveVehicle(speed);
+            car01.MoveVehicle(car01.CurrentSpeed);
             car01.Honk();
             // car01.StopVehicle();
             car01.Park();

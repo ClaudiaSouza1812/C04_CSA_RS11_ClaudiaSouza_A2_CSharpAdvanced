@@ -92,7 +92,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleType.Submarine}", "\n", "\n");
+                Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumWaterVehicleType.Submarine}", "\n", "\n\n");
             }
 
             #endregion
@@ -109,7 +109,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumWaterVehicleBrand.Beneteau}", "\n", "\n");
+                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumWaterVehicleBrand.Beneteau}", "\n", "\n\n");
             }
 
             #endregion
@@ -126,7 +126,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             }
             else
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleModel.Oceanis}", "\n", "\n");
+                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleModel.Oceanis}", "\n", "\n\n");
             }
 
             #endregion
@@ -135,7 +135,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override void StartVehicle()
         {
-            Utility.WriteMessage($"Starting the {WaterVehicleType}.", "\n\n", "\n");
+            Utility.WriteMessage($"Starting the {WaterVehicleType}.", "\n", "\n");
 
         }
 
@@ -176,35 +176,33 @@ namespace E01_OOP_Vehicle_v1.Classes
         internal double GetSubmarineDepth()
         {
             double depth;
-            string answer;
-            bool status = false;
+            bool isDepth;
 
             do
             {
-                Utility.WriteMessage("Enter Depth: ");
+                Utility.WriteMessage("Depth: ");
 
-                answer = Console.ReadLine();
+                string answer = Console.ReadLine();
 
-                if (VehicleUtility.CheckDouble(answer))
+                isDepth = double.TryParse(answer, out depth);
+
+                if (!CheckSubmarineDepth(depth))
                 {
-                    status = CheckSubmarineDepth(answer);
+                    Utility.WriteMessage($"Maximum depth: {MaxDepth}km/h.");
+                    Utility.PauseConsole();
+                    isDepth = false;
                 }
 
-            } while (!status);
-
-            depth = Convert.ToDouble(answer);
+            } while (!isDepth);
 
             return depth;
         }
 
 
-        internal bool CheckSubmarineDepth(string depth)
+        internal bool CheckSubmarineDepth(double depth)
         {
-
-            if (Convert.ToDouble(depth) > MaxDepth)
+            if (depth > MaxDepth)
             {
-                Utility.WriteMessage($"Maximum depth: {MaxDepth}km/h.");
-                Utility.PauseConsole();
                 return false;
             }
             return true;
