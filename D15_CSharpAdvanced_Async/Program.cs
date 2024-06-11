@@ -26,8 +26,8 @@ namespace D15_CSharpAdvanced_Async
             */
             #region Async02
 
-            Task task03 = ClassAsync01.Task04("03", 1000);
-            Task task04 = ClassAsync01.Task04("04", 4000);
+            Task task03 = ClassAsync02.Task04("03", 1000);
+            Task task04 = ClassAsync02.Task04("04", 4000);
             
             await Task.WhenAll(task03, task04);
 
