@@ -89,13 +89,45 @@ namespace E03_LINQ_linqMethods
 
         #endregion
 
+        #region 1.3.  Usar Exists() para verificar se alguma timespan tiver 5 na propriedade Hours.
+
+        // var timesList = timepanList.FindAll(t => t < new TimeSpan(12, 0, 0));
+
+        internal void ExistNumber()
+        {
+            
+        }
+
+        #endregion
+
+        #region 1.4.  Usar TrueForAll() para garantir que todas as timespans estão entre 0 e 24 horas.
+
+        // var timesList = timepanList.FindAll(t => t < new TimeSpan(12, 0, 0));
+
+        internal void Between0and24()
+        {
+            
+        }
+
+        #endregion
+
+        #region 1.5.  Usar  ConvertAll()  para  retornar  só  a  parte  de  Hours  de  cada timespan.
+
+        // var timesList = timepanList.FindAll(t => t < new TimeSpan(12, 0, 0));
+
+        internal void ReturnHour()
+        {
+           
+        }
+
+        #endregion
 
         #endregion
 
 
 
-        
 
-        
+
+
     }
 }
