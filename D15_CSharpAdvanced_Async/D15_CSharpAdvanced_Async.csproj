@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{64270B58-2C4E-434A-8B12-E712EA334B4F}</ProjectGuid>
+    <ProjectGuid>{0A51312D-80FF-4C0F-9AF9-C9724DAC3A97}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E03_LINQ_linqMethods</RootNamespace>
-    <AssemblyName>E03_LINQ_linqMethods</AssemblyName>
+    <RootNamespace>D15_CSharpAdvanced_Async</RootNamespace>
+    <AssemblyName>D15_CSharpAdvanced_Async</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LinqMethods.cs" />
+    <Compile Include="ClassAsync01.cs" />
+    <Compile Include="ClassAsync02.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

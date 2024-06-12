@@ -1,4 +1,5 @@
-﻿using System;
+﻿using D00_Utility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,13 @@ namespace E03_LINQ_linqMethods
     {
         static void Main(string[] args)
         {
+            Utility.SetUnicodeConsole();
+
+            LinqMethods linqMethods = new LinqMethods();
+
+            linqMethods.CitiesCustomersMethodSyntax();
+
+            Utility.TerminateConsole();
         }
     }
 }
