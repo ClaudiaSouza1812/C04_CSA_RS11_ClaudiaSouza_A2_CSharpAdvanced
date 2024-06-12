@@ -32,17 +32,24 @@ namespace D16_FuncionalidadesRecentes_ValueTuples
 
             #region Value tuple - Create
 
-            ValueTuple<string, int, string, DateTime, bool> student08 = new ValueTuple<string, int, string, DateTime, bool>("Claudia", 31, "Coimbra", new DateTime(1992, 12, 18), true);
+            ValueTuple<string, int, string, DateTime, bool> student05 = new ValueTuple<string, int, string, DateTime, bool>("Claudia", 31, "Coimbra", new DateTime(1992, 12, 18), true);
 
-            ValueTuple<string, short, string> student09 = ValueTuple.Create("Claudia", (short)31, "Coimbra");
+            ValueTuple<string, short, string> student06 = ValueTuple.Create("Claudia", (short)31, "Coimbra");
 
             (string, int) student07 = ("Claudia", 31);
 
             MyValueTuple.ListValueTuple(student07);
 
+            var student8 = MyValueTuple.ReturnValueTuple();
+
+            Utility.WriteMessage($"Student08: {student8.Item1}, {student8.Item2}, {student8.Item3}", "", "\n");
+
+            var calculations = MyValueTuple.ReturnArithmeticOperationsValueTuple((10, 5));
+
+            Utility.WriteMessage($"Soma: {calculations.Item1}, Subtração: {calculations.Item2}, Multiplicação: {calculations.Item3}, Divisão: {calculations.Item4}");
+
             #endregion
 
-            
 
             Utility.TerminateConsole();
         }
