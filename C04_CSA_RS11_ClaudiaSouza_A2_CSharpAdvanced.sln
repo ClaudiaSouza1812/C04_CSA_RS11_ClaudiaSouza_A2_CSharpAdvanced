@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D13_CSharpAdvanced_Extensio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D14_CSharpAdvanced_Nullable", "..\..\..\..\..\RS11\02_OOP\03_CSharp_A\C04_CSA_RS11_ClaudiaSouza_A2_CSharpAdvanced\D14_CSharpAdvanced_Nullable\D14_CSharpAdvanced_Nullable.csproj", "{C461826C-58ED-4338-8B75-1111B24B9D2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D16_FuncionalidadesRecentes_ValueTuples", "D16_FuncionalidadesRecentes_ValueTuples\D16_FuncionalidadesRecentes_ValueTuples.csproj", "{4DE2D8CA-D970-4EB2-ADA3-98686785FD39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{C461826C-58ED-4338-8B75-1111B24B9D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C461826C-58ED-4338-8B75-1111B24B9D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C461826C-58ED-4338-8B75-1111B24B9D2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE2D8CA-D970-4EB2-ADA3-98686785FD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE2D8CA-D970-4EB2-ADA3-98686785FD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE2D8CA-D970-4EB2-ADA3-98686785FD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE2D8CA-D970-4EB2-ADA3-98686785FD39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
