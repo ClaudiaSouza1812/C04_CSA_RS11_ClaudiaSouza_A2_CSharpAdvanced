@@ -50,7 +50,7 @@ namespace D16_FuncionalidadesRecentes_ValueTuples
 
             #endregion
 
-
+            
             Utility.TerminateConsole();
         }
     }
