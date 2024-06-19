@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
-      <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
+      <Project>{d7f06a26-2224-4d22-aef5-2fc0c3615bf4}</Project>
       <Name>D00_Utility</Name>
     </ProjectReference>
   </ItemGroup>
