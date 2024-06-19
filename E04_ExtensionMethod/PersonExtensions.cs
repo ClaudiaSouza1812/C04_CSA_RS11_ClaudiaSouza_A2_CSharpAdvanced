@@ -14,15 +14,15 @@ namespace E04_ExtensionMethod
         // The method must be static and the first parameter must be preceded by the keyword 'this' followed by the class name (data type) to which the method will be added
 
         // 1. Extension Method - Criar um método de extensão para a classe Person que devolve o nome completo da pessoa.
-        internal static string ListPersonName(this Person person)
+        internal static (string, string) ListPersonFullName(this Person person)
         {
-            return person.Name;
+            return (person.FirstName, person.LastName);
         }
 
         // 2. Tuple - Criar um método que devolve um tuple com o nome completo e a idade da pessoa.
-        internal static (string, string) ListPersonNameAndAge(this Person person)
+        internal static (string, string, string) ListPersonFullNameAndAge(this Person person)
         {
-            return (person.Name, person.Age);
+            return (person.FirstName, person.LastName, person.Age);
         }
 
 

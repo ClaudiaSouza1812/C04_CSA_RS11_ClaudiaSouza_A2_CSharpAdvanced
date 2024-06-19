@@ -18,7 +18,8 @@ namespace E04_ExtensionMethod
         /*
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
-        private string name;
+        private string firstName;
+        private string lastName;
         private string age;
 
         #endregion
@@ -62,6 +63,8 @@ namespace E04_ExtensionMethod
         internal int Id { get; }
         internal static int NextId { get; set; } = 1;
         internal EnumMaritalStatus MaritalStatus { get; set; }
+        internal EnumEyeColor EyeColor { get; set; }
+        internal EnumHairColor HairColor { get; set; }
 
         #endregion
 
@@ -76,10 +79,10 @@ namespace E04_ExtensionMethod
         }
         */
 
-        internal string Name
+        internal string FirstName
         {
-            get { return name; }
-            set { name = value; }
+            get { return firstName; }
+            set { lastName = value; }
         }
         #endregion
 
@@ -98,31 +101,62 @@ namespace E04_ExtensionMethod
             get => age;
             set => age = value;
         }
+
+        internal string LastName
+        {
+            get => lastName;
+            set => lastName = value;
+        }
         #endregion
         #endregion
 
         #region Constructors (public or internal)
-        // Fazer substituto do default constructor
+
+        // Construtor substituto do default constructor
 
         internal Person()
         {
             Id = NextId++;
-            Name = string.Empty;
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            Age = string.Empty;
+            MaritalStatus = EnumMaritalStatus.Single;
+            EyeColor = EnumEyeColor.Brown;
+            HairColor = EnumHairColor.Brown;
         }
 
-        // Fazer segundo construtor com inserção de parâmetros obrigatórios
+        // Segundo construtor com inserção de parâmetros obrigatórios
 
-        internal Person(string name)
+        internal Person(string firstName, string lastName, string age, EnumMaritalStatus maritalStatus, EnumEyeColor eyeColor, EnumHairColor hairColor)
         {
             Id = NextId++;
-            Name = name;
+            FirstName = firstName;
         }
 
-        internal Person(string name, EnumMaritalStatus maritalStatus)
+        // Terceiro construtor com inserção de parâmetros obrigatórios
+
+        internal Person(string firstName, EnumMaritalStatus maritalStatus)
         {
             Id = NextId++;
-            Name = name;
+            FirstName = firstName;
             MaritalStatus = maritalStatus;
+        }
+
+        #endregion
+
+        // O método Deconstruct é um método especial que permite desestruturar um objeto em variáveis individuais.
+        #region Deconstructor Method
+
+        // 4. Deconstruct - Implementar o método Deconstruct na classe Person para permitir a desestruturação de objetos Person.
+
+        internal void Deconstruct(out string firstName, out string lastName, out string age, out EnumMaritalStatus maritalStatus, out EnumEyeColor eyeColor, out EnumHairColor hairColor)
+        {
+            firstName = FirstName;
+            lastName = LastName;
+            age = Age;
+            maritalStatus = MaritalStatus;
+            eyeColor = EyeColor;    
+            hairColor = HairColor;
         }
 
         #endregion
@@ -181,7 +215,7 @@ namespace E04_ExtensionMethod
         { 
             if (status)
             {
-                Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status '{person.MaritalStatus}'.");
+                Utility.WriteMessage($"Person '{person.FirstName}' inserted successfully with ID '{person.Id}' and marital status '{person.MaritalStatus}'.");
             }
             else
             {
@@ -195,7 +229,7 @@ namespace E04_ExtensionMethod
 
             foreach (Person item in list)
             {
-                Utility.WriteMessage($"Id: {item.Id}, Name: {item.Name}", "", "\n");
+                Utility.WriteMessage($"Id: {item.Id}, Name: {item.FirstName}", "", "\n");
             }
         }
 

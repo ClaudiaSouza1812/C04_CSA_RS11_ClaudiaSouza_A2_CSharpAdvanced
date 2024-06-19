@@ -13,6 +13,7 @@ namespace D26_FuncionalidadesRecentes_Discards
             Utility.SetUnicodeConsole();
 
             #region Discard com Tuples
+
             Utility.WriteTitle("Discard com Tuples");
 
             var cidades = ("Lisboa", "Porto", "Espinho");   // tuple com 3 items
@@ -28,6 +29,7 @@ namespace D26_FuncionalidadesRecentes_Discards
             #endregion
 
             #region Discard e Deconstructor
+
             Utility.WriteTitle("Discard e Deconstructor", "\n\n\n\n\n\n");
 
             var person1 = new Person();
