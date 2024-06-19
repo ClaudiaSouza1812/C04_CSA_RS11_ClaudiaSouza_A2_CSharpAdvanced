@@ -19,6 +19,7 @@ namespace E04_ExtensionMethod
         variáveis internas da classe para serem usadas dentro das propriedades (Classic properties / Bodied-expression properties)
         */
         private string name;
+        private string age;
 
         #endregion
 
@@ -91,6 +92,12 @@ namespace E04_ExtensionMethod
             set => value02 = value;
         }
         */
+
+        internal string Age
+        {
+            get => age;
+            set => age = value;
+        }
         #endregion
         #endregion
 
@@ -122,6 +129,66 @@ namespace E04_ExtensionMethod
 
         #region Methods (public or internal)
 
+        //
+        internal static void AddPerson(List<Person> listPerson)
+        {
+
+            (string, EnumMaritalStatus) personInformation = GetPersonInformation();
+
+            Person person = new Person(personInformation.Item1, personInformation.Item2);
+
+            listPerson.Add(person);
+
+            ShowMessage(true, person);
+            
+        }
+
+        internal static (string, EnumMaritalStatus) GetPersonInformation()
+        {
+            Console.Clear();
+            Utility.WriteTitle("Enter the Person information", "\n", "\n\n");
+
+            Utility.WriteMessage("Name: ");
+            string name = Console.ReadLine();
+
+            Utility.WriteMessage("Marital status (Single, Married, Divorced, Widowed): ", "", "\n");
+            string maritalStatus = Console.ReadLine();
+
+            (bool, EnumMaritalStatus) isMaritalStatus = ValidateMaritalStatus(maritalStatus);
+
+            if (isMaritalStatus.Item1)
+            {
+                return (name, isMaritalStatus.Item2);
+            }
+            else
+            {
+                ShowMessage(false, null);
+                return (name, EnumMaritalStatus.Single);
+            }
+        }
+        
+        //
+        internal static (bool, EnumMaritalStatus) ValidateMaritalStatus(string maritalStatus)
+        {
+            // Validar se o input é correto de acordo com a enum
+            // true: ignora o case do input, aceita 'Single' e 'single'
+            bool isValid = Enum.TryParse(maritalStatus, true, out EnumMaritalStatus status);
+
+            return (isValid, status);
+        }
+        //
+        internal static void ShowMessage(bool status, Person person)
+        { 
+            if (status)
+            {
+                Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status '{person.MaritalStatus}'.");
+            }
+            else
+            {
+                Utility.WriteMessage("\"Invalid marital status entered, default value 'Single' will be set.", "\n\n");
+            }
+        }
+        //
         internal static void ListPerson(List<Person> list)
         {
             Utility.WriteTitle("Person - List", "\n", "\n\n");
@@ -132,56 +199,6 @@ namespace E04_ExtensionMethod
             }
         }
 
-
-        internal static void AddPerson(List<Person> listPerson)
-        {
-            Console.Clear();
-            Utility.WriteTitle("Add a Person", "\n", "\n\n");
-
-            Utility.WriteMessage("Name: ");
-
-            string name = Console.ReadLine();
-
-            Utility.WriteMessage("Marital status (Single, Married, Divorced, Widowed): ", "", "\n");
-
-            string maritalStatus = Console.ReadLine();
-
-            ValueTuple<bool, EnumMaritalStatus> result = ValidateMaritalStatus(maritalStatus);
-
-            if (result.Item1)
-            {
-                Person person = new Person(name, result.Item2);
-                listPerson.Add(person);
-                ShowMessage(result.Item1, person);
-            }
-            else
-            {
-                Person person = null;
-                ShowMessage(result.Item1, person);
-            }
-        }
-
-        internal static (bool, EnumMaritalStatus) ValidateMaritalStatus(string maritalStatus)
-        {
-            // Validar se o input é correto de acordo com a enum
-            // true: ignora o case do input, aceita 'Single' e 'single'
-            bool isValid = Enum.TryParse(maritalStatus, true, out EnumMaritalStatus status);
-
-            return (isValid, status);
-        }
-
-        internal static void ShowMessage(bool status, Person person)
-        { 
-            if (status)
-            {
-                Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status {person.MaritalStatus}");
-            }
-            else
-            {
-                Utility.WriteMessage("Invalid marital status entered.", "\n\n");
-            }
-        }
-        
         #endregion
 
         #region Destructor
