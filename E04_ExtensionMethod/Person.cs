@@ -146,12 +146,34 @@ namespace E04_ExtensionMethod
 
             string maritalStatus = Console.ReadLine();
 
+            ValueTuple<bool, EnumMaritalStatus> result = ValidateMaritalStatus(maritalStatus);
+
+            if (result.Item1)
+            {
+                Person person = new Person(name, result.Item2);
+                listPerson.Add(person);
+                ShowMessage(result.Item1, person);
+            }
+            else
+            {
+                Person person = null;
+                ShowMessage(result.Item1, person);
+            }
+        }
+
+        internal static (bool, EnumMaritalStatus) ValidateMaritalStatus(string maritalStatus)
+        {
             // Validar se o input é correto de acordo com a enum
             // true: ignora o case do input, aceita 'Single' e 'single'
-            if (Enum.TryParse(maritalStatus, true, out EnumMaritalStatus status))
+            bool isValid = Enum.TryParse(maritalStatus, true, out EnumMaritalStatus status);
+
+            return (isValid, status);
+        }
+
+        internal static void ShowMessage(bool status, Person person)
+        { 
+            if (status)
             {
-                Person person = new Person(name, status);
-                listPerson.Add(person);
                 Utility.WriteMessage($"Person '{person.Name}' inserted successfully with ID '{person.Id}' and marital status {person.MaritalStatus}");
             }
             else
@@ -159,7 +181,6 @@ namespace E04_ExtensionMethod
                 Utility.WriteMessage("Invalid marital status entered.", "\n\n");
             }
         }
-
         
         #endregion
 
