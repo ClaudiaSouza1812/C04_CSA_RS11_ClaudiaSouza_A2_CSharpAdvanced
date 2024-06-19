@@ -82,7 +82,7 @@ namespace E04_ExtensionMethod
         internal string FirstName
         {
             get { return firstName; }
-            set { lastName = value; }
+            set { firstName = value; }
         }
         #endregion
 
@@ -131,6 +131,11 @@ namespace E04_ExtensionMethod
         {
             Id = NextId++;
             FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            MaritalStatus = maritalStatus;  
+            EyeColor = eyeColor;
+            HairColor = hairColor;
         }
 
         // Terceiro construtor com inserção de parâmetros obrigatórios
@@ -179,13 +184,12 @@ namespace E04_ExtensionMethod
 
         internal static (string, EnumMaritalStatus) GetPersonInformation()
         {
-            Console.Clear();
             Utility.WriteTitle("Enter the Person information", "\n", "\n\n");
 
             Utility.WriteMessage("Name: ");
             string name = Console.ReadLine();
 
-            Utility.WriteMessage("Marital status (Single, Married, Divorced, Widowed): ", "", "\n");
+            Utility.WriteMessage("Marital status (Single, Married, Divorced, Widowed): ");
             string maritalStatus = Console.ReadLine();
 
             (bool, EnumMaritalStatus) isMaritalStatus = ValidateMaritalStatus(maritalStatus);
@@ -193,12 +197,14 @@ namespace E04_ExtensionMethod
             if (isMaritalStatus.Item1)
             {
                 return (name, isMaritalStatus.Item2);
+
             }
             else
             {
                 ShowMessage(false, null);
                 return (name, EnumMaritalStatus.Single);
             }
+            
         }
         
         //
