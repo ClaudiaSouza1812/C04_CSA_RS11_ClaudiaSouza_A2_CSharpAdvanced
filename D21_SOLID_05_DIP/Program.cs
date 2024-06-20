@@ -1,5 +1,6 @@
 ﻿using D00_Utility;
 using D21_SOLID_05_DIP.Classes;
+using D21_SOLID_05_DIP.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +15,11 @@ namespace D21_SOLID_05_DIP
         {
             Utility.SetUnicodeConsole();
 
+            #region Person
+
             // Repositories
             IPersonRepository personRepository = new PersonRepository();
-            INameFormatter nameFormatter = new FullNameFormatter();
+            INameFormatter nameFormatter = new NameFormatter();
             PersonService personService = new PersonService(personRepository, nameFormatter);
 
             // Add person
@@ -28,7 +31,28 @@ namespace D21_SOLID_05_DIP
             string formattedName = personService.GetFormattedName("Milena", "Reis e Sousa");
             Utility.WriteMessage($"Formatted name: {formattedName}");
 
+            #endregion
 
+            #region Employee
+
+            // Repositories
+            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            IEmployeeNameFormatter employeeNameFormatter = new EmployeeNameFormatter();
+            EmployeeService employeeService = new EmployeeService(employeeRepository, employeeNameFormatter);
+
+            // Add employee
+            Employee employee = new Employee("Claudia", "Souza", 31);
+            employeeService.AddEmployee(employee);
+
+            // Get employee formatted name
+            string employeeFormattedName = employeeService.GetEmployeeFormattedName(employee.EmployeeID);
+
+            Utility.WriteMessage($"Formatted employee name: {employeeFormattedName}");
+
+            #endregion
+
+            // Person com o nome formatado
+            // Employee com o nome formatado
 
             Utility.TerminateConsole();
         }

@@ -11,6 +11,6 @@ namespace D21_SOLID_05_DIP
     {
         void AddEmployee(Employee employee);
 
-        Employee GetEmployee(string employeeId);
+        Employee GetEmployee(int employeeId);
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace D21_SOLID_05_DIP
 {
-    internal class FullNameFormatter : INameFormatter
+    internal class NameFormatter : INameFormatter
     {
         public string FormatName(Person person)
         {
-            throw new NotImplementedException();
+            return $"{person.FirstName} {person.LastName}";
         }
     }
 }

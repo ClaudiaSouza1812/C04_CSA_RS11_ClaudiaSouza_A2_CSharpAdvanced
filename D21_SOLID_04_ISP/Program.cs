@@ -1,4 +1,14 @@
-﻿using System;
+﻿/*
+    SOLID
+    ISP
+    Interface Segregation Principle
+    
+    Criar interfaces específicas para as classes derivadas
+    Exemplo: criar interfaces separadas para ações concretas
+*/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

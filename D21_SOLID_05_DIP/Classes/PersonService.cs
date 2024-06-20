@@ -25,6 +25,7 @@ namespace D21_SOLID_05_DIP
         public string GetFormattedName(string firstName, string lastName)
         { 
             var person = _personRepository.GetPerson(firstName, lastName);
+
             return _nameFormatter.FormatName(person);
         }
     }

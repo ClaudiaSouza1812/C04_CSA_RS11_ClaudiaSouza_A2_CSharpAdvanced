@@ -8,16 +8,16 @@ namespace D21_SOLID_05_DIP.Classes
 {
     internal class PersonRepository : IPersonRepository
     {
-        private readonly List<Person> _person = new List<Person>();
+        private readonly List<Person> _people = new List<Person>();
 
         public void AddPerson(Person person)
         {
-            _person.Add(person);
+            _people.Add(person);
         }
 
         public Person GetPerson(string firstName, string lastName)
         {
-            return _person.FirstOrDefault(p => p.FirstName == firstName && p.LastName == lastName);
+            return _people.FirstOrDefault(p => p.FirstName == firstName && p.LastName == lastName);
         }
     }
 }
