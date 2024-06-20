@@ -54,9 +54,7 @@ namespace D21_SOLID_05_DIP
 
             #endregion
 
-            // Person com o nome formatado
-            // Employee com o nome formatado
-
+         
             Utility.TerminateConsole();
         }
     }
