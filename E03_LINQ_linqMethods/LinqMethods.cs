@@ -22,17 +22,23 @@ namespace E03_LINQ_linqMethods
         {
             CreateListTimespan();
 
-            Utility.WriteTitle("MethodAndQuerySyntax - Cities and Customers", "", "\n\n");
+            Utility.WriteTitle("Method And Query Syntax - Cities and Customers", "", "\n\n");
 
-            FindAllTimespans();
+            ListTimespans(timespanList);
 
-            ListTimespans();
+            FindAllTimespansMethodSintax();
 
-            ExistNumber();
+            ExistNumberMethodSintax();
 
-            Between0and24();
+            Between0and24MethodSintax();
 
-            ReturnHour();
+            ReturnHourMethodSintax();
+
+            FindAllTimespansQuerySintax();
+
+            ExistNumberQuerySintax();
+
+            Between0and24QuerySintax();
 
         }
 
@@ -66,29 +72,46 @@ namespace E03_LINQ_linqMethods
 
         #region 1.2.  Usar  FindAll()  para  localizar  todas  as  timespans  inferiores  a  12 horas.
 
+        #region Method sintax
+
         // var timesList = timepanList.FindAll(t => t < new TimeSpan(12, 0, 0));
 
-        internal void FindAllTimespans()
+        internal void FindAllTimespansMethodSintax()
         {
-            Utility.WriteTitle("Usar  FindAll()  para  localizar  todas  as  timespans  inferiores  a  12 horas.", "", "\n\n");
+            Utility.WriteTitle("Usar  FindAll()  para  localizar  todas  as  timespans  inferiores  a  12 horas - MethodSintax", "", "\n\n");
 
             var timesList = timespanList.FindAll(t => t.Hours < 12);
 
-            foreach (var item in timesList)
-            {
-                Utility.WriteMessage(item.ToString(), "", "\n");
-            };
+            ListTimespans(timesList);
 
         }
 
         #endregion
 
+        #region Query sintax
+
+        internal void FindAllTimespansQuerySintax()
+        {
+            Utility.WriteTitle("Localizar  todas  as  timespans  inferiores  a  12 horas - QuerySintax", "", "\n\n");
+
+            var timeList =
+                from t in timespanList
+                where t.Hours < 12
+                select t;
+
+            ListTimespans(timeList);
+        }
+        #endregion
+
+        #endregion
+
         #region 1.3.  Usar Exists() para verificar se alguma timespan tiver 5 na propriedade Hours.
 
+        #region Method sintax
 
-        internal void ExistNumber()
+        internal void ExistNumberMethodSintax()
         {
-            Utility.WriteTitle("Usar Exists() para verificar se alguma timespan tiver 5 na propriedade Hours.", "\n", "\n\n");
+            Utility.WriteTitle("Usar Exists() para verificar se alguma timespan tiver 5 na propriedade Hours - MethodSintax", "\n", "\n\n");
 
             var exist = timespanList.Exists(t => t.Hours == 5);
 
@@ -98,10 +121,31 @@ namespace E03_LINQ_linqMethods
 
                 var timeList = timespanList.FindAll(t => t.Hours == 5);
 
-                foreach (TimeSpan time in timeList)
-                {
-                    Utility.WriteMessage(time.ToString(), "", "\n");
-                }            
+                ListTimespans(timeList);
+            }
+            else
+            {
+                Utility.WriteMessage("Não existem timespans com '5' na hora.");
+            }
+        }
+        #endregion
+
+        #region Query sintax
+
+        internal void ExistNumberQuerySintax()
+        {
+            Utility.WriteTitle("Verificar se alguma timespan tiver 5 na propriedade Hours - QuerySintax", "\n", "\n\n");
+
+            var timeList =
+                from t in timespanList
+                where t.Hours == 5
+                select t;
+
+            if (timeList.Any())
+            {
+                Utility.WriteMessage("As timespans com '5' na hora são:", "", "\n");
+
+                ListTimespans(timeList);
             }
             else
             {
@@ -111,39 +155,66 @@ namespace E03_LINQ_linqMethods
 
         #endregion
 
+        #endregion
+
         #region 1.4. Usar TrueForAll() para garantir que todas as timespans estão entre 0 e 24 horas.
 
+        #region Method sintax
 
-        internal void Between0and24()
+        internal void Between0and24MethodSintax()
         {
-            Utility.WriteTitle("Usar TrueForAll() para garantir que todas as timespans estão entre 0 e 24 horas.", "\n", "\n\n");
+            Utility.WriteTitle("Usar TrueForAll() para garantir que todas as timespans estão entre 0 e 24 horas - MethodSintax", "\n", "\n\n");
 
             var isAllTrue = timespanList.TrueForAll(t => t.Hours >= 0 && t.Hours <= 24);
 
-            if (!isAllTrue) 
+            if (!isAllTrue)
             {
                 Utility.WriteMessage("As timespans fora do range entre 0 e 24 horas são:", "", "\n");
 
                 var timeList = timespanList.Where(t => t.Hours < 0 || t.Hours > 24).ToList();
 
-                foreach (TimeSpan time in timeList)
-                {
-                    Utility.WriteMessage(time.ToString(), "", "\n");
-                }
+                ListTimespans(timeList);
             }
             else
             {
                 Utility.WriteMessage("Todas as horas dentro do range entre 0 e 24 horas");
             }
         }
+        #endregion
+
+        #region Query sintax
+
+        internal void Between0and24QuerySintax()
+        {
+            Utility.WriteTitle("Garantir que todas as timespans estão entre 0 e 24 horas - QuerySintax", "\n", "\n\n");
+
+            var timeList =
+                from t in timespanList
+                where t.TotalHours < 0 || t.TotalHours > 24
+                select t;
+
+            if (timeList.Any())
+            {
+                Utility.WriteMessage("As timespans fora do range entre 0 e 24 horas são:", "", "\n");
+
+                ListTimespans(timeList);
+            }
+            else
+            {
+                Utility.WriteMessage("Todas as horas dentro do range entre 0 e 24 horas");
+            }
+        }
+        #endregion
 
         #endregion
 
         #region 1.5. Usar  ConvertAll()  para  retornar  só  a  parte  de  Hours  de  cada timespan.
 
-        internal void ReturnHour()
+        #region Method sintax
+
+        internal void ReturnHourMethodSintax()
         {
-            Utility.WriteTitle("Usar  ConvertAll()  para  retornar  só  a  parte  de  Hours  de  cada timespan.", "\n", "\n\n");
+            Utility.WriteTitle("Usar  ConvertAll()  para  retornar  só  a  parte  de  Hours  de  cada timespan - MethodSintax", "\n", "\n\n");
 
             var timeList = timespanList.ConvertAll(t => t.Hours);
 
@@ -152,12 +223,19 @@ namespace E03_LINQ_linqMethods
                 Utility.WriteMessage(time.ToString(), "", "\n");
             }
         }
+        #endregion
+
+        #region Query sintax
+
+
+
+        #endregion
 
         #endregion
 
         #region Listar timespans
 
-        internal void ListTimespans()
+        internal void ListTimespans(IEnumerable<TimeSpan> timespanList)
         {
             Utility.WriteTitle("Lista de timespans", "", "\n");
 
