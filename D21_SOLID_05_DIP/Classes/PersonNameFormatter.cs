@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace D21_SOLID_05_DIP
 {
-    internal class NameFormatter : INameFormatter
+    internal class PersonNameFormatter : IPersonNameFormatter
     {
         public string FormatName(Person person)
         {

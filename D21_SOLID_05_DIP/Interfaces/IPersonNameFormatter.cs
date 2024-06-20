@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace D21_SOLID_05_DIP
 {
-    internal interface INameFormatter
+    internal interface IPersonNameFormatter
     {
         string FormatName(Person person);
     }
