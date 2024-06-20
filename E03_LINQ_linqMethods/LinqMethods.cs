@@ -40,6 +40,8 @@ namespace E03_LINQ_linqMethods
 
             Between0and24QuerySintax();
 
+            ReturnHourQuerySintax();
+
         }
 
         #endregion
@@ -61,11 +63,15 @@ namespace E03_LINQ_linqMethods
 
             int maxMinutes = (int)(end - start).TotalMinutes;
 
+            timespanList = Enumerable.Range(0, 10).Select(_ => start.Add(TimeSpan.FromMinutes(random.Next(maxMinutes)))).ToList();
+
+            /*
             for (int i = 0; i < 10; i++)
             {
                 int minutes = random.Next(maxMinutes);
                 timespanList.Add(start.Add(TimeSpan.FromMinutes(minutes)));
             }
+            */
         }
 
         #endregion
@@ -218,16 +224,22 @@ namespace E03_LINQ_linqMethods
 
             var timeList = timespanList.ConvertAll(t => t.Hours);
 
-            foreach (int time in timeList)
-            {
-                Utility.WriteMessage(time.ToString(), "", "\n");
-            }
+            ListTimespans(timeList);
         }
         #endregion
 
         #region Query sintax
 
+        internal void ReturnHourQuerySintax()
+        {
+            Utility.WriteTitle("Retornar  só  a  parte  de  Hours  de  cada timespan - QuerySintax", "\n", "\n\n");
 
+            var timeList =
+                from t in timespanList
+                select t.Hours;
+
+            ListTimespans(timeList);
+        }
 
         #endregion
 
@@ -236,6 +248,16 @@ namespace E03_LINQ_linqMethods
         #region Listar timespans
 
         internal void ListTimespans(IEnumerable<TimeSpan> timespanList)
+        {
+            Utility.WriteTitle("Lista de timespans", "", "\n");
+
+            foreach (var item in timespanList)
+            {
+                Utility.WriteMessage(item.ToString(), "", "\n");
+            }
+        }
+
+        internal void ListTimespans(IEnumerable<int> timespanList)
         {
             Utility.WriteTitle("Lista de timespans", "", "\n");
 
