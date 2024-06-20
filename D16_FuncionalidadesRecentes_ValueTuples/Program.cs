@@ -38,6 +38,8 @@ namespace D16_FuncionalidadesRecentes_ValueTuples
 
             (string, int) student07 = ("Claudia", 31);
 
+            (string, int) student09 = ValueTuple.Create("Paula", 39);
+
             MyValueTuple.ListValueTuple(student07);
 
             var student8 = MyValueTuple.ReturnValueTuple();

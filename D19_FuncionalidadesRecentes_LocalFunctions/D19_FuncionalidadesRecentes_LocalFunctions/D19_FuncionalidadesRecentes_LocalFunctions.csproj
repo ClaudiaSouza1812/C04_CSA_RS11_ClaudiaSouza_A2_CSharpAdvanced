@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2452BAD4-0566-476A-B8A6-DC6B801D9E32}</ProjectGuid>
+    <ProjectGuid>{B2FADE40-C28E-4199-8574-E56E24C10382}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D20_FuncionalidadesRecentes_Discards</RootNamespace>
-    <AssemblyName>D20_FuncionalidadesRecentes_Discards</AssemblyName>
+    <RootNamespace>D19_FuncionalidadesRecentes_LocalFunctions</RootNamespace>
+    <AssemblyName>D19_FuncionalidadesRecentes_LocalFunctions</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassDiscard.cs" />
-    <Compile Include="ClassDiscardDeconstructor.cs" />
+    <Compile Include="ClassLocalFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

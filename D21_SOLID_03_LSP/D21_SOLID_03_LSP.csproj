@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2452BAD4-0566-476A-B8A6-DC6B801D9E32}</ProjectGuid>
+    <ProjectGuid>{4A7E5F2D-5C80-47B5-AA82-B103B3BF8398}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D20_FuncionalidadesRecentes_Discards</RootNamespace>
-    <AssemblyName>D20_FuncionalidadesRecentes_Discards</AssemblyName>
+    <RootNamespace>D21_SOLID_03_LSP</RootNamespace>
+    <AssemblyName>D21_SOLID_03_LSP</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassDiscard.cs" />
-    <Compile Include="ClassDiscardDeconstructor.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="FullNameFormatter.cs" />
+    <Compile Include="INameFormatter.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,7 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
-      <Project>{d7f06a26-2224-4d22-aef5-2fc0c3615bf4}</Project>
+      <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
       <Name>D00_Utility</Name>
     </ProjectReference>
   </ItemGroup>

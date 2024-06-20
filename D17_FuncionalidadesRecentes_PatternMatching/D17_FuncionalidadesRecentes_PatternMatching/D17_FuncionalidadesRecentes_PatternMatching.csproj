@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2452BAD4-0566-476A-B8A6-DC6B801D9E32}</ProjectGuid>
+    <ProjectGuid>{5FACC695-242F-4C11-9B52-A2D99AF0C830}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D20_FuncionalidadesRecentes_Discards</RootNamespace>
-    <AssemblyName>D20_FuncionalidadesRecentes_Discards</AssemblyName>
+    <RootNamespace>D17_FuncionalidadesRecentes_PatternMatching</RootNamespace>
+    <AssemblyName>D17_FuncionalidadesRecentes_PatternMatching</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClassDiscard.cs" />
-    <Compile Include="ClassDiscardDeconstructor.cs" />
+    <Compile Include="ClassSwitchPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

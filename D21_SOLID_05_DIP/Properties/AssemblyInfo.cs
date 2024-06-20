@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("D20_FuncionalidadesRecentes_Discards")]
+[assembly: AssemblyTitle("D21_SOLID_05_DIP")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("D20_FuncionalidadesRecentes_Discards")]
+[assembly: AssemblyProduct("D21_SOLID_05_DIP")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("59f3bdf7-7431-4573-8d75-d3f9efecd024")]
+[assembly: Guid("5d325ce5-0099-4d5a-bd40-04da03c765d9")]
 
 // Version information for an assembly consists of the following four values:
 //
