@@ -27,9 +27,10 @@ namespace D21_SOLID_05_DIP
             personService.AddPerson(person);
 
             // Get person formatted name
+            Utility.WriteTitle("Person name Formatted", "", "\n");
 
             string formattedName = personService.GetFormattedName("Milena", "Reis e Sousa");
-            Utility.WriteMessage($"Formatted name: {formattedName}");
+            Utility.WriteMessage($"Formatted name: {formattedName}", "", "\n");
 
             #endregion
 
@@ -45,9 +46,11 @@ namespace D21_SOLID_05_DIP
             employeeService.AddEmployee(employee);
 
             // Get employee formatted name
+            Utility.WriteTitle("Employee name Formatted", "", "\n");
+
             string employeeFormattedName = employeeService.GetEmployeeFormattedName(employee.EmployeeID);
 
-            Utility.WriteMessage($"Formatted employee name: {employeeFormattedName}");
+            Utility.WriteMessage($"Formatted employee name: {employeeFormattedName}", "", "\n");
 
             #endregion
 
