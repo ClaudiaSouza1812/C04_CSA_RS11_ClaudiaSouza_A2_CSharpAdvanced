@@ -19,8 +19,8 @@ namespace D21_SOLID_05_DIP
 
             // Repositories
             IPersonRepository personRepository = new PersonRepository();
-            INameFormatter nameFormatter = new NameFormatter();
-            PersonService personService = new PersonService(personRepository, nameFormatter);
+            IPersonNameFormatter personNameFormatter = new PersonNameFormatter();
+            PersonService personService = new PersonService(personRepository, personNameFormatter);
 
             // Add person
             Person person = new Person("Milena", "Reis e Sousa", 56);

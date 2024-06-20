@@ -47,11 +47,11 @@
     <Compile Include="Classes\EmployeeNameFormatter.cs" />
     <Compile Include="Classes\EmployeeRepository.cs" />
     <Compile Include="Classes\EmployeeService.cs" />
-    <Compile Include="Classes\NameFormatter.cs" />
+    <Compile Include="Classes\PersonNameFormatter.cs" />
     <Compile Include="Classes\PersonRepository.cs" />
     <Compile Include="Interfaces\IEmployeeNameFormatter.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
-    <Compile Include="Interfaces\INameFormatter.cs" />
+    <Compile Include="Interfaces\IPersonNameFormatter.cs" />
     <Compile Include="Interfaces\IPersonRepository.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\PersonService.cs" />

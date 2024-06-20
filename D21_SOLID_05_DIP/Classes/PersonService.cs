@@ -9,12 +9,12 @@ namespace D21_SOLID_05_DIP
     internal class PersonService
     {
         private readonly IPersonRepository _personRepository;
-        private readonly INameFormatter _nameFormatter;
+        private readonly IPersonNameFormatter _personNameFormatter;
 
-        public PersonService(IPersonRepository personRepository, INameFormatter nameFormatter)
+        public PersonService(IPersonRepository personRepository, IPersonNameFormatter personNameFormatter)
         {
             _personRepository = personRepository;
-            _nameFormatter = nameFormatter;
+            _personNameFormatter = personNameFormatter;
         }
 
         public void AddPerson(Person person)
@@ -26,7 +26,7 @@ namespace D21_SOLID_05_DIP
         { 
             var person = _personRepository.GetPerson(firstName, lastName);
 
-            return _nameFormatter.FormatName(person);
+            return _personNameFormatter.FormatName(person);
         }
     }
 }
