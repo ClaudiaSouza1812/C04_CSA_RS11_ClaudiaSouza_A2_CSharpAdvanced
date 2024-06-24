@@ -3,6 +3,7 @@ using E01_OOP_Vehicle_v1.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -59,6 +60,32 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #region PennantNumber
 
+            GetPennantNumber();
+
+            #endregion
+
+            #region WaterVehicleType
+
+            GetWaterVehicleType();
+
+            #endregion
+
+            #region WaterVehicleBrand
+
+            GetVehicleBrand();
+
+            #endregion
+
+            #region WaterVehicleModel
+
+            GetVehicleModel();
+
+            #endregion
+
+        }
+
+        internal void GetPennantNumber()
+        {
             string pennantNumber;
             do
             {
@@ -76,12 +103,10 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
 
             } while (pennantNumber == string.Empty);
+        }
 
-
-            #endregion
-
-            #region WaterVehicleType
-
+        internal void GetWaterVehicleType()
+        {
             Utility.WriteMessage("Type: ");
 
             string type = Console.ReadLine();
@@ -94,11 +119,10 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumWaterVehicleType.Submarine}", "\n", "\n\n");
             }
+        }
 
-            #endregion
-
-            #region WaterVehicleBrand
-
+        public override void GetVehicleBrand()
+        {
             Utility.WriteMessage("Brand: ");
 
             string brand = Console.ReadLine();
@@ -111,11 +135,10 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumWaterVehicleBrand.Beneteau}", "\n", "\n\n");
             }
+        }
 
-            #endregion
-
-            #region WaterVehicleModel
-
+        public override void GetVehicleModel()
+        {
             Utility.WriteMessage("Model: ");
 
             string model = Console.ReadLine();
@@ -128,17 +151,14 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleModel.Oceanis}", "\n", "\n\n");
             }
-
-            #endregion
-
         }
+
 
         public override void StartVehicle()
         {
             Utility.WriteMessage($"Starting the {WaterVehicleType}.", "\n", "\n");
 
         }
-
 
         // Polimorphism with Inheritance and Override method
         // Override the Vehicle method changing its speed and specifying the vehicle name
@@ -157,22 +177,6 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth} meters.", "", "\n");
         }
 
-        public void Emerge()
-        {
-            CurrentDepth = 0.0;
-
-            Utility.WriteMessage($"The {WaterVehicleType} emerged and reached the surface successfully.", "", "\n");
-
-        }
-
-        public override void StopVehicle()
-        {
-            Utility.WriteMessage($"The {WaterVehicleType} is stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
-
-            CurrentSpeed = 0;
-        }
-
-       
         internal double GetSubmarineDepth()
         {
             double depth;
@@ -198,7 +202,6 @@ namespace E01_OOP_Vehicle_v1.Classes
             return depth;
         }
 
-
         internal bool CheckSubmarineDepth(double depth)
         {
             if (depth > MaxDepth)
@@ -208,7 +211,20 @@ namespace E01_OOP_Vehicle_v1.Classes
             return true;
         }
 
-        
+        public void Emerge()
+        {
+            CurrentDepth = 0.0;
+
+            Utility.WriteMessage($"The {WaterVehicleType} emerged and reached the surface successfully.", "", "\n");
+
+        }
+
+        public override void StopVehicle()
+        {
+            Utility.WriteMessage($"The {WaterVehicleType} is stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
+
+            CurrentSpeed = 0;
+        }
 
         #endregion
 

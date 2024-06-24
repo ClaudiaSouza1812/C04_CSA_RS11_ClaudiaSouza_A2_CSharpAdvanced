@@ -108,6 +108,10 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage("Starting the vehicle.", "\n", "\n");
         }
 
+        public abstract void GetVehicleBrand();
+
+        public abstract void GetVehicleModel();
+
         public abstract void StopVehicle();
 
         #endregion

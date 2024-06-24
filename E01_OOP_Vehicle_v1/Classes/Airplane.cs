@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Deployment.Internal;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,31 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #region PlaneRegistration
 
+            GetPlaneRegistration();
+
+            #endregion
+
+            #region AirVehicleType
+
+            GetPlaneType();
+
+            #endregion
+
+            #region AirVehicleBrand
+
+            GetVehicleBrand();
+
+            #endregion
+
+            #region AirVehicleModel
+
+            GetVehicleModel();
+
+            #endregion
+        }
+
+        internal void GetPlaneRegistration()
+        {
             string planeRegistration;
             do
             {
@@ -76,12 +102,10 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
 
             } while (planeRegistration == string.Empty);
+        }
 
-
-            #endregion
-
-            #region AirVehicleType
-
+        internal void GetPlaneType()
+        {
             Utility.WriteMessage("Type: ");
 
             string type = Console.ReadLine();
@@ -94,29 +118,26 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumAirVehicleType.Airplane}", "\n", "\n\n");
             }
+        }
 
-            #endregion
-
-
-            #region AirVehicleBrand
-
+        public override void GetVehicleBrand()
+        {
             Utility.WriteMessage("Brand: ");
 
             string brand = Console.ReadLine();
 
-            if (Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand)) 
+            if (Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand))
             {
                 AirVehicleBrand = planeBrand;
             }
-            else 
+            else
             {
                 Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n\n");
             }
+        }
 
-            #endregion
-
-            #region AirVehicleModel
-
+        public override void GetVehicleModel()
+        {
             Utility.WriteMessage("Model: ");
 
             string model = Console.ReadLine();
@@ -129,10 +150,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleModel.Phenom}", "\n", "\n\n");
             }
-
-            #endregion
         }
-
 
         // Polimorphism with Inheritance and Override method
         // Override the Vehicle method specifying the vehicle name

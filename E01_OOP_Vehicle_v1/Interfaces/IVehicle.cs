@@ -26,10 +26,12 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         #region Methods
 
-        #region IVehicle own methods to be inherited by other interfaces and classes
+        #region IVehicle own methods to be inherited and implemented by other interfaces and classes
 
         // declara intenção dos métodos que pertencem a IVehicle
         void CreateVehicle();
+        void GetVehicleBrand();
+        void GetVehicleModel();
         void StartVehicle();
         void MoveVehicle();
         void StopVehicle();
