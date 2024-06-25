@@ -181,6 +181,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid type entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isType);
         }
@@ -218,6 +219,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isBrand);
             
@@ -256,6 +258,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isModel);
             
@@ -286,6 +289,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             else
             { 
                 Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot dive.", "", "\n");
+                Utility.PauseConsole();
             }
         }
 
@@ -320,6 +324,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 depth = 0.0;
                 Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot dive.", "", "\n");
+                Utility.PauseConsole();
             }   
             
             return depth;
@@ -345,6 +350,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             else
             {
                 Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot emerge.", "", "\n");
+                Utility.PauseConsole();
             }
         }
 

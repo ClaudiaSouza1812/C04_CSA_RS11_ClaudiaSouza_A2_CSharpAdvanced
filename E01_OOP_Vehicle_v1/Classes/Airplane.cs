@@ -180,6 +180,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid type entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isType);
         }
@@ -217,6 +218,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isBrand);
         }
@@ -254,6 +256,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isModel);
             

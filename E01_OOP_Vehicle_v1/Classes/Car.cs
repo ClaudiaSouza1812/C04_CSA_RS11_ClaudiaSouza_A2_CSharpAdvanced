@@ -216,6 +216,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isBrand);
         }
@@ -253,6 +254,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isModel);
             
@@ -291,6 +293,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid color entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isColor);
         }
@@ -328,6 +331,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 else
                 {
                     Utility.WriteMessage($"Invalid number of doors entered. Choose one of the options.", "\n", "\n\n");
+                    Utility.PauseConsole();
                 }
             } while (!isDoor);
             
@@ -365,7 +369,6 @@ namespace E01_OOP_Vehicle_v1.Classes
             CurrentSpeed = 50;
 
             Utility.WriteMessage($"Car in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
-
         }
 
 
