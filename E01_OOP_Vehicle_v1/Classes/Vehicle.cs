@@ -51,8 +51,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public abstract void MoveVehicle();
 
-        public abstract void GetVehicleYear();
-
         public abstract void StopVehicle();
 
         public abstract void ListVehicle();
@@ -61,7 +59,36 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public abstract void GetVehicleModel();
 
-        
+        // Checar com Milena
+        public virtual void GetVehicleYear()
+        {
+            bool isYear;
+            int year;
+
+            do
+            {
+                Utility.WriteMessage("Vehicle fabrication year: ");
+
+                string answer = Console.ReadLine();
+
+                isYear = int.TryParse(answer, out year);
+
+                if (!isYear)
+                {
+                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+                else if (!VehicleUtility.CheckVehicleYear(year))
+                {
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
+                    isYear = false;
+                }
+
+            } while (!isYear);
+
+            VehicleYear = year;
+        }
 
         #endregion
 

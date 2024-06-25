@@ -20,7 +20,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumWaterVehicleModel WaterVehicleModel { get; set; }
         public EnumWaterVehicleType WaterVehicleType { get; set; }
 
-        public override string FullVehicle => $"{base.FullVehicle}\nPennant number: {PennantNumber}\nCurrent depth: {CurrentDepth}\nMaximum depth: {MaxDepth}.";
+        public override string FullVehicle => $"{base.FullVehicle}\nPennant number: {PennantNumber}\nCurrent depth: {CurrentDepth}\nMaximum depth: {MaxDepth}\nBrand: {WaterVehicleBrand}\nModel: {WaterVehicleModel}\nType: {WaterVehicleType}";
         #endregion
 
         #region Constructors
@@ -56,11 +56,11 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override void CreateVehicle()
         {
-            Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
+            Utility.WriteTitle("Create Water Vehicle", "", "\n\n");
 
             #region WaterVehicleYear
 
-            GetVehicleYear();
+            base.GetVehicleYear();
 
             #endregion
 
@@ -90,40 +90,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         }
 
-        public override void GetVehicleYear()
-        {
-            bool isYear;
-            int year;
-
-            do
-            {
-                Console.Clear();
-
-                Utility.WriteTitle("Create Water Vehicles", "", "\n\n");
-
-                Utility.WriteMessage("Water Vehicle fabrication year: ");
-
-                string answer = Console.ReadLine();
-
-                isYear = int.TryParse(answer, out year);
-
-                if (!isYear)
-                {
-                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
-                    Utility.PauseConsole();
-                }
-                else if (!VehicleUtility.CheckVehicleYear(year))
-                {
-                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
-                    Utility.PauseConsole();
-                    isYear = false;
-                }
-
-            } while (!isYear);
-
-            VehicleYear = year;
-        }
-
+        
         internal void GetPennantNumber()
         {
             string pennantNumber;

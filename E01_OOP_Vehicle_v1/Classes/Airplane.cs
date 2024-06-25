@@ -60,7 +60,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #region AirVehicleYear
 
-            GetVehicleYear();
+            base.GetVehicleYear();
 
             #endregion
 
@@ -87,40 +87,6 @@ namespace E01_OOP_Vehicle_v1.Classes
             GetVehicleModel();
 
             #endregion
-        }
-
-        public override void GetVehicleYear()
-        {
-            bool isYear;
-            int year;
-
-            do
-            {
-                Console.Clear();
-
-                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
-
-                Utility.WriteMessage("Air Vehicle fabrication year: ");
-
-                string answer = Console.ReadLine();
-
-                isYear = int.TryParse(answer, out year);
-
-                if (!isYear)
-                {
-                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
-                    Utility.PauseConsole();
-                }
-                else if (!VehicleUtility.CheckVehicleYear(year))
-                {
-                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
-                    Utility.PauseConsole();
-                    isYear = false;
-                }
-
-            } while (!isYear);
-
-            VehicleYear = year;
         }
 
         internal void GetPlaneRegistration()
