@@ -30,12 +30,12 @@ namespace E01_OOP_Vehicle_v1.Interfaces
 
         // declara intenção dos métodos que pertencem a IVehicle
         void CreateVehicle();
-        void GetVehicleBrand();
-        void GetVehicleModel();
         void StartVehicle();
         void MoveVehicle();
         void StopVehicle();
         // checar com Milena
+        void GetVehicleBrand();
+        void GetVehicleModel();
         void ListVehicle();
 
         #endregion

@@ -20,7 +20,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumAirVehicleModel AirVehicleModel { get; set; }
         public EnumAirVehicleType AirVehicleType { get; set; }
 
-        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPlane registration: {PlaneRegistration}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}\nCurrent altitude: {CurrentAltitude}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
+        public override string FullVehicle => $"{base.FullVehicle}\nPlane registration: {PlaneRegistration}\nCurrent altitude: {CurrentAltitude}\nMax altitude: {MaxAltitude:F3} feet\nBrand: {AirVehicleBrand}\nModel: {AirVehicleModel}\nType: {AirVehicleType}.";
 
         #endregion
 
@@ -56,9 +56,15 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override void CreateVehicle()
         {
-            base.CreateVehicle();
+            Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
 
-            #region PlaneRegistration
+            #region AirVehicleYear
+
+            GetVehicleYear();
+
+            #endregion
+
+            #region AirVehicleRegistration
 
             GetPlaneRegistration();
 
@@ -83,6 +89,40 @@ namespace E01_OOP_Vehicle_v1.Classes
             #endregion
         }
 
+        public override void GetVehicleYear()
+        {
+            bool isYear;
+            int year;
+
+            do
+            {
+                Console.Clear();
+
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
+                Utility.WriteMessage("Air Vehicle fabrication year: ");
+
+                string answer = Console.ReadLine();
+
+                isYear = int.TryParse(answer, out year);
+
+                if (!isYear)
+                {
+                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+                else if (!VehicleUtility.CheckVehicleYear(year))
+                {
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
+                    isYear = false;
+                }
+
+            } while (!isYear);
+
+            VehicleYear = year;
+        }
+
         internal void GetPlaneRegistration()
         {
             string planeRegistration;
@@ -104,20 +144,38 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (planeRegistration == string.Empty);
         }
 
+        internal void ShowAirVehicles()
+        {
+            Utility.WriteTitle("Available Air Vehicle Types: ", "", "\n\n");
+
+            foreach (EnumAirVehicleType type in Enum.GetValues(typeof(EnumAirVehicleType)))
+            {
+                Utility.WriteMessage($"{type}\n");
+            }
+        }
+
         internal void GetPlaneType()
         {
-            Utility.WriteMessage("Type: ");
-
-            string type = Console.ReadLine();
-
-            if (Enum.TryParse(type, true, out EnumAirVehicleType planeType))
+            bool isType;
+            do
             {
-                AirVehicleType = planeType;
-            }
-            else
-            {
-                Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumAirVehicleType.Airplane}", "\n", "\n\n");
-            }
+                ShowAirVehicles();
+
+                Utility.WriteMessage("Write the Type: ");
+
+                string type = Console.ReadLine();
+
+                isType = Enum.TryParse(type, true, out EnumAirVehicleType planeType);
+
+                if (isType)
+                {
+                    AirVehicleType = planeType;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid type entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isType);
         }
 
         public override void GetVehicleBrand()
@@ -195,6 +253,12 @@ namespace E01_OOP_Vehicle_v1.Classes
             CurrentSpeed = 0;
         }
 
+        public override void ListVehicle()
+        {
+            Utility.WriteTitle($"{AirVehicleType} Information", "\n", "\n\n");
+
+            Utility.WriteMessage($"{FullVehicle}", "", "\n");
+        }
 
         #endregion
 

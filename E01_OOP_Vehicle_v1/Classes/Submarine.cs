@@ -20,7 +20,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public EnumWaterVehicleModel WaterVehicleModel { get; set; }
         public EnumWaterVehicleType WaterVehicleType { get; set; }
 
-        public override string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nPennant number: {PennantNumber}\nCurrent depth: {CurrentDepth}\nMaximum depth: {MaxDepth}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}.";
+        public override string FullVehicle => $"{base.FullVehicle}\nPennant number: {PennantNumber}\nCurrent depth: {CurrentDepth}\nMaximum depth: {MaxDepth}.";
         #endregion
 
         #region Constructors
@@ -56,9 +56,15 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override void CreateVehicle()
         {
-            base.CreateVehicle();
+            Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
 
-            #region PennantNumber
+            #region WaterVehicleYear
+
+            GetVehicleYear();
+
+            #endregion
+
+            #region WaterVehiclePennantNumber
 
             GetPennantNumber();
 
@@ -82,6 +88,40 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             #endregion
 
+        }
+
+        public override void GetVehicleYear()
+        {
+            bool isYear;
+            int year;
+
+            do
+            {
+                Console.Clear();
+
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
+                Utility.WriteMessage("Air Vehicle fabrication year: ");
+
+                string answer = Console.ReadLine();
+
+                isYear = int.TryParse(answer, out year);
+
+                if (!isYear)
+                {
+                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+                else if (!VehicleUtility.CheckVehicleYear(year))
+                {
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
+                    isYear = false;
+                }
+
+            } while (!isYear);
+
+            VehicleYear = year;
         }
 
         internal void GetPennantNumber()
@@ -224,6 +264,13 @@ namespace E01_OOP_Vehicle_v1.Classes
             Utility.WriteMessage($"The {WaterVehicleType} is stopping, speed from {CurrentSpeed}km/h to: 0km/h.", "", "\n");
 
             CurrentSpeed = 0;
+        }
+
+        public override void ListVehicle()
+        {
+            Utility.WriteTitle($"{WaterVehicleType} Information", "\n", "\n\n");
+
+            Utility.WriteMessage($"{FullVehicle}", "", "\n");
         }
 
         #endregion
