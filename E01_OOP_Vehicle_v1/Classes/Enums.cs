@@ -6,30 +6,6 @@ using System.Threading.Tasks;
 
 namespace E01_OOP_Vehicle_v1.Classes
 {
-    /*
-    internal enum EnumVehicleBrand
-    {
-        Embraer,
-        Boeing,
-        Porsche,
-        Mercedes,
-        Naval,
-        Beneteau
-    }
-
-    internal enum EnumVehicleModel
-    {
-        Phenom,
-        A350,
-        Beluga,
-        Macan,
-        Cayenne,
-        EQC,
-        VirginiaClass,
-        Oceanis,
-        Sundancer
-    }
-    */
     #region Air Vehicles
 
     internal enum EnumAirVehicleBrand

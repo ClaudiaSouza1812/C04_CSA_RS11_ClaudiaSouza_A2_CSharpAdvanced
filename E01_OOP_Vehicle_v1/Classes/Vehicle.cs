@@ -18,7 +18,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         public double CurrentSpeed { get; set; }
         public double MaxSpeed { get; set; }
 
-        public virtual string FullVehicle => $"Vehicle nº: {VehicleId}, Fabrication year: {VehicleYear}, Current speed: {CurrentSpeed}, Maximum speed: {MaxSpeed}, ";
+        public virtual string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}";
 
         #endregion
 
@@ -41,74 +41,27 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
         #endregion
-
-        // métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
+// métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
         // métodos abstratos devem ser implementados nas classes filhas
-
         #region Methods
 
-        public virtual void CreateVehicle()
-        {
-            Utility.WriteTitle("Create Vehicle", "", "\n\n");
+        public abstract void CreateVehicle();
 
-            GetVehicleYear();
-        }
+        public abstract void StartVehicle();
 
-        public void GetVehicleYear()
-        {
-            bool isYear;
-            int year;
+        public abstract void MoveVehicle();
 
-            do
-            {
-                Console.Clear();
-
-                Utility.WriteTitle("Create Vehicle", "", "\n\n");
-
-                Utility.WriteMessage("Vehicle fabrication year: ");
-
-                string answer = Console.ReadLine();
-
-                isYear = int.TryParse(answer, out year);
-
-                if (!isYear)
-                {
-                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
-                    Utility.PauseConsole();
-                }
-                else if (!VehicleUtility.CheckVehicleYear(year))
-                {
-                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
-                    Utility.PauseConsole();
-                    isYear = false;
-                }
-
-            } while (!isYear);
-
-            VehicleYear = year;
-        }
-
-
-        public virtual void MoveVehicle()
-        {
-            CurrentSpeed = 50;
-
-            Utility.WriteMessage($"Vehicle in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
-        }
-
-        public virtual void ListVehicle()
-        {
-            Utility.WriteTitle("Vehicle Information", "\n", "\n\n");
-
-            Utility.WriteMessage($"{FullVehicle}", "", "\n");
-        }
-
-        public virtual void StartVehicle()
-        {
-            Utility.WriteMessage("Starting the vehicle.", "\n", "\n");
-        }
+        public abstract void GetVehicleYear();
 
         public abstract void StopVehicle();
+
+        public abstract void ListVehicle();
+
+        public abstract void GetVehicleBrand();
+
+        public abstract void GetVehicleModel();
+
+        
 
         #endregion
 

@@ -59,8 +59,8 @@ namespace E01_OOP_Vehicle_v1
             car01.StartVehicle();
             car01.MoveVehicle(car01.CurrentSpeed);
             car01.Honk();
-            // car01.StopVehicle();
             car01.Park();
+            car01.StopVehicle();
             Utility.PauseConsole();
 
             #endregion
