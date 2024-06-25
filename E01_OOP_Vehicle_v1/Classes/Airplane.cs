@@ -150,7 +150,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             foreach (EnumAirVehicleType type in Enum.GetValues(typeof(EnumAirVehicleType)))
             {
-                Utility.WriteMessage($"{type}\n");
+                Utility.WriteMessage($"{type}", "", "\n");
             }
         }
 
@@ -161,7 +161,7 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 ShowAirVehicles();
 
-                Utility.WriteMessage("Write the Type: ");
+                Utility.WriteMessage("Write the Type: ", "\n");
 
                 string type = Console.ReadLine();
 
@@ -178,36 +178,73 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (!isType);
         }
 
+        internal void ShowAirVehicleBrand()
+        {
+            Utility.WriteTitle("Available Air Vehicle Brands: ", "", "\n\n");
+
+            foreach (EnumAirVehicleBrand brand in Enum.GetValues(typeof(EnumAirVehicleBrand)))
+            {
+                Utility.WriteMessage($"{brand}", "", "\n");
+            }
+        }
+
         public override void GetVehicleBrand()
         {
-            Utility.WriteMessage("Brand: ");
-
-            string brand = Console.ReadLine();
-
-            if (Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand))
+            bool isBrand;
+            do
             {
-                AirVehicleBrand = planeBrand;
-            }
-            else
+                ShowAirVehicleBrand();
+
+                Utility.WriteMessage("Write the Brand: ", "\n");
+
+                string brand = Console.ReadLine();
+
+                isBrand = Enum.TryParse(brand, true, out EnumAirVehicleBrand planeBrand);
+
+                if (isBrand)
+                {
+                    AirVehicleBrand = planeBrand;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid brand entered.  Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isBrand);
+        }
+
+        internal void ShowAirVehicleModel()
+        { 
+            Utility.WriteTitle("Available Air Vehicle Models: ", "", "\n\n");
+
+            foreach (EnumAirVehicleModel model in Enum.GetValues(typeof(EnumAirVehicleModel)))
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumAirVehicleBrand.Embraer}", "\n", "\n\n");
+                Utility.WriteMessage($"{model}", "", "\n");
             }
         }
 
         public override void GetVehicleModel()
         {
-            Utility.WriteMessage("Model: ");
-
-            string model = Console.ReadLine();
-
-            if (Enum.TryParse(model, true, out EnumAirVehicleModel planeModel))
+            bool isModel;
+            do
             {
-                AirVehicleModel = planeModel;
-            }
-            else
-            {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumAirVehicleModel.Phenom}", "\n", "\n\n");
-            }
+                ShowAirVehicleModel();
+
+                Utility.WriteMessage("Write the Model: ", "\n");
+
+                string model = Console.ReadLine();
+
+                isModel = Enum.TryParse(model, true, out EnumAirVehicleModel planeModel);
+
+                if (isModel)
+                {
+                    AirVehicleModel = planeModel;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isModel);
+            
         }
 
         // Polimorphism with Inheritance and Override method

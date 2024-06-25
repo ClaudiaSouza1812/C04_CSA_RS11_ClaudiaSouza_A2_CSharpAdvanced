@@ -106,9 +106,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Console.Clear();
 
-                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
 
-                Utility.WriteMessage("Air Vehicle fabrication year: ");
+                Utility.WriteMessage("Road Vehicle fabrication year: ");
 
                 string answer = Console.ReadLine();
 
@@ -177,69 +177,142 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (carRegistration == string.Empty);
         }
 
+        internal void ShowRoadVehicleBrand()
+        { 
+            Utility.WriteTitle("Car Brands", "", "\n\n");
+
+            foreach (EnumRoadVehicleBrand brand in Enum.GetValues(typeof(EnumRoadVehicleBrand)))
+            {
+                Utility.WriteMessage($"{brand}", "", "\n");
+            }
+        }
+
         public override void GetVehicleBrand()
         {
-            Utility.WriteMessage("Brand: ");
-
-            string brand = Console.ReadLine();
-
-            if (Enum.TryParse(brand, true, out EnumRoadVehicleBrand carBrand))
+            bool isBrand;
+            do
             {
-                RoadVehicleBrand = carBrand;
-            }
-            else
+                ShowRoadVehicleBrand();
+
+                Utility.WriteMessage("Write the Brand: ", "\n");
+
+                string brand = Console.ReadLine();
+
+                isBrand = Enum.TryParse(brand, true, out EnumRoadVehicleBrand carBrand);
+
+                if (isBrand)
+                {
+                    RoadVehicleBrand = carBrand;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isBrand);
+        }
+
+        internal void ShowRoadVehicleModel()
+        {
+            Utility.WriteTitle("Road Vehicle Models", "", "\n\n");
+
+            foreach (EnumRoadVehicleModel model in Enum.GetValues(typeof(EnumRoadVehicleModel)))
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumRoadVehicleBrand.Mercedez}", "\n", "\n\n");
+                Utility.WriteMessage($"{model}", "", "\n");
             }
         }
 
         public override void GetVehicleModel()
         {
-            Utility.WriteMessage("Model: ");
-
-            string model = Console.ReadLine();
-
-            if (Enum.TryParse(model, true, out EnumRoadVehicleModel carModel))
+            bool isModel;
+            do
             {
-                RoadVehicleModel = carModel;
-            }
-            else
+                ShowRoadVehicleModel();
+
+                Utility.WriteMessage("Write the Model: ");
+
+                string model = Console.ReadLine();
+
+                isModel = Enum.TryParse(model, true, out EnumRoadVehicleModel carModel);
+
+                if (isModel)
+                {
+                    RoadVehicleModel = carModel;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isModel);
+            
+        }
+
+        internal void ShowRoadVehicleColor()
+        {
+            Utility.WriteTitle("Road Vehicles color: ", "", "\n\n");
+
+            foreach (EnumRoadVehicleColor color in Enum.GetValues(typeof(EnumRoadVehicleColor)))
             {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumRoadVehicleModel.EQC}", "\n", "\n\n");
+                Utility.WriteMessage($"{color}", "", "\n");
             }
         }
 
         internal void GetCarColor()
         {
-            Utility.WriteMessage("Color: ");
-
-            string color = Console.ReadLine();
-
-            if (Enum.TryParse(color, true, out EnumRoadVehicleColor carColor))
+            bool isColor;
+            do
             {
-                RoadVehicleColor = carColor;
-            }
-            else
+                ShowRoadVehicleColor();
+
+                Utility.WriteMessage("Write the Color: ");
+
+                string color = Console.ReadLine();
+
+                isColor = Enum.TryParse(color, true, out EnumRoadVehicleColor carColor);
+
+                if (isColor)
+                {
+                    RoadVehicleColor = carColor;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid color entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isColor);
+        }
+
+        internal void ShowRoadVehicleDoors()
+        {
+            Utility.WriteTitle("Road Vehicles Doors");
+
+            foreach (EnumRoadVehicleNumberOfDoors door in Enum.GetValues(typeof(EnumRoadVehicleNumberOfDoors)))
             {
-                Utility.WriteMessage($"Invalid color entered. The default color will be set: {EnumRoadVehicleColor.Prata}", "\n", "\n\n");
+                Utility.WriteMessage($"{door}", "", "\n");
             }
         }
 
         internal void GetCarNumberOfDoors()
         {
-            Utility.WriteMessage("Enter the number of doors, ex: (quatro).", "\n", "\n");
-            Utility.WriteMessage("Number Of Doors: ");
-
-            string doors = Console.ReadLine();
-
-            if (Enum.TryParse(doors, true, out EnumRoadVehicleNumberOfDoors carDoors))
+            bool isDoor;
+            do
             {
-                RoadVehicleNumberOfDoors = carDoors;
-            }
-            else
-            {
-                Utility.WriteMessage($"Invalid number of doors entered. The default number of doors will be set: {EnumRoadVehicleNumberOfDoors.Quatro}", "\n", "\n\n");
-            }
+                ShowRoadVehicleDoors();
+
+                Utility.WriteMessage("Number Of Doors: ");
+
+                string doors = Console.ReadLine();
+
+                isDoor = Enum.TryParse(doors, true, out EnumRoadVehicleNumberOfDoors carDoors);
+
+                if (isDoor)
+                {
+                    RoadVehicleNumberOfDoors = carDoors;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid number of doors entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isDoor);
+            
         }
 
         internal bool CheckCarSpeed(double speed)
