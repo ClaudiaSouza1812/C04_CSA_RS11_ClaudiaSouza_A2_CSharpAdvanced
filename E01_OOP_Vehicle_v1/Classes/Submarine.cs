@@ -99,9 +99,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             {
                 Console.Clear();
 
-                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+                Utility.WriteTitle("Create Water Vehicles", "", "\n\n");
 
-                Utility.WriteMessage("Air Vehicle fabrication year: ");
+                Utility.WriteMessage("Water Vehicle fabrication year: ");
 
                 string answer = Console.ReadLine();
 
@@ -129,6 +129,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             string pennantNumber;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
+
                 Utility.WriteMessage("Pennant number: ");
                 pennantNumber = Console.ReadLine();
 
@@ -145,59 +148,122 @@ namespace E01_OOP_Vehicle_v1.Classes
             } while (pennantNumber == string.Empty);
         }
 
+        internal void ShowWaterVehicleType()
+        { 
+            Utility.WriteTitle("Water Vehicle Types", "", "\n\n");
+
+            foreach (EnumWaterVehicleType type in Enum.GetValues(typeof(EnumWaterVehicleType)))
+            {
+                Utility.WriteMessage($"{type}", "", "\n");
+            }
+        }
+
         internal void GetWaterVehicleType()
         {
-            Utility.WriteMessage("Type: ");
-
-            string type = Console.ReadLine();
-
-            if (Enum.TryParse(type, true, out EnumWaterVehicleType waterType))
+            bool isType;
+            do
             {
-                WaterVehicleType = waterType;
-            }
-            else
+                Console.Clear();
+                Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
+
+                ShowWaterVehicleType();
+
+                Utility.WriteMessage("Write the Type: ", "\n");
+
+                string type = Console.ReadLine();
+
+                isType = Enum.TryParse(type, true, out EnumWaterVehicleType waterType);
+
+                if (isType)
+                {
+                    WaterVehicleType = waterType;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid type entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isType);
+        }
+
+        internal void ShowWaterVehicleBrand()
+        {
+            Utility.WriteTitle("Water Vehicle Brands", "", "\n\n");
+
+            foreach (EnumWaterVehicleBrand brand in Enum.GetValues(typeof(EnumWaterVehicleBrand)))
             {
-                Utility.WriteMessage($"Invalid type entered. The default type will be set: {EnumWaterVehicleType.Submarine}", "\n", "\n\n");
+                Utility.WriteMessage($"{brand}", "", "\n");
             }
         }
 
         public override void GetVehicleBrand()
         {
-            Utility.WriteMessage("Brand: ");
-
-            string brand = Console.ReadLine();
-
-            if (Enum.TryParse(brand, true, out EnumWaterVehicleBrand waterBrand))
+            bool isBrand;
+            do
             {
-                WaterVehicleBrand = waterBrand;
-            }
-            else
+                Console.Clear();
+                Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
+
+                ShowWaterVehicleBrand();
+
+                Utility.WriteMessage("Write the Brand: ", "\n");
+
+                string brand = Console.ReadLine();
+
+                isBrand = Enum.TryParse(brand, true, out EnumWaterVehicleBrand waterBrand);
+
+                if (isBrand)
+                {
+                    WaterVehicleBrand = waterBrand;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isBrand);
+            
+        }
+
+        internal void ShowWaterVehicleModel()
+        {
+            Utility.WriteTitle("Water Vehicle Models", "", "\n\n");
+
+            foreach (EnumWaterVehicleModel model in Enum.GetValues(typeof(EnumWaterVehicleModel)))
             {
-                Utility.WriteMessage($"Invalid brand entered. The default brand will be set: {EnumWaterVehicleBrand.Beneteau}", "\n", "\n\n");
+                Utility.WriteMessage($"{model}", "", "\n");
             }
         }
+
 
         public override void GetVehicleModel()
         {
-            Utility.WriteMessage("Model: ");
-
-            string model = Console.ReadLine();
-
-            if (Enum.TryParse(model, true, out EnumWaterVehicleModel waterModel))
+            bool isModel;
+            do
             {
-                WaterVehicleModel = waterModel;
-            }
-            else
-            {
-                Utility.WriteMessage($"Invalid model entered. The default model will be set: {EnumWaterVehicleModel.Oceanis}", "\n", "\n\n");
-            }
+                Console.Clear();
+                Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
+
+                ShowWaterVehicleModel();
+
+                Utility.WriteMessage("Model: ", "\n");
+
+                string model = Console.ReadLine();
+
+                isModel = Enum.TryParse(model, true, out EnumWaterVehicleModel waterModel);
+                if (isModel)
+                {
+                    WaterVehicleModel = waterModel;
+                }
+                else
+                {
+                    Utility.WriteMessage($"Invalid model entered. Choose one of the options.", "\n", "\n\n");
+                }
+            } while (!isModel);
+            
         }
-
 
         public override void StartVehicle()
         {
             Utility.WriteMessage($"Starting the {WaterVehicleType}.", "\n", "\n");
-
         }
 
         // Polimorphism with Inheritance and Override method
@@ -207,42 +273,59 @@ namespace E01_OOP_Vehicle_v1.Classes
             CurrentSpeed = 60;
 
             Utility.WriteMessage($"{WaterVehicleType} in movement, speed from 0km/h to: {CurrentSpeed}km/h.", "", "\n");
-
         }
 
         public void Dive()
         {
-            CurrentDepth = GetSubmarineDepth();
+            if (WaterVehicleType == EnumWaterVehicleType.Submarine)
+            {
+                CurrentDepth = GetVehicleDepth();
 
-            Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth} meters.", "", "\n");
+                Utility.WriteMessage($"Submarine is diving with a depth of {CurrentDepth} meters.", "", "\n");
+            }
+            else
+            { 
+                Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot dive.", "", "\n");
+            }
         }
 
-        internal double GetSubmarineDepth()
+        internal double GetVehicleDepth()
         {
             double depth;
             bool isDepth;
 
-            do
+            if (WaterVehicleType == EnumWaterVehicleType.Submarine)
             {
-                Utility.WriteMessage("Depth: ");
-
-                string answer = Console.ReadLine();
-
-                isDepth = double.TryParse(answer, out depth);
-
-                if (!CheckSubmarineDepth(depth))
+                do
                 {
-                    Utility.WriteMessage($"Maximum depth: {MaxDepth}km/h.");
-                    Utility.PauseConsole();
-                    isDepth = false;
-                }
+                    Console.Clear();
+                    Utility.WriteTitle("Create a Water Vehicle", "", "\n\n");
 
-            } while (!isDepth);
+                    Utility.WriteMessage("Depth: ", "\n");
 
+                    string answer = Console.ReadLine();
+
+                    isDepth = double.TryParse(answer, out depth);
+
+                    if (!CheckVehicleDepth(depth))
+                    {
+                        Utility.WriteMessage($"Maximum depth: {MaxDepth}km/h.");
+                        Utility.PauseConsole();
+                        isDepth = false;
+                    }
+
+                } while (!isDepth);
+            }
+            else
+            {
+                depth = 0.0;
+                Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot dive.", "", "\n");
+            }   
+            
             return depth;
         }
 
-        internal bool CheckSubmarineDepth(double depth)
+        internal bool CheckVehicleDepth(double depth)
         {
             if (depth > MaxDepth)
             {
@@ -253,10 +336,16 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public void Emerge()
         {
-            CurrentDepth = 0.0;
+            if (WaterVehicleType == EnumWaterVehicleType.Submarine)
+            {
+                CurrentDepth = 0.0;
 
-            Utility.WriteMessage($"The {WaterVehicleType} emerged and reached the surface successfully.", "", "\n");
-
+                Utility.WriteMessage($"The {WaterVehicleType} emerged and reached the surface successfully.", "", "\n");
+            }
+            else
+            {
+                Utility.WriteMessage($"The {WaterVehicleType} is not a submarine and cannot emerge.", "", "\n");
+            }
         }
 
         public override void StopVehicle()

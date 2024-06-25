@@ -128,6 +128,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             string planeRegistration;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
                 Utility.WriteMessage("Registration: ");
                 planeRegistration = Console.ReadLine();
 
@@ -159,6 +162,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isType;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
                 ShowAirVehicles();
 
                 Utility.WriteMessage("Write the Type: ", "\n");
@@ -193,6 +199,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isBrand;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
                 ShowAirVehicleBrand();
 
                 Utility.WriteMessage("Write the Brand: ", "\n");
@@ -207,7 +216,7 @@ namespace E01_OOP_Vehicle_v1.Classes
                 }
                 else
                 {
-                    Utility.WriteMessage($"Invalid brand entered.  Choose one of the options.", "\n", "\n\n");
+                    Utility.WriteMessage($"Invalid brand entered. Choose one of the options.", "\n", "\n\n");
                 }
             } while (!isBrand);
         }
@@ -227,6 +236,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isModel;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Air Vehicles", "", "\n\n");
+
                 ShowAirVehicleModel();
 
                 Utility.WriteMessage("Write the Model: ", "\n");
@@ -298,7 +310,6 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
         #endregion
-
 
     }
 }

@@ -51,7 +51,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public override void CreateVehicle()
         {
-            Utility.WriteTitle("Create a Car", "", "\n\n");
+            Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
 
             #region RoadVehicleYear
 
@@ -138,6 +138,9 @@ namespace E01_OOP_Vehicle_v1.Classes
 
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 Utility.WriteMessage("Enter speed: ");
 
                 string answer = Console.ReadLine();
@@ -161,6 +164,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             string carRegistration;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 Utility.WriteMessage("Car registration: ");
                 carRegistration = Console.ReadLine();
 
@@ -192,6 +198,9 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isBrand;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 ShowRoadVehicleBrand();
 
                 Utility.WriteMessage("Write the Brand: ", "\n");
@@ -226,9 +235,12 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isModel;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 ShowRoadVehicleModel();
 
-                Utility.WriteMessage("Write the Model: ");
+                Utility.WriteMessage("Write the Model: ", "\n");
 
                 string model = Console.ReadLine();
 
@@ -261,9 +273,12 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isColor;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 ShowRoadVehicleColor();
 
-                Utility.WriteMessage("Write the Color: ");
+                Utility.WriteMessage("Write the Color: ", "\n");
 
                 string color = Console.ReadLine();
 
@@ -282,7 +297,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         internal void ShowRoadVehicleDoors()
         {
-            Utility.WriteTitle("Road Vehicles Doors");
+            Utility.WriteTitle("Road Vehicles Doors", "", "\n\n");
 
             foreach (EnumRoadVehicleNumberOfDoors door in Enum.GetValues(typeof(EnumRoadVehicleNumberOfDoors)))
             {
@@ -295,9 +310,12 @@ namespace E01_OOP_Vehicle_v1.Classes
             bool isDoor;
             do
             {
+                Console.Clear();
+                Utility.WriteTitle("Create Road Vehicles", "", "\n\n");
+
                 ShowRoadVehicleDoors();
 
-                Utility.WriteMessage("Number Of Doors: ");
+                Utility.WriteMessage("Number Of Doors: ", "\n");
 
                 string doors = Console.ReadLine();
 
