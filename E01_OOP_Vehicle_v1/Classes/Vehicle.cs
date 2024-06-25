@@ -41,7 +41,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
         #endregion
-// métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
+        // métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
         // métodos abstratos devem ser implementados nas classes filhas
         #region Methods
 
