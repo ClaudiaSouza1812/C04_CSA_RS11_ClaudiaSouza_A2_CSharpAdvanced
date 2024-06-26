@@ -51,7 +51,7 @@ namespace E01_OOP_Vehicle_v1.Classes
 
          
         #region Methods
-        // Polimorphism with Inheritance and Override method
+        // Polimorphism with Inheritance and Override methods
         // Override the Vehicle method adding Airplane properties
 
         public override void CreateVehicle()

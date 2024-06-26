@@ -22,8 +22,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}";
 
-        
-
         #endregion
 
         #region Constructors
