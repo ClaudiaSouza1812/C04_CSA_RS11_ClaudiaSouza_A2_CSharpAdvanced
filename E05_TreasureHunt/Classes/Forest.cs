@@ -18,8 +18,6 @@ namespace E05_TreasureHunt.Classes
         #region Properties
         public int Width { get; }
         public int Height { get; }
-        public int XAxis { get; set; }
-        public int YAxis { get; set; }
         public string Treasure { get; }
         public string Tree { get; }
         public string Lion { get; }
