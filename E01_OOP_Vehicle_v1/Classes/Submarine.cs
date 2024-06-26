@@ -189,7 +189,6 @@ namespace E01_OOP_Vehicle_v1.Classes
                     Utility.PauseConsole();
                 }
             } while (!isBrand);
-            
         }
 
         internal void ShowWaterVehicleModel()

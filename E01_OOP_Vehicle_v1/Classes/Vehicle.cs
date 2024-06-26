@@ -15,10 +15,14 @@ namespace E01_OOP_Vehicle_v1.Classes
         public int VehicleId { get; }
         private static int NextId { get; set; } = 1;
         public int VehicleYear { get; set; }
+        public Enum Brand { get; set; }
+        public Enum Model { get; set; }
         public double CurrentSpeed { get; set; }
         public double MaxSpeed { get; set; }
 
         public virtual string FullVehicle => $"Vehicle nº: {VehicleId}\nFabrication year: {VehicleYear}\nCurrent speed: {CurrentSpeed}\nMaximum speed: {MaxSpeed}";
+
+        
 
         #endregion
 

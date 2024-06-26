@@ -13,8 +13,6 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         #region Properties
 
         string CarRegistration { get; }
-        EnumRoadVehicleBrand RoadVehicleBrand { get; }
-        EnumRoadVehicleModel RoadVehicleModel { get; }
         EnumRoadVehicleColor RoadVehicleColor  { get; }
         EnumRoadVehicleNumberOfDoors RoadVehicleNumberOfDoors { get; }
 

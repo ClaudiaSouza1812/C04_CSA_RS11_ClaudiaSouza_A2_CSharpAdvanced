@@ -16,6 +16,8 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         // declara intenção das propriedades que pertencem a IVehicle
         int VehicleId { get; }
         int VehicleYear { get; }
+        Enum Brand { get; }
+        Enum Model { get; }
         // checar com Milena
         double CurrentSpeed { get; }
         double MaxSpeed { get; }
