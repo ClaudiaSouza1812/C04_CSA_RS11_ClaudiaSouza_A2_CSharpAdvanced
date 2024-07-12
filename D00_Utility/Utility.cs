@@ -77,6 +77,21 @@ namespace D00_Utility
             Console.ReadKey();
         }
 
-        
+        // Function to ask and return the user choice
+        public static bool KeepGoing()
+        {
+            WriteMessage("Continuar? (s/n): ", "\n");
+            string answer = Console.ReadLine().ToLower();
+
+            if (answer == "s")
+            {
+                return true;
+            }
+            if (answer == "n")
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
