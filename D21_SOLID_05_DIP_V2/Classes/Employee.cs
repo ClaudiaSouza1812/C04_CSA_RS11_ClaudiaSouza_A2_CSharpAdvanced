@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1
+namespace D21_SOLID_05_DIP_V2
 {
     // Define the Employee class, which will be used to represent an employee and inherit from the Person class
     internal class Employee : Person

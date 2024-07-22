@@ -1,11 +1,11 @@
-﻿using D21_SOLID_05_DIP_V1;
+﻿using D21_SOLID_05_DIP_V2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1.Classes
+namespace D21_SOLID_05_DIP_V2.Classes
 {
     // Class that will be used to manage employees
     internal class EmployeeService

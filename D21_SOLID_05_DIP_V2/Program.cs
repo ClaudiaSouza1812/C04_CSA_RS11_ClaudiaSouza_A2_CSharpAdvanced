@@ -1,5 +1,5 @@
-﻿using D21_SOLID_05_DIP_V1.Classes;
-using D21_SOLID_05_DIP_V1;
+﻿using D21_SOLID_05_DIP_V2.Classes;
+using D21_SOLID_05_DIP_V2;
 using System;
 using System.Collections.Generic;
 using System.Linq;

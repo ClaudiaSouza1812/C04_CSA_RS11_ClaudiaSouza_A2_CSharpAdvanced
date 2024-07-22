@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="D21_SOLID_05_DIP_V2.Employee">
+    <Position X="3.25" Y="4" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Employee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.NameFormatter" BaseTypeListCollapsed="true">
+    <Position X="15" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Classes\NameFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.Person">
+    <Position X="3.25" Y="1.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Classes\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.PersonService">
+    <Position X="11.25" Y="3.5" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAACAAAAAAAAAAAAAAAQAAAAEA=</HashCode>
+      <FileName>Classes\PersonService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.Classes.EmployeeRepository" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="6.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Classes\EmployeeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.Classes.EmployeeService">
+    <Position X="11.5" Y="6.25" Width="6.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAADAAQAAAAAA=</HashCode>
+      <FileName>Classes\EmployeeService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V2.Classes.PersonRepository" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="3.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Classes\PersonRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="D21_SOLID_05_DIP_V1_V2.Program">
+    <Position X="17.75" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="D21_SOLID_05_DIP_V2.IEmployeeRepository">
+    <Position X="7.25" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IEmployeeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="D21_SOLID_05_DIP_V2.INameFormatter">
+    <Position X="11.25" Y="1.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Interfaces\INameFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="D21_SOLID_05_DIP_V2.IPersonRepository">
+    <Position X="15" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Interfaces\IPersonRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
