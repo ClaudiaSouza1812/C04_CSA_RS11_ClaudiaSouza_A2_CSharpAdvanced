@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1
+namespace D21_SOLID_05_DIP_V2
 {
     // Defines the Person class, which will be used to store information about a person, and will allow other objects of the same type to inherit it
     internal class Person

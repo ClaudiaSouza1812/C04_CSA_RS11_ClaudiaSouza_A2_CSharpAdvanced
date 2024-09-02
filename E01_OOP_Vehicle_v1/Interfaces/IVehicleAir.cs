@@ -13,7 +13,6 @@ namespace E01_OOP_Vehicle_v1.Interfaces
         string PlaneRegistration { get; }
         double CurrentAltitude { get; }
         double MaxAltitude { get; }
-        EnumAirVehicleModel AirVehicleModel { get; }
         EnumAirVehicleType AirVehicleType { get; }
 
         #region Methods

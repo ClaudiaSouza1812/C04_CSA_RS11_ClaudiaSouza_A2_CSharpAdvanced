@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1.Classes
+namespace D21_SOLID_05_DIP_V2.Classes
 {
     // Define the class that will be used to interact with the database
     internal class PersonRepository : IPersonRepository

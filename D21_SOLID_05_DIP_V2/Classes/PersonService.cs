@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1
+namespace D21_SOLID_05_DIP_V2
 {
     // Class to manage the Person data
     internal class PersonService

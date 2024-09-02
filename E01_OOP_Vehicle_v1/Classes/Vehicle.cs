@@ -15,6 +15,8 @@ namespace E01_OOP_Vehicle_v1.Classes
         public int VehicleId { get; }
         private static int NextId { get; set; } = 1;
         public int VehicleYear { get; set; }
+        public Enum Brand { get; set; }
+        public Enum Model { get; set; }
         public double CurrentSpeed { get; set; }
         public double MaxSpeed { get; set; }
 
@@ -41,7 +43,7 @@ namespace E01_OOP_Vehicle_v1.Classes
         }
 
         #endregion
-// métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
+        // métodos não devem ser implementados na classe abstrata, pois não temos informações suficientes para implementá-los, rever arquitetura do projeto para implementar corretamente nas classes filhas
         // métodos abstratos devem ser implementados nas classes filhas
         #region Methods
 
@@ -51,8 +53,6 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public abstract void MoveVehicle();
 
-        public abstract void GetVehicleYear();
-
         public abstract void StopVehicle();
 
         public abstract void ListVehicle();
@@ -61,7 +61,36 @@ namespace E01_OOP_Vehicle_v1.Classes
 
         public abstract void GetVehicleModel();
 
-        
+        // Checar com Milena
+        public virtual void GetVehicleYear()
+        {
+            bool isYear;
+            int year;
+
+            do
+            {
+                Utility.WriteMessage("Vehicle fabrication year: ");
+
+                string answer = Console.ReadLine();
+
+                isYear = int.TryParse(answer, out year);
+
+                if (!isYear)
+                {
+                    Utility.WriteMessage("Enter a valid year.", "\n", "\n");
+                    Utility.PauseConsole();
+                }
+                else if (!VehicleUtility.CheckVehicleYear(year))
+                {
+                    Utility.WriteMessage($"Year range between 1950 and {DateTime.Now.Year}.", "\n", "\n");
+                    Utility.PauseConsole();
+                    isYear = false;
+                }
+
+            } while (!isYear);
+
+            VehicleYear = year;
+        }
 
         #endregion
 

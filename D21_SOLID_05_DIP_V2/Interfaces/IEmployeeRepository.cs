@@ -1,11 +1,11 @@
-﻿using D21_SOLID_05_DIP_V1;
+﻿using D21_SOLID_05_DIP_V2;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D21_SOLID_05_DIP_V1
+namespace D21_SOLID_05_DIP_V2
 {
     // Define the interface that will be implemented by the EmployeeRepository class, which will be used to interact with the database
     internal interface IEmployeeRepository

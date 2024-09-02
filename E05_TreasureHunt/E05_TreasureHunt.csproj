@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6FE89F9B-11FE-491C-8BC0-FB3588650E4E}</ProjectGuid>
+    <ProjectGuid>{8ED92BB7-DF20-464D-BD93-306CA22317D6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>E01_OOP_Vehicle_v1</RootNamespace>
-    <AssemblyName>E01_OOP_Vehicle_v1</AssemblyName>
+    <RootNamespace>E05_TreasureHunt</RootNamespace>
+    <AssemblyName>E05_TreasureHunt</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,29 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\Airplane.cs" />
-    <Compile Include="Classes\Car.cs" />
-    <Compile Include="Classes\Enums.cs" />
-    <Compile Include="Classes\Submarine.cs" />
-    <Compile Include="Classes\Vehicle.cs" />
-    <Compile Include="Classes\VehicleUtility.cs" />
-    <Compile Include="Interfaces\IVehicle.cs" />
-    <Compile Include="Interfaces\IVehicleAir.cs" />
-    <Compile Include="Interfaces\IVehicleRoad.cs" />
-    <Compile Include="Interfaces\IVehicleWater.cs" />
+    <Compile Include="Classes\Forest.cs" />
+    <Compile Include="Interfaces\IForest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\D00_Utility\D00_Utility.csproj">
       <Project>{f9bde1aa-9e8b-48cb-a240-4cf0c547eef8}</Project>
       <Name>D00_Utility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
