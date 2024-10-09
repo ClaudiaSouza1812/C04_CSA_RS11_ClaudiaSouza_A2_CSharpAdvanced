@@ -40,7 +40,7 @@ namespace _00_ClassTemplate_v01
 
         #region Enums (public or internal) 
 
-        /* Enums por dafault são int e zero-based, ex:
+        /* Enums por default são int e zero-based, ex:
         internal enum EnumMaritalStatus
         {
             Single,     // 0
